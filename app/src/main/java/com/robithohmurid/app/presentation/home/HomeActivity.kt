@@ -2,7 +2,6 @@ package com.robithohmurid.app.presentation.home
 
 import android.Manifest
 import android.content.pm.PackageManager
-import android.location.Geocoder
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
