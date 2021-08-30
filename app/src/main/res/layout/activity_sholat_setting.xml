@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.sholat.setting.SholatSettingActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/layout_toolbar" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include
+        android:id="@+id/layout_notifikasi_adzan"
+        layout="@layout/item_config"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/appbar" />
+
+    <include
+        android:id="@+id/layout_shortcut_jadwal_sholat"
+        layout="@layout/item_config"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/layout_notifikasi_adzan" />
+
+    <include
+        android:id="@+id/layout_lokasi"
+        layout="@layout/item_config"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/layout_shortcut_jadwal_sholat" />
+
+    <include
+        android:id="@+id/layout_metode"
+        layout="@layout/item_config"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/layout_lokasi" />
+
+    <include
+        android:id="@+id/layout_koreksi"
+        layout="@layout/item_config"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/layout_metode" />
+
+    <include
+        android:id="@+id/layout_config_ashar"
+        layout="@layout/item_config"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/layout_koreksi" />
+
+    <include
+        android:id="@+id/layout_garis_lintang"
+        layout="@layout/item_config"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/layout_config_ashar" />
+
+    <include
+        android:id="@+id/layout_musim_panas"
+        layout="@layout/item_config"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/layout_garis_lintang" />
+
+    <include
+        android:id="@+id/layout_imsak"
+        layout="@layout/item_config"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/layout_musim_panas" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

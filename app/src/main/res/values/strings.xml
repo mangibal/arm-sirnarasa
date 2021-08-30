@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Robithoh Murid</string>
+
+    <string name="label_permission">Permission</string>
+
+    <string name="hours">hour(s)</string>
+    <string name="mins">mins</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+    <string name="fcm_message">FCM Message</string>
+
+    <string name="label_subuh">Subuh</string>
+    <string name="label_dhuhur">Dhuhur</string>
+    <string name="label_ashar">Ashar</string>
+    <string name="label_maghrib">Maghrib</string>
+    <string name="label_isya">Isya</string>
+    <string name="go_to_content">Go to content</string>
+</resources>

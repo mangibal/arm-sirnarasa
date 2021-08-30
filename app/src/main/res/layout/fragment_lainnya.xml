@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_bottom_sheet"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/view_swipe"
+        android:layout_width="48dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/view_swipe" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/dimen16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_swipe">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_bottom_sheet">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_amaliyah_title"
+                    style="@style/TextViewStyle"
+                    android:layout_marginStart="@dimen/dimen16"
+                    android:text="@string/title_amaliyah_mursyid"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/font16"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_amaliyah"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen8"
+                    android:layout_marginTop="@dimen/dimen4"
+                    android:layout_marginEnd="@dimen/dimen16"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toTopOf="@id/tv_tqn_title"
+                    app:layout_constraintTop_toBottomOf="@id/tv_amaliyah_title"
+                    app:spanCount="4"
+                    tools:itemCount="4"
+                    tools:listitem="@layout/item_list_menu" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_tqn_title"
+                    style="@style/TextViewStyle"
+                    android:layout_marginStart="@dimen/dimen16"
+                    android:layout_marginTop="@dimen/dimen16"
+                    android:text="Ke TQN-an"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/font16"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rv_amaliyah" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_tqn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen8"
+                    android:layout_marginTop="@dimen/dimen4"
+                    android:layout_marginEnd="@dimen/dimen16"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_tqn_title"
+                    app:spanCount="4"
+                    tools:itemCount="4"
+                    tools:listitem="@layout/item_list_menu" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

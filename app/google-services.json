@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "566083689350",
+    "project_id": "robithoh-murid",
+    "storage_bucket": "robithoh-murid.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:566083689350:android:a84b8b21ab3c2d4b1d2a07",
+        "android_client_info": {
+          "package_name": "com.robithohmurid.app.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "566083689350-n03t39rklcgbhqrgd8h2c3m1tumsoc4i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.robithohmurid.app.dev",
+            "certificate_hash": "e588725fae2975996363e6ab8bc0ee8067f68e06"
+          }
+        },
+        {
+          "client_id": "566083689350-d7m706pf6nh2ppt86pdb2i50hfa33su1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZsGnxMH8rOhTa23RKC2PkziH9aYGG59k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "566083689350-d7m706pf6nh2ppt86pdb2i50hfa33su1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

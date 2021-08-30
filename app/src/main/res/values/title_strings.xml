@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_created_by">Created By :</string>
+    <string name="title_stid_sirnarasa">STID Sirnarasa</string>
+    <string name="title_pengaturan">Pengaturan</string>
+    <string name="title_setting_adzan">Adzan dan Jadwal Sholat</string>
+    <string name="title_faq">F.A.Q.</string>
+    <string name="title_saran_masukan">Saran dan Masukan</string>
+    <string name="title_tentang_kami">Tentang Kami</string>
+    <string name="title_beri_rating">Beri Rating</string>
+    <string name="title_bagikan_app">Bagikan Aplikasi ini</string>
+
+    <string name="title_pemberitahuan_adzan">Pemberitahuan Adzan</string>
+    <string name="title_shortcut_jadwal_sholat">Shortcut Jadwal Sholat</string>
+    <string name="title_lokasi">Lokasi</string>
+    <string name="title_metode_hitung_sholat">Metode Perhitungan Waktu Sholat</string>
+    <string name="title_koreksi_manual">Koreksi Manual</string>
+    <string name="title_perhitungan_ashar">Perhitungan Waktu Ashar - Metode Hukum Perhitungan</string>
+    <string name="title_garis_lintang">Penyesuaian Garis Lintang Tinggi</string>
+    <string name="title_waktu_musim_panas">Waktu Musim Panas</string>
+    <string name="title_imsak">Imsak</string>
+
+    <string name="title_pilih_lokasi">Pilih Lokasi</string>
+    <string name="title_lokasi_terkini">Lokasi Terkini</string>
+    <string name="title_sirnarasa">Ponpes Sirnarasa</string>
+    <string name="title_arm">Amaliyah Robithoh Murid</string>
+    <string name="title_amaliyah_mursyid">Amaliyah Mursyid</string>
+</resources>
