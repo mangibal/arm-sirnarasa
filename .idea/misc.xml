@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Priambudi/AndroidStudioProjects/mursyid-app/app/src/main/res/drawable/ic_back.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/Priambudi/AndroidStudioProjects/mursyid-app/app/src/main/res/layout/activity_content.xml" value="0.16032608695652173" />
+        <entry key="..\:/Users/Priambudi/AndroidStudioProjects/mursyid-app/app/src/main/res/layout/activity_list_content.xml" value="0.16032608695652173" />
+        <entry key="..\:/Users/Priambudi/AndroidStudioProjects/mursyid-app/app/src/main/res/layout/activity_on_boarding.xml" value="0.16032608695652173" />
+        <entry key="..\:/Users/Priambudi/AndroidStudioProjects/mursyid-app/app/src/main/res/layout/fragment_base_on_boarding.xml" value="0.16032608695652173" />
+        <entry key="..\:/Users/Priambudi/AndroidStudioProjects/mursyid-app/app/src/main/res/layout/layout_app_bar_view.xml" value="0.16032608695652173" />
+        <entry key="..\:/Users/Priambudi/AndroidStudioProjects/mursyid-app/app/src/main/res/menu/menu.xml" value="0.209375" />
+      </map>
+    </option>
+  </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_13" project-jdk-name="13" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_13" default="true" project-jdk-name="13" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

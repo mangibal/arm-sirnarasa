@@ -26,16 +26,16 @@ data class NewsEntity(
 )
 
 val listAmaliyah = listOf(
-    AmaliyahEntity(0, "Adab-adab", "Adab sehari-hari", R.drawable.ic_adab),
-    AmaliyahEntity(1),
-    AmaliyahEntity(2, "Dzikir", "Dzikir harian", R.drawable.ic_dzikir),
-    AmaliyahEntity(3, "Khotaman", "Khotaman TQN PPS Suryalaya", R.drawable.ic_khotaman),
+    AmaliyahEntity(),
+    AmaliyahEntity(1, "Dzikir", "Dzikir harian", R.drawable.ic_dzikir),
+    AmaliyahEntity(2, "Khotaman", "Khotaman TQN PPS Suryalaya", R.drawable.ic_khotaman),
     AmaliyahEntity(
-        4,
+        3,
         "Manaqib",
         "Manaqib Tuan Syaikh Abdul Qadir Jailani QS",
         R.drawable.ic_manaqib
     ),
+    AmaliyahEntity(4, "Adab-adab", "Adab sehari-hari", R.drawable.ic_adab),
     AmaliyahEntity(5, "Doa-doa", "Kumpulan doa-doa mustajab", R.drawable.ic_doa),
     AmaliyahEntity(6, "Ziarah", "Ziarah Kubur", R.drawable.ic_ziarah),
     AmaliyahEntity(7, "Lainnya", icon = R.drawable.ic_lainnya)
@@ -43,33 +43,40 @@ val listAmaliyah = listOf(
 
 val listMenuTqn = listOf(
     AmaliyahEntity(
-        1, "Tujuan dan Dasar TQN", "Tujuan dan Dasar TQN Suryalaya",
+        8, "Tujuan dan Dasar TQN", "Tujuan dan Dasar TQN Suryalaya",
         R.drawable.ic_tqn
     ),
     AmaliyahEntity(
-        2,
-        "Silsilah dan Sanad",
-        "Silsilah TQN PPS dan Sanad Pangersa Abah Aos",
-        R.drawable.ic_silsilah
-    ),
-    AmaliyahEntity(
-        3,
+        9,
         "Diagram Latifah",
         "Latifah yang ada alam qolbu manusia",
         R.drawable.ic_latifah
     ),
     AmaliyahEntity(
-        4, "Wakil Talqin", "Wakil talqin Pangersa Abah Aos QS",
+        10,
+        "Dustur",
+        "Langgam bacaan do'a pagi hari",
+        R.drawable.ic_dustur
+    ),
+    AmaliyahEntity(11, "Tarhim", "Langgam bacaan do'a", R.drawable.ic_tarhim),
+    AmaliyahEntity(
+        12, "Wakil Talqin", "Wakil talqin Pangersa Abah Aos QS",
         R.drawable.ic_waktal
     ),
     AmaliyahEntity(
-        5,
+        13,
+        "Silsilah dan Sanad",
+        "Silsilah TQN PPS dan Sanad Pangersa Abah Aos",
+        R.drawable.ic_silsilah
+    ),
+    AmaliyahEntity(
+        14,
         "Syekh Abdul Qodir Al-Jailani",
         "Profil dan Nama-nama Syekh Abdul Qodir",
         R.drawable.ic_manaqib
     ),
     AmaliyahEntity(
-        6,
+        15,
         "Maklumat",
         "Maklumat terbaru dari Pangersa Abah Aos QS",
         R.drawable.ic_maklumat
@@ -77,11 +84,11 @@ val listMenuTqn = listOf(
 )
 
 val listMenuManaqib = listOf(
-    AmaliyahEntity(20, "MC", icon = R.drawable.ic_mic),
-    AmaliyahEntity(21, "Sholawat", icon = R.drawable.ic_sholawat),
-    AmaliyahEntity(22, "Tanbih"),
-    AmaliyahEntity(23, "Tawashul", icon = R.drawable.ic_tawashul),
-    AmaliyahEntity(24, "Manqobah", icon = R.drawable.ic_manqobah)
+    AmaliyahEntity(16, "MC", icon = R.drawable.ic_mic),
+    AmaliyahEntity(17, "Sholawat", icon = R.drawable.ic_sholawat),
+    AmaliyahEntity(18, "Tanbih"),
+    AmaliyahEntity(19, "Tawashul", icon = R.drawable.ic_tawashul),
+    AmaliyahEntity(20, "Manqobah", icon = R.drawable.ic_manqobah)
 )
 
 val listNews = listOf(
@@ -89,22 +96,21 @@ val listNews = listOf(
     NewsEntity(),
     NewsEntity(),
 )
-val listContentAdab: List<ListingContentEntity> = listOf(
-    ListingContentEntity(1, "Adab Berwudhu"),
-    ListingContentEntity(2, "Adab Sholat"),
-    ListingContentEntity(3, "Adab Pergi ke Masjid"),
-    ListingContentEntity(4, "Adab Mendengarkan Adzan"),
-    ListingContentEntity(5, "Adab Iqomah"),
-    ListingContentEntity(6, "Adab Hari Jumat"),
-    ListingContentEntity(7, "Adab Berdoa"),
-    ListingContentEntity(8, "Adab Masuk Rumah"),
-    ListingContentEntity(9, "Adab Keluar Rumah"),
-    ListingContentEntity(10, "Adab Dzikir"),
+val listContentAdab : List<ListingContentEntity> = listOf(
+    ListingContentEntity(1,"Adab Berwudhu"),
+    ListingContentEntity(2,"Adab Sholat"),
+    ListingContentEntity(3,"Adab Pergi ke Masjid"),
+    ListingContentEntity(4,"Adab Mendengarkan Adzan"),
+    ListingContentEntity(5,"Adab Iqomah"),
+    ListingContentEntity(6,"Adab Hari Jumat"),
+    ListingContentEntity(7,"Adab Berdoa"),
+    ListingContentEntity(8,"Adab Masuk Rumah"),
+    ListingContentEntity(9,"Adab Keluar Rumah"),
+    ListingContentEntity(10,"Adab Dzikir"),
 )
 
-val sampleContentMarkwon: List<ContentEntity> = listOf(
-    ContentEntity(
-        1, "Membasuh Wajah", """
+val sampleContentMarkwon : List<ContentEntity> = listOf(
+    ContentEntity(1,"Membasuh Wajah","""
 # Structured documents
 
 Sometimes it's useful to have different levels of headings to structure your documents. Start lines with a `#` to create headings. Multiple `##` in a row denote smaller heading sizes.
@@ -147,15 +153,7 @@ Content in the first column | Content in the second column
 <em>This is emphasized text!</em>
 
 <strong>This is strong text!</strong>
-    """.trimIndent()
-    ),
-    ContentEntity(
-        2, "Dzikir Harian", """
-        اِلٰى حَضْرَةِ النَّبِيِّ الْمُصْطَفٰى مُحَمَّدٍ صَلَّى اللّٰهُ عَلَيْهِ وَسَلَّمَ وَعَلٰى اٰلِهٖ وَاَصْحَابِهٖ وَاَزْوَاجِهٖ وَذُرِّيّٰتِهٖ وَاَهْلِ بَيْتِهٖ وَلِمَنْ دَخَلَ فِي بَيْتِهٖ اَجْمَعِيْنَ كُلُّ شَيْئ ٍ لِلّٰهِ لَهُمُ الْفَاتِحَةُ
-        
-        Ilaa hadrotin nabiyyil musthofaa Muhammadin Shollalloohu ‘Alaihi Wa sallam wa ‘alaa  Aalihii wa Ashhabihii wa Azwaajihii wa Dzurriyyaatihii wa Ahli Baitihii wa Liman dakhola fii Baitihii ajma ‘iin, kullu syai'in lillahi lahum, al Faatihah
-    """.trimIndent()
-    )
+    """.trimIndent()),
 )
 
 data class ServicesEntity(

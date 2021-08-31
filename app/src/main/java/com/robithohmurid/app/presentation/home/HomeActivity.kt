@@ -22,8 +22,11 @@ import com.robithohmurid.app.databinding.BottomSheetMainBinding
 import com.robithohmurid.app.domain.abstraction.BaseActivity
 import com.robithohmurid.app.domain.router.ActivityScreen
 import com.robithohmurid.app.external.constant.DateTimeFormat
-import com.robithohmurid.app.external.constant.MenuConstant.LAINNYA
-import com.robithohmurid.app.external.constant.MenuConstant.MANAQIB
+import com.robithohmurid.app.external.constant.MenuConstant.ID_DZIKIR
+import com.robithohmurid.app.external.constant.MenuConstant.ID_KHOTAMAN
+import com.robithohmurid.app.external.constant.MenuConstant.ID_LAINNYA
+import com.robithohmurid.app.external.constant.MenuConstant.ID_MANAQIB
+import com.robithohmurid.app.external.constant.MenuConstant.ID_ZIARAH
 import com.robithohmurid.app.external.extension.app.*
 import com.robithohmurid.app.external.extension.view.*
 import com.robithohmurid.app.presentation.dialog.LocationDialogFragment
@@ -153,27 +156,42 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
             menuGridAdapter.run {
                 setItems(listAmaliyah)
                 setListener {
-                    showMenu(it.name)
+                    showMenu(it.id, it.name)
                 }
             }
         }
     }
 
-    private fun showMenu(title: String) {
-        when (title) {
-            MANAQIB -> ManaqibFragment().run {
+    private fun showMenu(id: Int, title: String) {
+        val toContent = router.getIntentScreen(this, ActivityScreen.Content).apply {
+            putExtra("title", title)
+            putExtra("id", id)
+        }
+        when (id) {
+            ID_MANAQIB -> ManaqibFragment().run {
                 show(supportFragmentManager, ManaqibFragment().tag)
             }
-            LAINNYA -> MenuFragment().run {
+            ID_LAINNYA -> MenuFragment().run {
                 show(supportFragmentManager, MenuFragment().tag)
             }
+            ID_ZIARAH -> {
+                startActivity(toContent)
+            }
+            ID_DZIKIR -> {
+                startActivity(toContent)
+            }
+            ID_KHOTAMAN -> {
+                startActivity(toContent)
+            }
             else -> {
-                val intent =
-                    router.getIntentScreen(this@HomeActivity, ActivityScreen.ListContent)
-                intent.putExtra("title", title)
+                val intent = router.getIntentScreen(this@HomeActivity, ActivityScreen.ListContent).apply {
+                    putExtra("id", id)
+                    putExtra("title", title)
+                }
                 startActivity(intent)
             }
         }
+
     }
 
     private fun setupServicesMenu() {

@@ -12,5 +12,31 @@ object MenuConstant {
     const val ADAB = "Adab-Adab"
     const val DOA = "Doa-doa"
     const val ZIARAH = "Ziarah"
+    const val SILSILAH = "Silsilah"
+    const val PROFIL_SYEKH = "SyekhAQJ"
     const val LAINNYA = "Lainnya"
+    const val IMG_MENU = "img"
+
+    //IDs
+    const val ID_SHOLAT = 0
+    const val ID_DZIKIR = 1
+    const val ID_KHOTAMAN = 2
+    const val ID_MANAQIB = 3
+    const val ID_ADAB = 4
+    const val ID_DOA = 5
+    const val ID_ZIARAH = 6
+    const val ID_LAINNYA = 7
+    const val ID_TUJUAN_TQN = 8
+    const val ID_DIAGRAM_LATIFAH = 9
+    const val ID_DUSTUR = 10
+    const val ID_TARHIM = 11
+    const val ID_WAKTAL = 12
+    const val ID_SILSILAH = 13
+    const val ID_SYEKH_AQJ = 14
+    const val ID_MAKLUMAT = 15
+    const val ID_MC = 16
+    const val ID_SHOLAWAT = 17
+    const val ID_TANBIH = 18
+    const val ID_TAWASUL = 19
+    const val ID_MANQOBAH = 20
 }
