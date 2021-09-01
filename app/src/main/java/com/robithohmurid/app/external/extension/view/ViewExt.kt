@@ -135,7 +135,7 @@ fun Context.dpToPx(dp: Float): Int =
 fun AppCompatActivity.initToolbar(
     toolbar: Toolbar,
     title: String = "",
-    colorTitle: Int = R.color.black
+    colorTitle: Int = R.color.white
 ) {
     setSupportActionBar(toolbar)
     supportActionBar?.title = title

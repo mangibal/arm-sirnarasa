@@ -11,16 +11,16 @@ import com.robithohmurid.app.domain.abstraction.BaseHolder
 import io.noties.markwon.Markwon
 
 class ContentAdapter :
-    BaseAdapter<ContentEntity, ItemContentBinding, ContentAdapter.ItemHolder>(
-        ItemContentBinding::inflate
+    BaseAdapter<ContentEntity, ItemListContentBinding, ContentAdapter.ItemHolder>(
+        ItemListContentBinding::inflate
     ) {
     inner class ItemHolder(private val binding: ItemContentBinding) :
         BaseHolder<ContentEntity>(binding) {
 
         override fun bind(data: ContentEntity) {
-           binding.tvContent.let {
-               Markwon.create(it.context).setMarkdown(it,data.content)
-           }
+            binding.tvContent.let {
+                Markwon.create(it.context).setMarkdown(it,data.content)
+            }
         }
     }
 

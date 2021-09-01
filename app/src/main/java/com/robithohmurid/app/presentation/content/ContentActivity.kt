@@ -17,13 +17,16 @@ class ContentActivity : BaseActivity<ActivityContentBinding, ContentViewModel>(
     }
     override fun onInitUI(savedInstanceState: Bundle?) {
         initToolbar(binding.toolbar)
+        val id = intent.getIntExtra("id",0)
+        val title = intent.getStringExtra("title")
+        binding.toolbar.title = title
         with(binding){
             rvContent.adapter = contentAdapter
         }
     }
 
     override fun onInitData() {
-       contentAdapter.setItems(sampleContentMarkwon)
+        contentAdapter.setItems(sampleContentMarkwon)
     }
 
 }
