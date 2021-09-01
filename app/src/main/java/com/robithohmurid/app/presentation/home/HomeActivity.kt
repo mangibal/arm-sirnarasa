@@ -17,6 +17,8 @@ import com.robithohmurid.app.data.local.listNews
 import com.robithohmurid.app.data.local.servicesList
 import com.robithohmurid.app.data.local.sholat.LocationData
 import com.robithohmurid.app.data.model.SholatEntity
+import com.robithohmurid.app.data.model.response.ContentEntity
+import com.robithohmurid.app.data.model.response.ItemEntity
 import com.robithohmurid.app.databinding.ActivityMainBinding
 import com.robithohmurid.app.databinding.BottomSheetMainBinding
 import com.robithohmurid.app.domain.abstraction.BaseActivity
@@ -184,10 +186,11 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
                 startActivity(toContent)
             }
             else -> {
-                val intent = router.getIntentScreen(this@HomeActivity, ActivityScreen.ListContent).apply {
-                    putExtra("id", id)
-                    putExtra("title", title)
-                }
+                val intent =
+                    router.getIntentScreen(this@HomeActivity, ActivityScreen.ListContent).apply {
+                        putExtra("id", id)
+                        putExtra("title", title)
+                    }
                 startActivity(intent)
             }
         }
@@ -475,6 +478,24 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
             setLocationInfo(location.latitude, location.longitude)
             calculatePrayerTime()
         }
+
+        with(viewModel) {
+            observe(listContent, ::onListContentReceived)
+            observe(listItem, ::onListItemReceived)
+
+            getListSholat()
+        }
+    }
+
+    private fun onListContentReceived(data: List<ContentEntity>) {
+        logInfo(data.toString())
+        showToast(data.toString())
+        viewModel.getListItem(data[0].alias)
+    }
+
+    private fun onListItemReceived(data: List<ItemEntity>) {
+        logInfo(data.toString())
+        showToast(data.toString())
     }
 
     private fun setLocationInfo(latitude: Double, longitude: Double) {

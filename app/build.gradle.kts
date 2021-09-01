@@ -48,7 +48,7 @@ android {
         getByName("debug") {
             isDebuggable = true
             applicationIdSuffix = ".dev"
-            buildConfigField("String", "BASE_URL", "\"${Properties.BASE_URL}\"")
+            buildConfigField("String", "BASE_URL", "\"${Properties.BASE_URL_DEBUG}\"")
         }
     }
 

@@ -22,22 +22,4 @@ class SettingsViewModel(private val repo: IRepository): BaseViewModel() {
     private val _listMenu: MutableLiveData<List<MenuEntity>> = MutableLiveData()
     val listMenu: LiveData<List<MenuEntity>> = _listMenu
 
-    fun getListMenu() {
-        _loadingMenu.postValue(true)
-        viewModelScope.launch {
-            repo.getListMenu(object : DataCallback<List<MenuEntity>> {
-                override fun onSuccess(data: List<MenuEntity>) {
-                    _loadingMenu.postValue(false)
-                    _listMenu.postValue(data)
-                }
-
-                override fun onFailure(t: Throwable) {
-                    _loadingMenu.postValue(false)
-                    logError(t.message.toString())
-                }
-
-            })
-        }
-    }
-
 }

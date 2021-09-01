@@ -1,6 +1,6 @@
 package com.robithohmurid.app.domain.repository
 
-import com.robithohmurid.app.data.model.MenuEntity
+import com.robithohmurid.app.data.model.response.ContentEntity
 import com.robithohmurid.app.data.model.response.ItemEntity
 import com.robithohmurid.app.data.remote.source.DataCallback
 
@@ -13,9 +13,13 @@ interface IRepository {
     suspend fun getListContent(
         category: String,
         content: String,
-        dataCallback: DataCallback<List<ItemEntity>>
+        dataCallback: DataCallback<List<ContentEntity>>
     )
 
-    suspend fun getListMenu(dataCallback: DataCallback<List<MenuEntity>>)
-
+    suspend fun getListItem(
+        category: String,
+        content: String,
+        item: String,
+        dataCallback: DataCallback<List<ItemEntity>>
+    )
 }

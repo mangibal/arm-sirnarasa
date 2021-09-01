@@ -1,6 +1,6 @@
 package com.robithohmurid.app.koin
 
-import com.robithohmurid.app.data.remote.networkModule
+import com.robithohmurid.app.data.remote.network.networkModule
 import com.robithohmurid.app.data.remote.source.dataModule
 import com.robithohmurid.app.domain.repository.repositoryModule
 import com.robithohmurid.app.domain.router.screenRouterModule
