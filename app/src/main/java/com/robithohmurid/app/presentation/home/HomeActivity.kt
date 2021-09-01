@@ -490,7 +490,9 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
     private fun onListContentReceived(data: List<ContentEntity>) {
         logInfo(data.toString())
         showToast(data.toString())
-        viewModel.getListItem(data[0].alias)
+        if (data.isNotEmpty()) {
+            viewModel.getListItem(data[0].alias)
+        }
     }
 
     private fun onListItemReceived(data: List<ItemEntity>) {
