@@ -18,14 +18,15 @@ object MenuConstant {
     const val IMG_MENU = "img"
 
     //IDs
-    const val ID_SHOLAT = 0
-    const val ID_DZIKIR = 1
-    const val ID_KHOTAMAN = 2
-    const val ID_MANAQIB = 3
-    const val ID_ADAB = 4
-    const val ID_DOA = 5
-    const val ID_ZIARAH = 6
+    const val ID_ADAB = 0
+    const val ID_SHOLAT = 1
+    const val ID_DZIKIR = 2
+    const val ID_KHOTAMAN = 3
+    const val ID_MANAQIB = 4
+    const val ID_SHOLAWAT_SATU = 5
+    const val ID_DOA = 6
     const val ID_LAINNYA = 7
+    const val ID_ZIARAH = 21
     const val ID_TUJUAN_TQN = 8
     const val ID_DIAGRAM_LATIFAH = 9
     const val ID_DUSTUR = 10

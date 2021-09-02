@@ -15,7 +15,8 @@ data class AmaliyahEntity(
     var id: Int = 0,
     var name: String = "Sholat",
     var subtitle: String = "Sholat harian, bulanan, dan tahunan",
-    var icon: Int = R.drawable.ic_kabah
+    var icon: Int = R.drawable.ic_kabah,
+    var alias: String = "sholat"
 ) : Parcelable
 
 data class NewsEntity(
@@ -26,18 +27,18 @@ data class NewsEntity(
 )
 
 val listAmaliyah = listOf(
-    AmaliyahEntity(),
-    AmaliyahEntity(1, "Dzikir", "Dzikir harian", R.drawable.ic_dzikir),
-    AmaliyahEntity(2, "Khotaman", "Khotaman TQN PPS Suryalaya", R.drawable.ic_khotaman),
+    AmaliyahEntity(0, "Adab-adab", "Adab Syekh Mursyid", R.drawable.ic_adab),
+    AmaliyahEntity(id = 1),
+    AmaliyahEntity(2, "Dzikir", "Dzikir harian", R.drawable.ic_dzikir),
+    AmaliyahEntity(3, "Khotaman", "Khotaman TQN PPS Suryalaya", R.drawable.ic_khotaman),
     AmaliyahEntity(
-        3,
+        4,
         "Manaqib",
         "Manaqib Tuan Syaikh Abdul Qadir Jailani QS",
         R.drawable.ic_manaqib
     ),
-    AmaliyahEntity(4, "Adab-adab", "Adab sehari-hari", R.drawable.ic_adab),
-    AmaliyahEntity(5, "Doa-doa", "Kumpulan doa-doa mustajab", R.drawable.ic_doa),
-    AmaliyahEntity(6, "Ziarah", "Ziarah Kubur", R.drawable.ic_ziarah),
+    AmaliyahEntity(5, "Sholawat", "Kumpulan sholawat", R.drawable.ic_sholawat),
+    AmaliyahEntity(6, "Doa-doa", "Kumpulan doa-doa mustajab", R.drawable.ic_doa),
     AmaliyahEntity(7, "Lainnya", icon = R.drawable.ic_lainnya)
 )
 
@@ -96,21 +97,22 @@ val listNews = listOf(
     NewsEntity(),
     NewsEntity(),
 )
-val listContentAdab : List<ListingContentEntity> = listOf(
-    ListingContentEntity(1,"Adab Berwudhu"),
-    ListingContentEntity(2,"Adab Sholat"),
-    ListingContentEntity(3,"Adab Pergi ke Masjid"),
-    ListingContentEntity(4,"Adab Mendengarkan Adzan"),
-    ListingContentEntity(5,"Adab Iqomah"),
-    ListingContentEntity(6,"Adab Hari Jumat"),
-    ListingContentEntity(7,"Adab Berdoa"),
-    ListingContentEntity(8,"Adab Masuk Rumah"),
-    ListingContentEntity(9,"Adab Keluar Rumah"),
-    ListingContentEntity(10,"Adab Dzikir"),
+val listContentAdab: List<ListingContentEntity> = listOf(
+    ListingContentEntity(1, "Adab Berwudhu"),
+    ListingContentEntity(2, "Adab Sholat"),
+    ListingContentEntity(3, "Adab Pergi ke Masjid"),
+    ListingContentEntity(4, "Adab Mendengarkan Adzan"),
+    ListingContentEntity(5, "Adab Iqomah"),
+    ListingContentEntity(6, "Adab Hari Jumat"),
+    ListingContentEntity(7, "Adab Berdoa"),
+    ListingContentEntity(8, "Adab Masuk Rumah"),
+    ListingContentEntity(9, "Adab Keluar Rumah"),
+    ListingContentEntity(10, "Adab Dzikir"),
 )
 
-val sampleContentMarkwon : List<ContentEntity> = listOf(
-    ContentEntity(1,"Membasuh Wajah","""
+val sampleContentMarkwon: List<ContentEntity> = listOf(
+    ContentEntity(
+        1, "Membasuh Wajah", """
 # Structured documents
 
 Sometimes it's useful to have different levels of headings to structure your documents. Start lines with a `#` to create headings. Multiple `##` in a row denote smaller heading sizes.
@@ -153,7 +155,8 @@ Content in the first column | Content in the second column
 <em>This is emphasized text!</em>
 
 <strong>This is strong text!</strong>
-    """.trimIndent()),
+    """.trimIndent()
+    ),
 )
 
 data class ServicesEntity(

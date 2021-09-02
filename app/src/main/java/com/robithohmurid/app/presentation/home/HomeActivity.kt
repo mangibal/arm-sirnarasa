@@ -24,10 +24,15 @@ import com.robithohmurid.app.databinding.BottomSheetMainBinding
 import com.robithohmurid.app.domain.abstraction.BaseActivity
 import com.robithohmurid.app.domain.router.ActivityScreen
 import com.robithohmurid.app.external.constant.DateTimeFormat
+import com.robithohmurid.app.external.constant.MenuConstant.ID_ADAB
+import com.robithohmurid.app.external.constant.MenuConstant.ID_DOA
 import com.robithohmurid.app.external.constant.MenuConstant.ID_DZIKIR
 import com.robithohmurid.app.external.constant.MenuConstant.ID_KHOTAMAN
 import com.robithohmurid.app.external.constant.MenuConstant.ID_LAINNYA
 import com.robithohmurid.app.external.constant.MenuConstant.ID_MANAQIB
+import com.robithohmurid.app.external.constant.MenuConstant.ID_SHOLAT
+import com.robithohmurid.app.external.constant.MenuConstant.ID_SHOLAWAT
+import com.robithohmurid.app.external.constant.MenuConstant.ID_SHOLAWAT_SATU
 import com.robithohmurid.app.external.constant.MenuConstant.ID_ZIARAH
 import com.robithohmurid.app.external.extension.app.*
 import com.robithohmurid.app.external.extension.view.*
@@ -170,28 +175,45 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
             putExtra("id", id)
         }
         when (id) {
-            ID_MANAQIB -> ManaqibFragment().run {
-                show(supportFragmentManager, ManaqibFragment().tag)
-            }
-            ID_LAINNYA -> MenuFragment().run {
-                show(supportFragmentManager, MenuFragment().tag)
-            }
-            ID_ZIARAH -> {
-                startActivity(toContent)
-            }
-            ID_DZIKIR -> {
-                startActivity(toContent)
-            }
-            ID_KHOTAMAN -> {
-                startActivity(toContent)
-            }
-            else -> {
+            ID_ADAB -> {
                 val intent =
                     router.getIntentScreen(this@HomeActivity, ActivityScreen.ListContent).apply {
                         putExtra("id", id)
                         putExtra("title", title)
                     }
                 startActivity(intent)
+            }
+            ID_SHOLAT -> {
+                val intent =
+                    router.getIntentScreen(this@HomeActivity, ActivityScreen.ListContent).apply {
+                        putExtra("id", id)
+                        putExtra("title", title)
+                    }
+                startActivity(intent)
+            }
+            ID_DZIKIR -> startActivity(toContent)
+            ID_KHOTAMAN -> startActivity(toContent)
+            ID_MANAQIB -> ManaqibFragment().run {
+                show(supportFragmentManager, ManaqibFragment().tag)
+            }
+            ID_SHOLAWAT_SATU -> {
+                val intent =
+                    router.getIntentScreen(this@HomeActivity, ActivityScreen.ListContent).apply {
+                        putExtra("id", id)
+                        putExtra("title", title)
+                    }
+                startActivity(intent)
+            }
+            ID_DOA -> {
+                val intent =
+                    router.getIntentScreen(this@HomeActivity, ActivityScreen.ListContent).apply {
+                        putExtra("id", id)
+                        putExtra("title", title)
+                    }
+                startActivity(intent)
+            }
+            ID_LAINNYA -> MenuFragment().run {
+                show(supportFragmentManager, MenuFragment().tag)
             }
         }
 
@@ -483,7 +505,7 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
             observe(listContent, ::onListContentReceived)
             observe(listItem, ::onListItemReceived)
 
-            getListSholat()
+//            getListSholat()
         }
     }
 
