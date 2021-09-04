@@ -19,9 +19,7 @@ class ListContentViewModel(private val repo: IRepository) : BaseViewModel() {
 
     fun getListContent(contentName: String) {
         viewModelScope.launch {
-            repo.getListContent(
-                CategoryConstant.AMALIYAH_KEY,
-                contentName,
+            repo.getListContent(CategoryConstant.AMALIYAH_KEY, contentName,
                 object : DataCallback<List<ContentEntity>> {
                     override fun onSuccess(data: List<ContentEntity>) {
                         _listContent.postValue(data)
