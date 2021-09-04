@@ -7,6 +7,9 @@ import com.robithohmurid.app.databinding.FragmentLainnyaBinding
 import com.robithohmurid.app.domain.abstraction.BaseBottomSheetDialogFragment
 import com.robithohmurid.app.domain.router.ActivityScreen
 import com.robithohmurid.app.external.constant.MenuConstant
+import com.robithohmurid.app.external.constant.MenuConstant.ID_DZIKIR
+import com.robithohmurid.app.external.constant.MenuConstant.ID_KHOTAMAN
+import com.robithohmurid.app.external.constant.MenuConstant.ID_ZIARAH
 import com.robithohmurid.app.external.extension.app.showToast
 import com.robithohmurid.app.external.extension.view.setupList
 import com.robithohmurid.app.presentation.home.HomeViewModel
@@ -54,20 +57,38 @@ class MenuFragment : BaseBottomSheetDialogFragment<FragmentLainnyaBinding, HomeV
 
             listAmaliyahAdapter.run {
                 val listAmaliyah = listAmaliyah.filterNot {
-                    it.name == MenuConstant.LAINNYA
-                    it.name == MenuConstant.MANAQIB
+                    (it.name == MenuConstant.MANAQIB) or (it.name == MenuConstant.LAINNYA)
                 }
                 setItems(listAmaliyah)
-                setListener {
-                    val intent = router.getIntentScreen(requireContext(), ActivityScreen.ListContent).apply {
-                        putExtra("id",it.id)
-                        putExtra("title",it.name)
+                setListener { a ->
+                    val toContent =
+                        router.getIntentScreen(requireContext(), ActivityScreen.Content).apply {
+                            putExtra("id", a.id)
+                            putExtra("title", a.name)
+                        }
+                    when (a.id) {
+                        ID_ZIARAH -> {
+                            startActivity(toContent)
+                        }
+                        ID_KHOTAMAN -> {
+                            startActivity(toContent)
+                        }
+                        ID_DZIKIR -> {
+                            startActivity(toContent)
+                        }
+                        else -> {
+                            val i =  router.getIntentScreen(requireContext(), ActivityScreen.ListContent).apply {
+                                putExtra("id", a.id)
+                                putExtra("title", a.name)
+                            }
+                            startActivity(i)
+                        }
                     }
-                    startActivity(intent)
                 }
             }
         }
     }
+
 
     override fun onInitData() {
 
