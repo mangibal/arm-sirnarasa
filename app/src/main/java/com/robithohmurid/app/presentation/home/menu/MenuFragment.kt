@@ -1,6 +1,7 @@
 package com.robithohmurid.app.presentation.home.menu
 
 import android.os.Bundle
+import android.widget.Toast
 import com.robithohmurid.app.data.local.listAmaliyah
 import com.robithohmurid.app.data.local.listMenuTqn
 import com.robithohmurid.app.databinding.FragmentLainnyaBinding
@@ -40,10 +41,11 @@ class MenuFragment : BaseBottomSheetDialogFragment<FragmentLainnyaBinding, HomeV
             listTqnAdapter.run {
                 setItems(listMenuTqn)
                 setListener {
-                    val intent = router.getIntentScreen(requireContext(), ActivityScreen.Content).apply {
-                        putExtra("id",it.id)
-                        putExtra("title",it.name)
-                    }
+                    val intent =
+                        router.getIntentScreen(requireContext(), ActivityScreen.Content).apply {
+                            putExtra("id", it.id)
+                            putExtra("title", it.name)
+                        }
                     startActivity(intent)
                 }
             }
@@ -61,18 +63,28 @@ class MenuFragment : BaseBottomSheetDialogFragment<FragmentLainnyaBinding, HomeV
                 }
                 setItems(listAmaliyah)
                 setListener { a ->
-                    if ( (a.id!= ID_DZIKIR) or (a.id!=ID_KHOTAMAN) or (a.id!= ID_ZIARAH) ){
-                        val intent = router.getIntentScreen(requireContext(), ActivityScreen.ListContent).apply {
-                            putExtra("id",a.id)
-                            putExtra("title",a.name)
+                    val toContent =
+                        router.getIntentScreen(requireContext(), ActivityScreen.Content).apply {
+                            putExtra("id", a.id)
+                            putExtra("title", a.name)
                         }
-                        startActivity(intent)
-                    }else{
-                        val intent = router.getIntentScreen(requireContext(), ActivityScreen.Content).apply {
-                            putExtra("id",a.id)
-                            putExtra("title",a.name)
+                    when (a.id) {
+                        ID_ZIARAH -> {
+                            startActivity(toContent)
                         }
-                        startActivity(intent)
+                        ID_KHOTAMAN -> {
+                            startActivity(toContent)
+                        }
+                        ID_DZIKIR -> {
+                            startActivity(toContent)
+                        }
+                        else -> {
+                            val i =  router.getIntentScreen(requireContext(), ActivityScreen.ListContent).apply {
+                                putExtra("id", a.id)
+                                putExtra("title", a.name)
+                            }
+                            startActivity(i)
+                        }
                     }
                 }
             }

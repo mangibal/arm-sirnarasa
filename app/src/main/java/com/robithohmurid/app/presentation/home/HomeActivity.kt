@@ -483,7 +483,7 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
             observe(listContent, ::onListContentReceived)
             observe(listItem, ::onListItemReceived)
 
-            getListSholat()
+//            getListSholat()
         }
     }
 
