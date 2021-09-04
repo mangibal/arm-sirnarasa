@@ -1,7 +1,6 @@
 package com.robithohmurid.app.presentation.home.menu
 
 import android.os.Bundle
-import android.widget.Toast
 import com.robithohmurid.app.data.local.listAmaliyah
 import com.robithohmurid.app.data.local.listMenuTqn
 import com.robithohmurid.app.databinding.FragmentLainnyaBinding
@@ -41,11 +40,10 @@ class MenuFragment : BaseBottomSheetDialogFragment<FragmentLainnyaBinding, HomeV
             listTqnAdapter.run {
                 setItems(listMenuTqn)
                 setListener {
-                    val intent =
-                        router.getIntentScreen(requireContext(), ActivityScreen.Content).apply {
-                            putExtra("id", it.id)
-                            putExtra("title", it.name)
-                        }
+                    val intent = router.getIntentScreen(requireContext(), ActivityScreen.Content).apply {
+                        putExtra("id",it.id)
+                        putExtra("title",it.name)
+                    }
                     startActivity(intent)
                 }
             }
@@ -90,6 +88,7 @@ class MenuFragment : BaseBottomSheetDialogFragment<FragmentLainnyaBinding, HomeV
             }
         }
     }
+
 
     override fun onInitData() {
 
