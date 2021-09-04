@@ -30,10 +30,8 @@ import com.robithohmurid.app.external.constant.MenuConstant.ID_DZIKIR
 import com.robithohmurid.app.external.constant.MenuConstant.ID_KHOTAMAN
 import com.robithohmurid.app.external.constant.MenuConstant.ID_LAINNYA
 import com.robithohmurid.app.external.constant.MenuConstant.ID_MANAQIB
-import com.robithohmurid.app.external.constant.MenuConstant.ID_SHOLAT
+import com.robithohmurid.app.external.constant.MenuConstant.ID_SHOLAT_HARIAN
 import com.robithohmurid.app.external.constant.MenuConstant.ID_SHOLAWAT
-import com.robithohmurid.app.external.constant.MenuConstant.ID_SHOLAWAT_SATU
-import com.robithohmurid.app.external.constant.MenuConstant.ID_ZIARAH
 import com.robithohmurid.app.external.extension.app.*
 import com.robithohmurid.app.external.extension.view.*
 import com.robithohmurid.app.presentation.dialog.LocationDialogFragment
@@ -175,15 +173,8 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
             putExtra("id", id)
         }
         when (id) {
-            ID_ADAB -> {
-                val intent =
-                    router.getIntentScreen(this@HomeActivity, ActivityScreen.ListContent).apply {
-                        putExtra("id", id)
-                        putExtra("title", title)
-                    }
-                startActivity(intent)
-            }
-            ID_SHOLAT -> {
+            ID_ADAB -> router.gotoListContent(this, id, title)
+            ID_SHOLAT_HARIAN -> {
                 val intent =
                     router.getIntentScreen(this@HomeActivity, ActivityScreen.ListContent).apply {
                         putExtra("id", id)
@@ -196,7 +187,7 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
             ID_MANAQIB -> ManaqibFragment().run {
                 show(supportFragmentManager, ManaqibFragment().tag)
             }
-            ID_SHOLAWAT_SATU -> {
+            ID_SHOLAWAT -> {
                 val intent =
                     router.getIntentScreen(this@HomeActivity, ActivityScreen.ListContent).apply {
                         putExtra("id", id)

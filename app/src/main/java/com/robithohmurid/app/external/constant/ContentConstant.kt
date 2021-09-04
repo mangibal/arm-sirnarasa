@@ -5,7 +5,7 @@ package com.robithohmurid.app.external.constant
  * iqbal.fauzi.if99@gmail.com
  */
 object ContentConstant {
-    const val ADAB_KEY = "adab"
+    const val ADAB_KEY = "adab-syekh-mursyid"
     const val SHOLAT_KEY = "sholat"
     const val SHOLAWAT_KEY = "sholawat"
     const val MANQOBAH_KEY = "manqobah"
