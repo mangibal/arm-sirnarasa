@@ -61,23 +61,34 @@ class MenuFragment : BaseBottomSheetDialogFragment<FragmentLainnyaBinding, HomeV
                 }
                 setItems(listAmaliyah)
                 setListener { a ->
-                    if ( (a.id!= ID_DZIKIR) or (a.id!=ID_KHOTAMAN) or (a.id!= ID_ZIARAH) ){
-                        val intent = router.getIntentScreen(requireContext(), ActivityScreen.ListContent).apply {
-                            putExtra("id",a.id)
-                            putExtra("title",a.name)
+                    val toContent =
+                        router.getIntentScreen(requireContext(), ActivityScreen.Content).apply {
+                            putExtra("id", a.id)
+                            putExtra("title", a.name)
                         }
-                        startActivity(intent)
-                    }else{
-                        val intent = router.getIntentScreen(requireContext(), ActivityScreen.Content).apply {
-                            putExtra("id",a.id)
-                            putExtra("title",a.name)
+                    when (a.id) {
+                        ID_ZIARAH -> {
+                            startActivity(toContent)
                         }
-                        startActivity(intent)
+                        ID_KHOTAMAN -> {
+                            startActivity(toContent)
+                        }
+                        ID_DZIKIR -> {
+                            startActivity(toContent)
+                        }
+                        else -> {
+                            val i =  router.getIntentScreen(requireContext(), ActivityScreen.ListContent).apply {
+                                putExtra("id", a.id)
+                                putExtra("title", a.name)
+                            }
+                            startActivity(i)
+                        }
                     }
                 }
             }
         }
     }
+
 
     override fun onInitData() {
 
