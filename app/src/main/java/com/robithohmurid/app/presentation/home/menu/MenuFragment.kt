@@ -7,6 +7,9 @@ import com.robithohmurid.app.databinding.FragmentLainnyaBinding
 import com.robithohmurid.app.domain.abstraction.BaseBottomSheetDialogFragment
 import com.robithohmurid.app.domain.router.ActivityScreen
 import com.robithohmurid.app.external.constant.MenuConstant
+import com.robithohmurid.app.external.constant.MenuConstant.ID_DZIKIR
+import com.robithohmurid.app.external.constant.MenuConstant.ID_KHOTAMAN
+import com.robithohmurid.app.external.constant.MenuConstant.ID_ZIARAH
 import com.robithohmurid.app.external.extension.app.showToast
 import com.robithohmurid.app.external.extension.view.setupList
 import com.robithohmurid.app.presentation.home.HomeViewModel
@@ -54,16 +57,23 @@ class MenuFragment : BaseBottomSheetDialogFragment<FragmentLainnyaBinding, HomeV
 
             listAmaliyahAdapter.run {
                 val listAmaliyah = listAmaliyah.filterNot {
-                    it.name == MenuConstant.LAINNYA
-                    it.name == MenuConstant.MANAQIB
+                    (it.name == MenuConstant.MANAQIB) or (it.name == MenuConstant.LAINNYA)
                 }
                 setItems(listAmaliyah)
-                setListener {
-                    val intent = router.getIntentScreen(requireContext(), ActivityScreen.ListContent).apply {
-                        putExtra("id",it.id)
-                        putExtra("title",it.name)
+                setListener { a ->
+                    if ( (a.id!= ID_DZIKIR) or (a.id!=ID_KHOTAMAN) or (a.id!= ID_ZIARAH) ){
+                        val intent = router.getIntentScreen(requireContext(), ActivityScreen.ListContent).apply {
+                            putExtra("id",a.id)
+                            putExtra("title",a.name)
+                        }
+                        startActivity(intent)
+                    }else{
+                        val intent = router.getIntentScreen(requireContext(), ActivityScreen.Content).apply {
+                            putExtra("id",a.id)
+                            putExtra("title",a.name)
+                        }
+                        startActivity(intent)
                     }
-                    startActivity(intent)
                 }
             }
         }
