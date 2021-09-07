@@ -2,15 +2,12 @@ package com.robithohmurid.app.presentation.listcontent
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Filterable
 import androidx.viewbinding.ViewBinding
-import com.robithohmurid.app.data.model.ListingContentEntity
 import com.robithohmurid.app.data.model.response.ContentEntity
 import com.robithohmurid.app.databinding.ItemListContentBinding
 import com.robithohmurid.app.domain.abstraction.BaseAdapter
 import com.robithohmurid.app.domain.abstraction.BaseHolder
 import com.robithohmurid.app.external.extension.view.onClick
-import java.util.*
 
 class ListContentAdapter :
     BaseAdapter<ContentEntity, ItemListContentBinding, ListContentAdapter.ItemHolder>(

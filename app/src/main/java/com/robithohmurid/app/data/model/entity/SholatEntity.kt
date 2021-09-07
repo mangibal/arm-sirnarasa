@@ -1,4 +1,4 @@
-package com.robithohmurid.app.data.model
+package com.robithohmurid.app.data.model.entity
 
 /**
  * Created by Iqbal Fauzi on 21/08/21 20.18

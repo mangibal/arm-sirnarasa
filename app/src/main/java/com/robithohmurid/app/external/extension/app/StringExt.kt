@@ -16,12 +16,6 @@ import org.json.JSONObject
  * Created by Iqbal Fauzi on 11/06/21 23.09
  * iqbal.fauzi.if99@gmail.com
  */
-fun Int.getAliasById(): String {
-    return when (this) {
-        MenuConstant.ID_ADAB -> ContentConstant.ADAB_KEY
-        else -> ContentConstant.ADAB_KEY
-    }
-}
 
 fun String.isJSONValid(): Boolean {
 

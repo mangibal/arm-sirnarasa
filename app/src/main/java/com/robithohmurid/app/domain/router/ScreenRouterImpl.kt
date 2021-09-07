@@ -30,14 +30,14 @@ class ScreenRouterImpl(private val application: Application) : ScreenRouter {
     override fun gotoContent(
         context: Activity,
         category: String,
-        content: String,
+        contentAlias: String,
         item: String,
         title: String
     ) {
         val screen = getIntentScreen(context, ActivityScreen.Content)
         val bundle = Bundle().apply {
             putString(IntentKey.CATEGORY_KEY, category)
-            putString(IntentKey.CONTENT_KEY, content)
+            putString(IntentKey.CONTENT_KEY, contentAlias)
             putString(IntentKey.ITEM_KEY, item)
             putString(IntentKey.TITLE_KEY, title)
         }
@@ -47,13 +47,13 @@ class ScreenRouterImpl(private val application: Application) : ScreenRouter {
     override fun gotoListContent(
         context: Activity,
         category: String,
-        contentId: Int,
+        alias: String,
         title: String
     ) {
         val screen = getIntentScreen(context, ActivityScreen.ListContent)
         val bundle = Bundle().apply {
             putString(IntentKey.CATEGORY_KEY, category)
-            putInt(IntentKey.CONTENT_KEY, contentId)
+            putString(IntentKey.CONTENT_KEY, alias)
             putString(IntentKey.TITLE_KEY, title)
         }
         openActivity(context, screen, bundle)

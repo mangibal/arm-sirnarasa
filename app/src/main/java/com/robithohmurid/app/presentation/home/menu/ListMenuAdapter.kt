@@ -3,7 +3,7 @@ package com.robithohmurid.app.presentation.home.menu
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.viewbinding.ViewBinding
-import com.robithohmurid.app.data.local.AmaliyahEntity
+import com.robithohmurid.app.data.model.entity.MenuEntity
 import com.robithohmurid.app.databinding.ItemListMenuBinding
 import com.robithohmurid.app.domain.abstraction.BaseAdapter
 import com.robithohmurid.app.domain.abstraction.BaseHolder
@@ -15,7 +15,7 @@ import com.robithohmurid.app.external.extension.view.onClick
  * iqbal.fauzi.if99@gmail.com
  */
 class ListMenuAdapter :
-    BaseAdapter<AmaliyahEntity, ItemListMenuBinding, ListMenuAdapter.ItemHolder>(
+    BaseAdapter<MenuEntity, ItemListMenuBinding, ListMenuAdapter.ItemHolder>(
         ItemListMenuBinding::inflate
     ) {
 
@@ -26,9 +26,9 @@ class ListMenuAdapter :
     }
 
     inner class ItemHolder(private val binding: ItemListMenuBinding) :
-        BaseHolder<AmaliyahEntity>(binding) {
+        BaseHolder<MenuEntity>(binding) {
 
-        override fun bind(data: AmaliyahEntity) {
+        override fun bind(data: MenuEntity) {
             with(binding) {
                 ivIcon.setImageDrawable(root.context.getDrawableCompat(data.icon))
                 tvTitle.text = data.name

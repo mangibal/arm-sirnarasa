@@ -1,7 +1,6 @@
 package com.robithohmurid.app.data.remote.source
 
 import com.robithohmurid.app.data.model.base.DataResponse
-import com.robithohmurid.app.data.model.MenuEntity
 import com.robithohmurid.app.data.model.response.ContentEntity
 import com.robithohmurid.app.data.model.response.ItemEntity
 import kotlinx.coroutines.flow.Flow

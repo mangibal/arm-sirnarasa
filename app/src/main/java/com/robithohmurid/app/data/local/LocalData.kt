@@ -1,24 +1,14 @@
 package com.robithohmurid.app.data.local
 
-import android.os.Parcelable
 import com.robithohmurid.app.R
-import com.robithohmurid.app.data.model.ContentEntity
-import com.robithohmurid.app.data.model.ListingContentEntity
-import kotlinx.parcelize.Parcelize
+import com.robithohmurid.app.data.model.entity.MenuEntity
+import com.robithohmurid.app.data.model.entity.ContentEntity
+import com.robithohmurid.app.data.model.entity.ListingContentEntity
 
 /**
  * Created by Iqbal Fauzi on 18/06/21 20.16
  * iqbal.fauzi.if99@gmail.com
  */
-@Parcelize
-data class AmaliyahEntity(
-    var id: Int = 0,
-    var name: String = "Sholat",
-    var subtitle: String = "Sholat harian, bulanan, dan tahunan",
-    var icon: Int = R.drawable.ic_kabah,
-    var alias: String = "sholat"
-) : Parcelable
-
 data class NewsEntity(
     var id: Int = 0,
     var title: String = "Maulid Abah Aos ke 79",
@@ -26,57 +16,41 @@ data class NewsEntity(
     var imageUrl: Int = R.drawable.iv_home
 )
 
-val listAmaliyah = listOf(
-    AmaliyahEntity(0, "Adab-adab", "Adab Syekh Mursyid", R.drawable.ic_adab),
-    AmaliyahEntity(id = 1),
-    AmaliyahEntity(2, "Dzikir", "Dzikir harian", R.drawable.ic_dzikir),
-    AmaliyahEntity(3, "Khotaman", "Khotaman TQN PPS Suryalaya", R.drawable.ic_khotaman),
-    AmaliyahEntity(
-        4,
-        "Manaqib",
-        "Manaqib Tuan Syaikh Abdul Qadir Jailani QS",
-        R.drawable.ic_manaqib
-    ),
-    AmaliyahEntity(5, "Sholawat", "Kumpulan sholawat", R.drawable.ic_sholawat),
-    AmaliyahEntity(6, "Doa-doa", "Kumpulan doa-doa mustajab", R.drawable.ic_doa),
-    AmaliyahEntity(7, "Lainnya", icon = R.drawable.ic_lainnya)
-)
-
 val listMenuTqn = listOf(
-    AmaliyahEntity(
+    MenuEntity(
         8, "Tujuan dan Dasar TQN", "Tujuan dan Dasar TQN Suryalaya",
         R.drawable.ic_tqn
     ),
-    AmaliyahEntity(
+    MenuEntity(
         9,
         "Diagram Latifah",
         "Latifah yang ada alam qolbu manusia",
         R.drawable.ic_latifah
     ),
-    AmaliyahEntity(
+    MenuEntity(
         10,
         "Dustur",
         "Langgam bacaan do'a pagi hari",
         R.drawable.ic_dustur
     ),
-    AmaliyahEntity(11, "Tarhim", "Langgam bacaan do'a", R.drawable.ic_tarhim),
-    AmaliyahEntity(
+    MenuEntity(11, "Tarhim", "Langgam bacaan do'a", R.drawable.ic_tarhim),
+    MenuEntity(
         12, "Wakil Talqin", "Wakil talqin Pangersa Abah Aos QS",
         R.drawable.ic_waktal
     ),
-    AmaliyahEntity(
+    MenuEntity(
         13,
         "Silsilah dan Sanad",
         "Silsilah TQN PPS dan Sanad Pangersa Abah Aos",
         R.drawable.ic_silsilah
     ),
-    AmaliyahEntity(
+    MenuEntity(
         14,
         "Syekh Abdul Qodir Al-Jailani",
         "Profil dan Nama-nama Syekh Abdul Qodir",
         R.drawable.ic_manaqib
     ),
-    AmaliyahEntity(
+    MenuEntity(
         15,
         "Maklumat",
         "Maklumat terbaru dari Pangersa Abah Aos QS",
@@ -85,11 +59,11 @@ val listMenuTqn = listOf(
 )
 
 val listMenuManaqib = listOf(
-    AmaliyahEntity(16, "MC", icon = R.drawable.ic_mic),
-    AmaliyahEntity(17, "Sholawat", icon = R.drawable.ic_sholawat),
-    AmaliyahEntity(18, "Tanbih"),
-    AmaliyahEntity(19, "Tawashul", icon = R.drawable.ic_tawashul),
-    AmaliyahEntity(20, "Manqobah", icon = R.drawable.ic_manqobah)
+    MenuEntity(16, "MC", icon = R.drawable.ic_mic),
+    MenuEntity(17, "Sholawat", icon = R.drawable.ic_sholawat),
+    MenuEntity(18, "Tanbih"),
+    MenuEntity(19, "Tawashul", icon = R.drawable.ic_tawashul),
+    MenuEntity(20, "Manqobah", icon = R.drawable.ic_manqobah)
 )
 
 val listNews = listOf(

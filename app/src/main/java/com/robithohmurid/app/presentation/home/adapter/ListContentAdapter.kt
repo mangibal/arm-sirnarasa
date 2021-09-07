@@ -1,7 +1,7 @@
 package com.robithohmurid.app.presentation.home.adapter
 
 import androidx.viewbinding.ViewBinding
-import com.robithohmurid.app.data.model.ContentEntity
+import com.robithohmurid.app.data.model.entity.ContentEntity
 import com.robithohmurid.app.databinding.ItemContentBinding
 import com.robithohmurid.app.domain.abstraction.BaseAdapter
 import com.robithohmurid.app.domain.abstraction.BaseHolder

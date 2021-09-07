@@ -1,7 +1,6 @@
 package com.robithohmurid.app.data.remote.network
 
 import com.robithohmurid.app.data.model.base.DataResponse
-import com.robithohmurid.app.data.model.MenuEntity
 import com.robithohmurid.app.data.model.response.ItemEntity
 import com.robithohmurid.app.data.model.response.ContentEntity
 import retrofit2.http.GET

@@ -1,4 +1,4 @@
-package com.robithohmurid.app.data.model
+package com.robithohmurid.app.data.model.entity
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName

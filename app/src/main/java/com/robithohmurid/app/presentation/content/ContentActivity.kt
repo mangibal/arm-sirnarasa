@@ -1,13 +1,10 @@
 package com.robithohmurid.app.presentation.content
 
 import android.os.Bundle
-import com.robithohmurid.app.data.local.sampleContentMarkwon
-import com.robithohmurid.app.data.model.ContentEntity
 import com.robithohmurid.app.data.model.response.ItemEntity
 import com.robithohmurid.app.databinding.ActivityContentBinding
 import com.robithohmurid.app.domain.abstraction.BaseActivity
 import com.robithohmurid.app.external.constant.IntentKey
-import com.robithohmurid.app.external.extension.app.getAliasById
 import com.robithohmurid.app.external.extension.app.observe
 import com.robithohmurid.app.external.extension.view.initToolbar
 import com.robithohmurid.app.external.extension.view.setupList

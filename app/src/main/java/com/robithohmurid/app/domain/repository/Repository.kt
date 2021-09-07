@@ -1,6 +1,5 @@
 package com.robithohmurid.app.domain.repository
 
-import com.robithohmurid.app.data.model.MenuEntity
 import com.robithohmurid.app.data.model.response.ContentEntity
 import com.robithohmurid.app.data.model.response.ItemEntity
 import com.robithohmurid.app.data.remote.source.DataCallback

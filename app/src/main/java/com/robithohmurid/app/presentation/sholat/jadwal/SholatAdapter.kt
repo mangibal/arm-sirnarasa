@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.viewbinding.ViewBinding
 import com.robithohmurid.app.R
-import com.robithohmurid.app.data.model.SholatEntity
+import com.robithohmurid.app.data.model.entity.SholatEntity
 import com.robithohmurid.app.databinding.ItemSholatBinding
 import com.robithohmurid.app.domain.abstraction.BaseAdapter
 import com.robithohmurid.app.domain.abstraction.BaseHolder

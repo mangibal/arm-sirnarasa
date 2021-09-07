@@ -2,7 +2,7 @@ package com.robithohmurid.app.presentation.sholat.jadwal
 
 import android.os.Bundle
 import com.robithohmurid.app.R
-import com.robithohmurid.app.data.model.SholatEntity
+import com.robithohmurid.app.data.model.entity.SholatEntity
 import com.robithohmurid.app.databinding.ActivityJadwalSholatBinding
 import com.robithohmurid.app.domain.abstraction.BaseActivity
 import com.robithohmurid.app.external.constant.DateTimeFormat

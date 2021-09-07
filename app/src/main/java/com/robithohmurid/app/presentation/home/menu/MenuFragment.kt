@@ -1,19 +1,14 @@
 package com.robithohmurid.app.presentation.home.menu
 
 import android.os.Bundle
-import com.robithohmurid.app.data.local.listAmaliyah
 import com.robithohmurid.app.data.local.listMenuTqn
+import com.robithohmurid.app.data.model.entity.listAmaliyah
 import com.robithohmurid.app.databinding.FragmentLainnyaBinding
 import com.robithohmurid.app.domain.abstraction.BaseBottomSheetDialogFragment
 import com.robithohmurid.app.domain.router.ActivityScreen
 import com.robithohmurid.app.external.constant.MenuConstant
-import com.robithohmurid.app.external.constant.MenuConstant.ID_DZIKIR
-import com.robithohmurid.app.external.constant.MenuConstant.ID_KHOTAMAN
-import com.robithohmurid.app.external.constant.MenuConstant.ID_ZIARAH
-import com.robithohmurid.app.external.extension.app.showToast
 import com.robithohmurid.app.external.extension.view.setupList
 import com.robithohmurid.app.presentation.home.HomeViewModel
-import com.robithohmurid.app.presentation.home.manaqib.ManaqibFragment
 
 /**
  * Created by Iqbal Fauzi on 19/06/21 19.53
@@ -66,14 +61,14 @@ class MenuFragment : BaseBottomSheetDialogFragment<FragmentLainnyaBinding, HomeV
                             putExtra("id", a.id)
                             putExtra("title", a.name)
                         }
-                    when (a.id) {
-                        ID_ZIARAH -> {
+                    when (a.alias) {
+                        MenuConstant.ZIARAH -> {
                             startActivity(toContent)
                         }
-                        ID_KHOTAMAN -> {
+                        MenuConstant.KHOTAMAN -> {
                             startActivity(toContent)
                         }
-                        ID_DZIKIR -> {
+                        MenuConstant.DZIKIR -> {
                             startActivity(toContent)
                         }
                         else -> {

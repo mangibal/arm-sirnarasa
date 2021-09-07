@@ -1,4 +1,4 @@
-package com.robithohmurid.app.data.model
+package com.robithohmurid.app.data.model.entity
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
@@ -9,6 +9,6 @@ import kotlinx.parcelize.Parcelize
  * iqbal.fauzi.if99@gmail.com
  */
 @Parcelize
-data class MenuEntity(
+data class SettingEntity(
     @SerializedName("title") val title: String
 ) : Parcelable

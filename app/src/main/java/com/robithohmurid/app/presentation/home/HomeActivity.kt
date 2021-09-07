@@ -12,11 +12,11 @@ import androidx.lifecycle.lifecycleScope
 import com.google.android.gms.location.LocationServices
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.robithohmurid.app.R
-import com.robithohmurid.app.data.local.listAmaliyah
 import com.robithohmurid.app.data.local.listNews
 import com.robithohmurid.app.data.local.servicesList
 import com.robithohmurid.app.data.local.sholat.LocationData
-import com.robithohmurid.app.data.model.SholatEntity
+import com.robithohmurid.app.data.model.entity.SholatEntity
+import com.robithohmurid.app.data.model.entity.listAmaliyah
 import com.robithohmurid.app.data.model.response.ContentEntity
 import com.robithohmurid.app.data.model.response.ItemEntity
 import com.robithohmurid.app.databinding.ActivityMainBinding
@@ -25,14 +25,7 @@ import com.robithohmurid.app.domain.abstraction.BaseActivity
 import com.robithohmurid.app.domain.router.ActivityScreen
 import com.robithohmurid.app.external.constant.CategoryConstant
 import com.robithohmurid.app.external.constant.DateTimeFormat
-import com.robithohmurid.app.external.constant.MenuConstant.ID_ADAB
-import com.robithohmurid.app.external.constant.MenuConstant.ID_DOA
-import com.robithohmurid.app.external.constant.MenuConstant.ID_DZIKIR
-import com.robithohmurid.app.external.constant.MenuConstant.ID_KHOTAMAN
-import com.robithohmurid.app.external.constant.MenuConstant.ID_LAINNYA
-import com.robithohmurid.app.external.constant.MenuConstant.ID_MANAQIB
-import com.robithohmurid.app.external.constant.MenuConstant.ID_SHOLAT_HARIAN
-import com.robithohmurid.app.external.constant.MenuConstant.ID_SHOLAWAT
+import com.robithohmurid.app.external.constant.MenuConstant
 import com.robithohmurid.app.external.extension.app.*
 import com.robithohmurid.app.external.extension.view.*
 import com.robithohmurid.app.presentation.dialog.LocationDialogFragment
@@ -162,49 +155,61 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
             menuGridAdapter.run {
                 setItems(listAmaliyah)
                 setListener {
-                    showMenu(it.id, it.name)
+                    showMenu(it.alias, it.name)
                 }
             }
         }
     }
 
-    private fun showMenu(id: Int, title: String) {
-        val toContent = router.getIntentScreen(this, ActivityScreen.Content).apply {
-            putExtra("title", title)
-            putExtra("id", id)
-        }
-        when (id) {
-            ID_ADAB -> router.gotoListContent(this, CategoryConstant.AMALIYAH_KEY, id, title)
-            ID_SHOLAT_HARIAN -> {
-                val intent =
-                    router.getIntentScreen(this@HomeActivity, ActivityScreen.ListContent).apply {
-                        putExtra("id", id)
-                        putExtra("title", title)
-                    }
-                startActivity(intent)
-            }
-            ID_DZIKIR -> startActivity(toContent)
-            ID_KHOTAMAN -> startActivity(toContent)
-            ID_MANAQIB -> ManaqibFragment().run {
+    private fun showMenu(alias: String, title: String) {
+        when (alias) {
+            MenuConstant.ADAB -> router.gotoListContent(
+                this,
+                CategoryConstant.AMALIYAH_KEY,
+                alias,
+                title
+            )
+            MenuConstant.SHOLAT -> ManaqibFragment().run {
                 show(supportFragmentManager, ManaqibFragment().tag)
             }
-            ID_SHOLAWAT -> {
-                val intent =
-                    router.getIntentScreen(this@HomeActivity, ActivityScreen.ListContent).apply {
-                        putExtra("id", id)
-                        putExtra("title", title)
-                    }
-                startActivity(intent)
+            MenuConstant.DZIKIR -> {
+                router.gotoContent(
+                    this,
+                    CategoryConstant.AMALIYAH_KEY,
+                    MenuConstant.DZIKIR,
+                    alias,
+                    title
+                )
             }
-            ID_DOA -> {
-                val intent =
-                    router.getIntentScreen(this@HomeActivity, ActivityScreen.ListContent).apply {
-                        putExtra("id", id)
-                        putExtra("title", title)
-                    }
-                startActivity(intent)
+            MenuConstant.KHOTAMAN -> {
+                router.gotoContent(
+                    this,
+                    CategoryConstant.AMALIYAH_KEY,
+                    MenuConstant.KHOTAMAN,
+                    alias,
+                    title
+                )
             }
-            ID_LAINNYA -> MenuFragment().run {
+            MenuConstant.MANAQIB -> ManaqibFragment().run {
+                show(supportFragmentManager, ManaqibFragment().tag)
+            }
+            MenuConstant.SHOLAWAT -> {
+                router.gotoListContent(
+                    this,
+                    CategoryConstant.TQN_KEY,
+                    alias,
+                    title
+                )
+            }
+            MenuConstant.DOA -> {
+                router.gotoListContent(
+                    this,
+                    CategoryConstant.TQN_KEY,
+                    alias,
+                    title
+                )
+            }
+            MenuConstant.LAINNYA -> MenuFragment().run {
                 show(supportFragmentManager, MenuFragment().tag)
             }
         }

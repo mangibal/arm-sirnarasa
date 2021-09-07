@@ -3,7 +3,6 @@ package com.robithohmurid.app.presentation.content
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.viewbinding.ViewBinding
-import com.robithohmurid.app.data.model.ContentEntity
 import com.robithohmurid.app.data.model.response.ItemEntity
 import com.robithohmurid.app.databinding.ItemContentBinding
 import com.robithohmurid.app.databinding.ItemListContentBinding

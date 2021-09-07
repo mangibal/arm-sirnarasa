@@ -8,13 +8,8 @@ import com.robithohmurid.app.data.model.response.ContentEntity
 import com.robithohmurid.app.databinding.ActivityListContentBinding
 import com.robithohmurid.app.domain.abstraction.BaseActivity
 import com.robithohmurid.app.external.constant.IntentKey
-import com.robithohmurid.app.external.constant.MenuConstant.ID_ADAB
-import com.robithohmurid.app.external.constant.MenuConstant.ID_SHOLAT_HARIAN
-import com.robithohmurid.app.external.constant.MenuConstant.ID_SHOLAWAT
-import com.robithohmurid.app.external.constant.MenuConstant.ID_SILSILAH
-import com.robithohmurid.app.external.constant.MenuConstant.ID_SYEKH_AQJ
+import com.robithohmurid.app.external.constant.MenuConstant
 import com.robithohmurid.app.external.custom.AppBar
-import com.robithohmurid.app.external.extension.app.getAliasById
 import com.robithohmurid.app.external.extension.app.observe
 import com.robithohmurid.app.external.extension.view.initToolbar
 import com.robithohmurid.app.external.extension.view.setupList
@@ -32,8 +27,8 @@ class ListContentActivity : BaseActivity<ActivityListContentBinding, ListContent
         return@lazy dataReceived?.getString(IntentKey.CATEGORY_KEY) ?: ""
     }
 
-    private val contentId: Int by lazy {
-        return@lazy dataReceived?.getInt(IntentKey.CONTENT_KEY) ?: 0
+    private val contentAlias: String by lazy {
+        return@lazy dataReceived?.getString(IntentKey.CONTENT_KEY) ?: ""
     }
 
     private val title: String by lazy {
@@ -52,7 +47,7 @@ class ListContentActivity : BaseActivity<ActivityListContentBinding, ListContent
                 router.gotoContent(
                     this@ListContentActivity,
                     category = category,
-                    content = contentId.getAliasById(),
+                    contentAlias = contentAlias,
                     item = it.alias,
                     title = it.name
                 )
@@ -68,7 +63,7 @@ class ListContentActivity : BaseActivity<ActivityListContentBinding, ListContent
         with(viewModel) {
             observe(listContent, ::onListContent)
 
-            getListContent(category, contentId.getAliasById())
+            getListContent(category, contentAlias)
         }
     }
 
@@ -81,12 +76,12 @@ class ListContentActivity : BaseActivity<ActivityListContentBinding, ListContent
             appBar.run {
                 setToolbarTitle(title)
                 setToolbarListener(this@ListContentActivity)
-                when (contentId) {
-                    ID_ADAB -> setImageDrawable(R.drawable.iv_adab)
-                    ID_SHOLAT_HARIAN -> setImageDrawable(R.drawable.iv_sholat)
-                    ID_SYEKH_AQJ -> setImageDrawable(R.drawable.iv_profil_syekh)
-                    ID_SILSILAH -> setImageDrawable(R.drawable.iv_silsilah)
-                    ID_SHOLAWAT -> setImageDrawable(R.drawable.iv_sholawat)
+                when (contentAlias) {
+                    MenuConstant.ADAB -> setImageDrawable(R.drawable.iv_adab)
+                    MenuConstant.SHOLAT, MenuConstant.SHOLAT_HARIAN, MenuConstant.SHOLAT_TAHUNAN -> setImageDrawable(R.drawable.iv_sholat)
+                    MenuConstant.MANAQIB -> setImageDrawable(R.drawable.iv_profil_syekh)
+                    MenuConstant.SILSILAH -> setImageDrawable(R.drawable.iv_silsilah)
+                    MenuConstant.SHOLAWAT -> setImageDrawable(R.drawable.iv_sholawat)
                     else -> setImageDrawable(R.drawable.iv_jadwal_sholat)
                 }
             }
