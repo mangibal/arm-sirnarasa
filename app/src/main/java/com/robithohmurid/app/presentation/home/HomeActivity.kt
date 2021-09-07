@@ -23,6 +23,7 @@ import com.robithohmurid.app.databinding.ActivityMainBinding
 import com.robithohmurid.app.databinding.BottomSheetMainBinding
 import com.robithohmurid.app.domain.abstraction.BaseActivity
 import com.robithohmurid.app.domain.router.ActivityScreen
+import com.robithohmurid.app.external.constant.CategoryConstant
 import com.robithohmurid.app.external.constant.DateTimeFormat
 import com.robithohmurid.app.external.constant.MenuConstant.ID_ADAB
 import com.robithohmurid.app.external.constant.MenuConstant.ID_DOA
@@ -173,7 +174,7 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
             putExtra("id", id)
         }
         when (id) {
-            ID_ADAB -> router.gotoListContent(this, id, title)
+            ID_ADAB -> router.gotoListContent(this, CategoryConstant.AMALIYAH_KEY, id, title)
             ID_SHOLAT_HARIAN -> {
                 val intent =
                     router.getIntentScreen(this@HomeActivity, ActivityScreen.ListContent).apply {

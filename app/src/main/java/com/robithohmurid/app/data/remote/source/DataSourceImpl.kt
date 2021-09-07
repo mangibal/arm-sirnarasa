@@ -60,7 +60,7 @@ class DataSourceImpl(
             emit(apiResponse)
 
             if (apiResponse.data != null) {
-                session.saveListItem(content, apiResponse.data)
+                session.saveListItem(item, apiResponse.data)
             }
         }
     }

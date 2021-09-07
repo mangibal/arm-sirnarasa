@@ -28,8 +28,12 @@ class ListContentActivity : BaseActivity<ActivityListContentBinding, ListContent
         return@lazy ListContentAdapter()
     }
 
-    private val listId: Int by lazy {
-        return@lazy dataReceived?.getInt(IntentKey.LIST_ID_KEY) ?: 0
+    private val category: String by lazy {
+        return@lazy dataReceived?.getString(IntentKey.CATEGORY_KEY) ?: ""
+    }
+
+    private val contentId: Int by lazy {
+        return@lazy dataReceived?.getInt(IntentKey.CONTENT_KEY) ?: 0
     }
 
     private val title: String by lazy {
@@ -45,11 +49,13 @@ class ListContentActivity : BaseActivity<ActivityListContentBinding, ListContent
     private fun setupListContent() {
         with(binding) {
             listContentAdapter.setListener {
-//                val intent = router.getIntentScreen(this, ActivityScreen.Content).apply {
-//                    putExtra("title", it.title)
-//                    putExtra("id", it.id)
-//                }
-//                startActivity(intent)
+                router.gotoContent(
+                    this@ListContentActivity,
+                    category = category,
+                    content = contentId.getAliasById(),
+                    item = it.alias,
+                    title = it.name
+                )
             }
             rvListContent.apply {
                 setupList(this)
@@ -62,7 +68,7 @@ class ListContentActivity : BaseActivity<ActivityListContentBinding, ListContent
         with(viewModel) {
             observe(listContent, ::onListContent)
 
-            getListContent(listId.getAliasById())
+            getListContent(category, contentId.getAliasById())
         }
     }
 
@@ -75,7 +81,7 @@ class ListContentActivity : BaseActivity<ActivityListContentBinding, ListContent
             appBar.run {
                 setToolbarTitle(title)
                 setToolbarListener(this@ListContentActivity)
-                when (listId) {
+                when (contentId) {
                     ID_ADAB -> setImageDrawable(R.drawable.iv_adab)
                     ID_SHOLAT_HARIAN -> setImageDrawable(R.drawable.iv_sholat)
                     ID_SYEKH_AQJ -> setImageDrawable(R.drawable.iv_profil_syekh)

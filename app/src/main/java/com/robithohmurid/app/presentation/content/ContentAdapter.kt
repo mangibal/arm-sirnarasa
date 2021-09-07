@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.viewbinding.ViewBinding
 import com.robithohmurid.app.data.model.ContentEntity
+import com.robithohmurid.app.data.model.response.ItemEntity
 import com.robithohmurid.app.databinding.ItemContentBinding
 import com.robithohmurid.app.databinding.ItemListContentBinding
 import com.robithohmurid.app.domain.abstraction.BaseAdapter
@@ -11,15 +12,15 @@ import com.robithohmurid.app.domain.abstraction.BaseHolder
 import io.noties.markwon.Markwon
 
 class ContentAdapter :
-    BaseAdapter<ContentEntity, ItemListContentBinding, ContentAdapter.ItemHolder>(
+    BaseAdapter<ItemEntity, ItemListContentBinding, ContentAdapter.ItemHolder>(
         ItemListContentBinding::inflate
     ) {
     inner class ItemHolder(private val binding: ItemContentBinding) :
-        BaseHolder<ContentEntity>(binding) {
+        BaseHolder<ItemEntity>(binding) {
 
-        override fun bind(data: ContentEntity) {
+        override fun bind(data: ItemEntity) {
             binding.tvContent.let {
-                Markwon.create(it.context).setMarkdown(it,data.content)
+                Markwon.create(it.context).setMarkdown(it, data.body)
             }
         }
     }

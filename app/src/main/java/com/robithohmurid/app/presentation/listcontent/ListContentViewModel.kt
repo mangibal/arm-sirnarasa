@@ -17,9 +17,9 @@ class ListContentViewModel(private val repo: IRepository) : BaseViewModel() {
     private val _listContent: MutableLiveData<List<ContentEntity>> = MutableLiveData()
     val listContent: LiveData<List<ContentEntity>> = _listContent
 
-    fun getListContent(contentName: String) {
+    fun getListContent(category: String, content: String) {
         viewModelScope.launch {
-            repo.getListContent(CategoryConstant.AMALIYAH_KEY, contentName,
+            repo.getListContent(category, content,
                 object : DataCallback<List<ContentEntity>> {
                     override fun onSuccess(data: List<ContentEntity>) {
                         _listContent.postValue(data)
