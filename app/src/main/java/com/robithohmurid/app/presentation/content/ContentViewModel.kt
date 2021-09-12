@@ -17,16 +17,22 @@ class ContentViewModel(private val repo: IRepository) : BaseViewModel() {
     private val _listItem: MutableLiveData<List<ItemEntity>> = MutableLiveData()
     val listItem: LiveData<List<ItemEntity>> = _listItem
 
+    private val _isLoading: MutableLiveData<Boolean> = MutableLiveData()
+    val isLoading: LiveData<Boolean> = _isLoading
+
     fun getListItem(category: String, content: String, item: String) {
+        _isLoading.postValue(true)
         viewModelScope.launch {
             repo.getListItem(category, content, item,
                 object : DataCallback<List<ItemEntity>> {
                     override fun onSuccess(data: List<ItemEntity>) {
+                        _isLoading.postValue(false)
                         _listItem.postValue(data)
                         logInfo(data.toString())
                     }
 
                     override fun onFailure(t: Throwable) {
+                        _isLoading.postValue(false)
                         logError(t.message.toString())
                     }
 

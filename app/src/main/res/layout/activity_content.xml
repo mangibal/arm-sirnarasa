@@ -9,23 +9,53 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="0dp"
-        app:navigationIcon="@drawable/ic_back"
         android:layout_height="?actionBarSize"
         android:background="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
-        app:titleTextColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_back"
+        app:titleTextColor="@color/white" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_content"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:visibility="gone"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:listitem="@layout/item_content" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="pb_content, tv_memuat" />
+
+    <ProgressBar
+        android:id="@+id/pb_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_memuat"
+        style="@style/TextViewStyle"
+        android:layout_marginStart="@dimen/dimen16"
+        android:text="@string/title_memuat"
+        android:textAlignment="center"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/font16"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/pb_content"
+        app:layout_constraintStart_toStartOf="@id/pb_content"
+        app:layout_constraintTop_toBottomOf="@id/pb_content" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

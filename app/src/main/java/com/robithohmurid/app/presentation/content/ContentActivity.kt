@@ -8,6 +8,7 @@ import com.robithohmurid.app.external.constant.IntentKey
 import com.robithohmurid.app.external.extension.app.observe
 import com.robithohmurid.app.external.extension.view.initToolbar
 import com.robithohmurid.app.external.extension.view.setupList
+import com.robithohmurid.app.external.extension.view.showIf
 
 class ContentActivity : BaseActivity<ActivityContentBinding, ContentViewModel>(
     ActivityContentBinding::inflate,
@@ -55,10 +56,15 @@ class ContentActivity : BaseActivity<ActivityContentBinding, ContentViewModel>(
 
     override fun onInitData() {
         with(viewModel) {
+            observe(isLoading, ::onLoadingData)
             observe(listItem, ::onItemReceived)
 
             getListItem(category, contentId, itemId)
         }
+    }
+
+    private fun onLoadingData(isLoading: Boolean) {
+        binding.groupLoading.showIf(isLoading)
     }
 
     private fun onItemReceived(list: List<ItemEntity>) {

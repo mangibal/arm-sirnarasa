@@ -42,6 +42,26 @@ class ListContentActivity : BaseActivity<ActivityListContentBinding, ListContent
         setupListContent()
     }
 
+    private fun setupHeader() {
+        with(binding) {
+            appBar.run {
+                setToolbarTitle(title)
+                setToolbarListener(this@ListContentActivity)
+                when (contentAlias) {
+                    MenuConstant.ADAB -> setImageDrawable(R.drawable.iv_adab)
+                    MenuConstant.SHOLAT, MenuConstant.SHOLAT_HARIAN, MenuConstant.SHOLAT_TAHUNAN -> setImageDrawable(
+                        R.drawable.iv_sholat
+                    )
+                    MenuConstant.MANAQIB -> setImageDrawable(R.drawable.iv_profil_syekh)
+                    MenuConstant.SHOLAWAT -> setImageDrawable(R.drawable.iv_sholawat)
+                    else -> setImageDrawable(R.drawable.iv_jadwal_sholat)
+                }
+            }
+
+        }
+
+    }
+
     private fun setupListContent() {
         with(binding) {
             listContentAdapter.setListener {
@@ -76,27 +96,6 @@ class ListContentActivity : BaseActivity<ActivityListContentBinding, ListContent
     private fun onListContent(list: List<ContentEntity>) {
         binding.rvListContent.showIf(list.isNotEmpty())
         listContentAdapter.setItems(list)
-    }
-
-    private fun setupHeader() {
-        with(binding) {
-            appBar.run {
-                setToolbarTitle(title)
-                setToolbarListener(this@ListContentActivity)
-                when (contentAlias) {
-                    MenuConstant.ADAB -> setImageDrawable(R.drawable.iv_adab)
-                    MenuConstant.SHOLAT, MenuConstant.SHOLAT_HARIAN, MenuConstant.SHOLAT_TAHUNAN -> setImageDrawable(
-                        R.drawable.iv_sholat
-                    )
-                    MenuConstant.MANAQIB -> setImageDrawable(R.drawable.iv_profil_syekh)
-                    MenuConstant.SILSILAH -> setImageDrawable(R.drawable.iv_silsilah)
-                    MenuConstant.SHOLAWAT -> setImageDrawable(R.drawable.iv_sholawat)
-                    else -> setImageDrawable(R.drawable.iv_jadwal_sholat)
-                }
-            }
-
-        }
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
