@@ -5,11 +5,14 @@ import com.robithohmurid.app.data.local.listMenuManaqib
 import com.robithohmurid.app.databinding.FragmentManaqibBinding
 import com.robithohmurid.app.domain.abstraction.BaseBottomSheetDialogFragment
 import com.robithohmurid.app.domain.router.ActivityScreen
+import com.robithohmurid.app.external.constant.CategoryConstant
 import com.robithohmurid.app.external.constant.MenuConstant
 import com.robithohmurid.app.external.extension.view.setupGridList
 import com.robithohmurid.app.external.extension.view.snackBar
 import com.robithohmurid.app.presentation.home.HomeViewModel
 import com.robithohmurid.app.presentation.home.adapter.MenuGridAdapter
+import com.robithohmurid.app.presentation.home.menu.MenuFragment
+import com.robithohmurid.app.presentation.home.sholat.SholatFragment
 
 /**
  * Created by Iqbal Fauzi on 19/06/21 19.53
@@ -30,25 +33,42 @@ class ManaqibFragment : BaseBottomSheetDialogFragment<FragmentManaqibBinding, Ho
             menuAdapter.run {
                 setItems(listMenuManaqib)
                 setListener {
-                    if (it.alias != MenuConstant.MANQOBAH) {
-                        val intent =
-                            router.getIntentScreen(requireContext(), ActivityScreen.Content).apply {
-                                putExtra("title", it.name)
-                                putExtra("id", it.id)
-                            }
-                        startActivity(intent)
-                    } else {
-                        val intent =
-                            router.getIntentScreen(requireContext(), ActivityScreen.ListContent)
-                                .apply {
-                                    putExtra("id", it.id)
-                                    putExtra("title", it.name)
-                                }
-                        startActivity(intent)
-                    }
+                    showMenu(it.alias, it.name)
                 }
             }
         }
+    }
+
+    private fun showMenu(alias: String, title: String) {
+        when (alias) {
+            MenuConstant.MC_MANAQIB, MenuConstant.TANBIH, MenuConstant.TAWASSUL -> {
+                router.gotoContent(
+                    requireActivity(),
+                    category = CategoryConstant.AMALIYAH_KEY,
+                    contentAlias = alias,
+                    item = alias,
+                    title = title
+                )
+            }
+            MenuConstant.SHOLAWAT_THORIQIYYAH -> {
+                router.gotoContent(
+                    requireActivity(),
+                    CategoryConstant.TQN_KEY,
+                    alias,
+                    alias,
+                    title
+                )
+            }
+            MenuConstant.MANQOBAH -> {
+                router.gotoListContent(
+                    requireActivity(),
+                    CategoryConstant.AMALIYAH_KEY,
+                    alias,
+                    title
+                )
+            }
+        }
+
     }
 
     override fun onInitData() {

@@ -13,6 +13,7 @@ import com.robithohmurid.app.external.custom.AppBar
 import com.robithohmurid.app.external.extension.app.observe
 import com.robithohmurid.app.external.extension.view.initToolbar
 import com.robithohmurid.app.external.extension.view.setupList
+import com.robithohmurid.app.external.extension.view.showIf
 
 class ListContentActivity : BaseActivity<ActivityListContentBinding, ListContentViewModel>(
     ActivityListContentBinding::inflate,
@@ -61,13 +62,19 @@ class ListContentActivity : BaseActivity<ActivityListContentBinding, ListContent
 
     override fun onInitData() {
         with(viewModel) {
+            observe(isLoading, ::onLoadingData)
             observe(listContent, ::onListContent)
 
             getListContent(category, contentAlias)
         }
     }
 
+    private fun onLoadingData(isLoading: Boolean) {
+        binding.groupLoading.showIf(isLoading)
+    }
+
     private fun onListContent(list: List<ContentEntity>) {
+        binding.rvListContent.showIf(list.isNotEmpty())
         listContentAdapter.setItems(list)
     }
 
@@ -78,7 +85,9 @@ class ListContentActivity : BaseActivity<ActivityListContentBinding, ListContent
                 setToolbarListener(this@ListContentActivity)
                 when (contentAlias) {
                     MenuConstant.ADAB -> setImageDrawable(R.drawable.iv_adab)
-                    MenuConstant.SHOLAT, MenuConstant.SHOLAT_HARIAN, MenuConstant.SHOLAT_TAHUNAN -> setImageDrawable(R.drawable.iv_sholat)
+                    MenuConstant.SHOLAT, MenuConstant.SHOLAT_HARIAN, MenuConstant.SHOLAT_TAHUNAN -> setImageDrawable(
+                        R.drawable.iv_sholat
+                    )
                     MenuConstant.MANAQIB -> setImageDrawable(R.drawable.iv_profil_syekh)
                     MenuConstant.SILSILAH -> setImageDrawable(R.drawable.iv_silsilah)
                     MenuConstant.SHOLAWAT -> setImageDrawable(R.drawable.iv_sholawat)
