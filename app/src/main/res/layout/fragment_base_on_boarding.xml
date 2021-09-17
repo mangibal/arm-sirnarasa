@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.onboarding.BaseOnBoardingFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.55" />
+
+    <TextView
+        android:id="@+id/tv_title_onboarding"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font24"
+        app:layout_constraintEnd_toEndOf="@+id/img_onboarding"
+        app:layout_constraintStart_toStartOf="@+id/img_onboarding"
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
+        tools:text="@string/title_onboarding1" />
+
+    <TextView
+        android:id="@+id/tv_desc_onboarding"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dimen16"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="center_horizontal"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font16"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="@+id/img_onboarding"
+        app:layout_constraintStart_toStartOf="@+id/img_onboarding"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_onboarding"
+        tools:text="@string/desc_onboarding1" />
+
+    <ImageView
+        android:id="@+id/img_onboarding"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/iv_ob1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

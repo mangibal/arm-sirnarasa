@@ -3,12 +3,11 @@ package com.robithohmurid.app.external.service
 import android.os.Build
 import com.robithohmurid.app.data.local.sholat.LocationData
 import com.robithohmurid.app.data.local.SessionHelper
-import com.robithohmurid.app.data.model.SholatEntity
+import com.robithohmurid.app.data.model.entity.SholatEntity
 import com.robithohmurid.app.external.constant.DateTimeFormat
 import com.robithohmurid.app.external.constant.SessionConstant
 import com.robithohmurid.app.external.extension.app.formatToString
 import com.robithohmurid.app.external.extension.app.getCalendarInstance
-import com.robithohmurid.app.external.extension.app.logInfo
 
 /**
  * Created by Iqbal Fauzi on 10/07/21 16.43

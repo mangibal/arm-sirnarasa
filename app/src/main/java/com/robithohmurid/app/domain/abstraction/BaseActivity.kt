@@ -64,6 +64,7 @@ abstract class BaseActivity<VB : ViewBinding, out VM : BaseViewModel>(
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        dataReceived = intent.extras
         onInitUI(savedInstanceState)
         onInitData()
     }

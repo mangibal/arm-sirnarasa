@@ -1,12 +1,14 @@
 package com.robithohmurid.app.presentation.onboarding
 
 import android.os.Bundle
+import androidx.core.view.ViewCompat
 import androidx.viewpager2.widget.ViewPager2
 import com.robithohmurid.app.R
 import com.robithohmurid.app.databinding.ActivityOnBoardingBinding
 import com.robithohmurid.app.domain.abstraction.BaseActivity
 import com.robithohmurid.app.domain.router.ScreenRouter
 import com.robithohmurid.app.external.extension.app.getDrawableCompat
+import com.robithohmurid.app.external.extension.view.makeStatusBarTransparent
 import com.robithohmurid.app.external.extension.view.onClick
 import org.koin.android.ext.android.inject
 
@@ -16,6 +18,7 @@ class OnBoardingActivity : BaseActivity<ActivityOnBoardingBinding, OnBoardingVie
 ) {
     private val screenRouter: ScreenRouter by inject()
     override fun onInitUI(savedInstanceState: Bundle?) {
+        setupStatusBar()
         with(binding) {
             vpOnboarding.adapter = OnBoardingPagerAdapter(this@OnBoardingActivity)
             dotsIndicator.setViewPager2(vpOnboarding)
@@ -51,5 +54,12 @@ class OnBoardingActivity : BaseActivity<ActivityOnBoardingBinding, OnBoardingVie
     override fun onInitData() {
 
     }
-
+    private fun setupStatusBar() {
+        with(binding) {
+            makeStatusBarTransparent()
+            ViewCompat.setOnApplyWindowInsetsListener(root) { _, insets ->
+                insets.consumeSystemWindowInsets()
+            }
+        }
+    }
 }

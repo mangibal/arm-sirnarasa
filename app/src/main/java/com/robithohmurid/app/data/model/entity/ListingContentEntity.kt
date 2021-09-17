@@ -1,6 +1,7 @@
-package com.robithohmurid.app.data.model
+package com.robithohmurid.app.data.model.entity
 
 import android.os.Parcelable
+import com.robithohmurid.app.data.model.entity.ContentEntity
 import kotlinx.parcelize.Parcelize
 
 @Parcelize

@@ -6,6 +6,8 @@ import android.text.Html
 import android.text.Spanned
 import androidx.core.net.toUri
 import com.robithohmurid.app.R
+import com.robithohmurid.app.external.constant.ContentConstant
+import com.robithohmurid.app.external.constant.MenuConstant
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
@@ -14,6 +16,7 @@ import org.json.JSONObject
  * Created by Iqbal Fauzi on 11/06/21 23.09
  * iqbal.fauzi.if99@gmail.com
  */
+
 fun String.isJSONValid(): Boolean {
 
     if (this.isEmpty()) {

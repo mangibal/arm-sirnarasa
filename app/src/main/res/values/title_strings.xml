@@ -24,5 +24,7 @@
     <string name="title_lokasi_terkini">Lokasi Terkini</string>
     <string name="title_sirnarasa">Ponpes Sirnarasa</string>
     <string name="title_arm">Amaliyah Robithoh Murid</string>
-    <string name="title_amaliyah_mursyid">Amaliyah Mursyid</string>
+    <string name="title_amaliyah_mursyid">Amaliyah Syekh Mursyid</string>
+    <string name="title_sholat">Sholat</string>
+    <string name="title_memuat">Sedang memuat…</string>
 </resources>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Robithoh Murid</string>
+    <string name="app_name">ARM Sirnarasa</string>
 
     <string name="label_permission">Permission</string>
 
@@ -16,4 +16,14 @@
     <string name="label_maghrib">Maghrib</string>
     <string name="label_isya">Isya</string>
     <string name="go_to_content">Go to content</string>
+    <string name="title_onboarding5">Fitur Layanan Lainnya</string>
+    <string name="desc_onboarding5">Anda dapat mengakses website dan SIAKAD STID Sirnarasa</string>
+    <string name="title_onboarding4">Internet</string>
+    <string name="desc_onboarding4">Untuk pertama kali membuka aplikasi ini silahkan hubungkan koneksi internet terlebih dahulu</string>
+    <string name="title_onboarding3">Kemudahan Akses</string>
+    <string name="desc_onboarding3">Banyak kemudahan yang dapat Anda dapatkan seperti Tuntunan Dzikir, Tawassul, Khotaman, jadwal manaqib, jadwal shalat, dan informasi terbaru tentang Sirnarsa</string>
+    <string name="title_onboarding2">Adab Sehari-hari</string>
+    <string name="desc_onboarding2">Selain Amaliyah Mursyid, App ini juga terdapat adab sehari-hari Syekh Mursyid</string>
+    <string name="desc_onboarding1">Selamat datang di App\nAmaliyah Mursyid</string>
+    <string name="title_onboarding1">App Amaliyah Mursyid</string>
 </resources>

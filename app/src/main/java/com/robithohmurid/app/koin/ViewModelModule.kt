@@ -1,6 +1,8 @@
 package com.robithohmurid.app.koin
 
+import com.robithohmurid.app.presentation.content.ContentViewModel
 import com.robithohmurid.app.presentation.home.HomeViewModel
+import com.robithohmurid.app.presentation.listcontent.ListContentViewModel
 import com.robithohmurid.app.presentation.onboarding.OnBoardingViewModel
 import com.robithohmurid.app.presentation.settings.SettingsViewModel
 import com.robithohmurid.app.presentation.sholat.jadwal.JadwalSholatViewModel
@@ -18,4 +20,6 @@ val viewModelModule = module {
     viewModel { HomeViewModel(get()) }
     viewModel { SettingsViewModel(get()) }
     viewModel { JadwalSholatViewModel() }
+    viewModel { ListContentViewModel(get()) }
+    viewModel { ContentViewModel(get()) }
 }

@@ -4,8 +4,10 @@ import android.app.Activity
 import android.app.Application
 import android.content.Context
 import android.content.Intent
+import android.os.Bundle
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.robithohmurid.app.domain.abstraction.BaseActivity
+import com.robithohmurid.app.external.constant.IntentKey
 import com.robithohmurid.app.external.extension.app.logError
 import com.robithohmurid.app.presentation.content.ContentActivity
 import com.robithohmurid.app.presentation.home.HomeActivity
@@ -14,7 +16,6 @@ import com.robithohmurid.app.presentation.onboarding.OnBoardingActivity
 import com.robithohmurid.app.presentation.settings.SettingsActivity
 import com.robithohmurid.app.presentation.sholat.jadwal.JadwalSholatActivity
 import com.robithohmurid.app.presentation.sholat.setting.SholatSettingActivity
-import com.robithohmurid.app.presentation.sholat.setting.SholatSettingViewModel
 
 /**
  * Created by Iqbal Fauzi on 07/06/21 22.06
@@ -24,6 +25,38 @@ class ScreenRouterImpl(private val application: Application) : ScreenRouter {
 
     companion object {
         const val TAG = "ROUTER"
+    }
+
+    override fun gotoContent(
+        context: Activity,
+        category: String,
+        contentAlias: String,
+        item: String,
+        title: String
+    ) {
+        val screen = getIntentScreen(context, ActivityScreen.Content)
+        val bundle = Bundle().apply {
+            putString(IntentKey.CATEGORY_KEY, category)
+            putString(IntentKey.CONTENT_KEY, contentAlias)
+            putString(IntentKey.ITEM_KEY, item)
+            putString(IntentKey.TITLE_KEY, title)
+        }
+        openActivity(context, screen, bundle)
+    }
+
+    override fun gotoListContent(
+        context: Activity,
+        category: String,
+        alias: String,
+        title: String
+    ) {
+        val screen = getIntentScreen(context, ActivityScreen.ListContent)
+        val bundle = Bundle().apply {
+            putString(IntentKey.CATEGORY_KEY, category)
+            putString(IntentKey.CONTENT_KEY, alias)
+            putString(IntentKey.TITLE_KEY, title)
+        }
+        openActivity(context, screen, bundle)
     }
 
     override fun gotoSettingSholat(context: Activity) {
@@ -69,12 +102,12 @@ class ScreenRouterImpl(private val application: Application) : ScreenRouter {
     private fun openActivity(
         context: Activity,
         intent: Intent,
+        bundle: Bundle? = null,
         isFinish: Boolean = false
     ) {
         try {
-            intent.run {
-                context.startActivity(this)
-            }
+            bundle?.let { intent.putExtras(bundle) }
+            intent.run { context.startActivity(this) }
             if (isFinish) context.finish()
         } catch (ex: ClassNotFoundException) {
             logError(ex.message.toString())

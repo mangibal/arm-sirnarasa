@@ -7,6 +7,43 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:566083689350:android:9640ec5a04e7e0321d2a07",
+        "android_client_info": {
+          "package_name": "com.robithohmurid.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "566083689350-alrh6tgv77np0etbfsve42rg87avi2jn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.robithohmurid.app",
+            "certificate_hash": "845920271618f11b00eaefaa90c7c852a2097dec"
+          }
+        },
+        {
+          "client_id": "566083689350-d7m706pf6nh2ppt86pdb2i50hfa33su1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZsGnxMH8rOhTa23RKC2PkziH9aYGG59k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "566083689350-d7m706pf6nh2ppt86pdb2i50hfa33su1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:566083689350:android:a84b8b21ab3c2d4b1d2a07",
         "android_client_info": {
           "package_name": "com.robithohmurid.app.dev"

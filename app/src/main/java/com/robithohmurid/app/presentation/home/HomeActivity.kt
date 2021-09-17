@@ -12,18 +12,19 @@ import androidx.lifecycle.lifecycleScope
 import com.google.android.gms.location.LocationServices
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.robithohmurid.app.R
-import com.robithohmurid.app.data.local.listAmaliyah
+import com.robithohmurid.app.data.local.listAmaliyahGrid
 import com.robithohmurid.app.data.local.listNews
 import com.robithohmurid.app.data.local.servicesList
 import com.robithohmurid.app.data.local.sholat.LocationData
-import com.robithohmurid.app.data.model.SholatEntity
+import com.robithohmurid.app.data.model.entity.SholatEntity
+import com.robithohmurid.app.data.model.response.ContentEntity
+import com.robithohmurid.app.data.model.response.ItemEntity
 import com.robithohmurid.app.databinding.ActivityMainBinding
 import com.robithohmurid.app.databinding.BottomSheetMainBinding
 import com.robithohmurid.app.domain.abstraction.BaseActivity
-import com.robithohmurid.app.domain.router.ActivityScreen
+import com.robithohmurid.app.external.constant.CategoryConstant
 import com.robithohmurid.app.external.constant.DateTimeFormat
-import com.robithohmurid.app.external.constant.MenuConstant.LAINNYA
-import com.robithohmurid.app.external.constant.MenuConstant.MANAQIB
+import com.robithohmurid.app.external.constant.MenuConstant
 import com.robithohmurid.app.external.extension.app.*
 import com.robithohmurid.app.external.extension.view.*
 import com.robithohmurid.app.presentation.dialog.LocationDialogFragment
@@ -32,6 +33,7 @@ import com.robithohmurid.app.presentation.home.adapter.NewsAdapter
 import com.robithohmurid.app.presentation.home.adapter.ServicesAdapter
 import com.robithohmurid.app.presentation.home.manaqib.ManaqibFragment
 import com.robithohmurid.app.presentation.home.menu.MenuFragment
+import com.robithohmurid.app.presentation.home.sholat.SholatFragment
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -130,15 +132,6 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
             LocationDialogFragment().run {
                 show(supportFragmentManager, LocationDialogFragment().tag)
             }
-//            val fm = supportFragmentManager
-//            val fragment: DialogFragment?
-//            fragment =
-//                Class.forName("com.robithohmurid.app.presentation.dialog.LocationDialogFragment")
-//                    .newInstance() as DialogFragment
-//            val tag = fragment.javaClass.simpleName
-//            val bundle = Bundle()
-//            fragment.arguments = bundle
-//            fragment.showNow(fm, tag)
         } catch (ex: ClassNotFoundException) {
             ex.printStackTrace()
             showToast(ex.message.toString())
@@ -151,29 +144,59 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
             inclBottomSheet.rvAmaliyah.adapter = menuGridAdapter
 
             menuGridAdapter.run {
-                setItems(listAmaliyah)
+                setItems(listAmaliyahGrid)
                 setListener {
-                    showMenu(it.name)
+                    showMenu(it.alias, it.name)
                 }
             }
         }
     }
 
-    private fun showMenu(title: String) {
-        when (title) {
-            MANAQIB -> ManaqibFragment().run {
+    private fun showMenu(alias: String, title: String) {
+        when (alias) {
+            MenuConstant.ADAB -> router.gotoListContent(
+                this,
+                CategoryConstant.AMALIYAH_KEY,
+                alias,
+                title
+            )
+            MenuConstant.SHOLAT -> SholatFragment().run {
+                show(supportFragmentManager, SholatFragment().tag)
+            }
+            MenuConstant.DZIKIR -> {
+                router.gotoContent(
+                    this,
+                    CategoryConstant.AMALIYAH_KEY,
+                    MenuConstant.DZIKIR,
+                    alias,
+                    title
+                )
+            }
+            MenuConstant.KHOTAMAN -> {
+                router.gotoContent(
+                    this,
+                    CategoryConstant.AMALIYAH_KEY,
+                    MenuConstant.KHOTAMAN,
+                    alias,
+                    title
+                )
+            }
+            MenuConstant.MANAQIB -> ManaqibFragment().run {
                 show(supportFragmentManager, ManaqibFragment().tag)
             }
-            LAINNYA -> MenuFragment().run {
+            MenuConstant.SHOLAWAT, MenuConstant.DOA -> {
+                router.gotoListContent(
+                    this,
+                    CategoryConstant.TQN_KEY,
+                    alias,
+                    title
+                )
+            }
+            MenuConstant.LAINNYA -> MenuFragment().run {
                 show(supportFragmentManager, MenuFragment().tag)
             }
-            else -> {
-                val intent =
-                    router.getIntentScreen(this@HomeActivity, ActivityScreen.ListContent)
-                intent.putExtra("title", title)
-                startActivity(intent)
-            }
         }
+
     }
 
     private fun setupServicesMenu() {
@@ -457,6 +480,26 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
             setLocationInfo(location.latitude, location.longitude)
             calculatePrayerTime()
         }
+
+        with(viewModel) {
+            observe(listContent, ::onListContentReceived)
+            observe(listItem, ::onListItemReceived)
+
+//            getListSholat()
+        }
+    }
+
+    private fun onListContentReceived(data: List<ContentEntity>) {
+        logInfo(data.toString())
+        showToast(data.toString())
+        if (data.isNotEmpty()) {
+            viewModel.getListItem(data[0].alias)
+        }
+    }
+
+    private fun onListItemReceived(data: List<ItemEntity>) {
+        logInfo(data.toString())
+        showToast(data.toString())
     }
 
     private fun setLocationInfo(latitude: Double, longitude: Double) {

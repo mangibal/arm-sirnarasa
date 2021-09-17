@@ -91,6 +91,12 @@
                     tools:itemCount="2"
                     tools:listitem="@layout/item_grid_menu" />
 
+                <androidx.constraintlayout.widget.Group
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:constraint_referenced_ids="tv_news, tv_more, rv_news" />
+
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/tv_news"
                     style="@style/TextViewStyle"

@@ -3,7 +3,11 @@ package com.robithohmurid.app.external.custom
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
+import android.widget.Toolbar
+import coil.load
 import com.google.android.material.appbar.AppBarLayout
+import com.google.android.material.appbar.MaterialToolbar
+import com.robithohmurid.app.R
 import com.robithohmurid.app.databinding.LayoutAppBarViewBinding
 import com.robithohmurid.app.external.extension.app.getDrawableCompat
 import com.robithohmurid.app.external.extension.view.loadImage
@@ -16,6 +20,8 @@ import com.robithohmurid.app.external.extension.view.showIf
 class AppBar(context: Context, attrs: AttributeSet) : AppBarLayout(context, attrs) {
     private lateinit var binding: LayoutAppBarViewBinding
     private lateinit var toolbarListener: ToolbarListener
+    lateinit var appToolbar : MaterialToolbar
+
 
     private val onAppBarScroll = object : OnOffsetChangedListener {
         var isShow = false
@@ -50,6 +56,7 @@ class AppBar(context: Context, attrs: AttributeSet) : AppBarLayout(context, attr
             toolbar.setNavigationOnClickListener { toolbarListener.onBackPressed() }
             appBar.addOnOffsetChangedListener(onAppBarScroll)
         }
+        appToolbar = binding.toolbar
     }
 
     fun setToolbarListener(listener: ToolbarListener) {
@@ -57,11 +64,12 @@ class AppBar(context: Context, attrs: AttributeSet) : AppBarLayout(context, attr
     }
 
     fun setImageDrawable(image: Int) {
-        binding.ivHeader.setImageDrawable(context.getDrawableCompat(image))
+        binding.ivHeader.load(image)
     }
 
     fun setToolbarTitle(title: String){
         binding.toolbar.title = title
     }
+
 
 }

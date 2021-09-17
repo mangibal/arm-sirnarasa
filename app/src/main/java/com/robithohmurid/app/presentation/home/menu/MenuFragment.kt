@@ -1,18 +1,16 @@
 package com.robithohmurid.app.presentation.home.menu
 
 import android.os.Bundle
-import androidx.core.os.bundleOf
 import com.robithohmurid.app.data.local.listAmaliyah
 import com.robithohmurid.app.data.local.listMenuTqn
 import com.robithohmurid.app.databinding.FragmentLainnyaBinding
 import com.robithohmurid.app.domain.abstraction.BaseBottomSheetDialogFragment
-import com.robithohmurid.app.domain.router.ActivityScreen
+import com.robithohmurid.app.external.constant.CategoryConstant
 import com.robithohmurid.app.external.constant.MenuConstant
-import com.robithohmurid.app.external.extension.app.showToast
 import com.robithohmurid.app.external.extension.view.setupList
-import com.robithohmurid.app.external.extension.view.snackBar
 import com.robithohmurid.app.presentation.home.HomeViewModel
-import com.robithohmurid.app.presentation.listcontent.ListContentActivity
+import com.robithohmurid.app.presentation.home.manaqib.ManaqibFragment
+import com.robithohmurid.app.presentation.home.sholat.SholatFragment
 
 /**
  * Created by Iqbal Fauzi on 19/06/21 19.53
@@ -39,7 +37,7 @@ class MenuFragment : BaseBottomSheetDialogFragment<FragmentLainnyaBinding, HomeV
             listTqnAdapter.run {
                 setItems(listMenuTqn)
                 setListener {
-                    requireContext().showToast(it.name)
+                    showMenu(it.alias, it.name)
                 }
             }
         }
@@ -51,15 +49,57 @@ class MenuFragment : BaseBottomSheetDialogFragment<FragmentLainnyaBinding, HomeV
             rvAmaliyah.adapter = listAmaliyahAdapter
 
             listAmaliyahAdapter.run {
-                val listAmaliyah = listAmaliyah.filterNot {
-                    it.name == MenuConstant.LAINNYA
-                }
                 setItems(listAmaliyah)
                 setListener {
-                    requireContext().showToast(it.name)
+                    showMenu(it.alias, it.name)
                 }
             }
         }
+    }
+
+    private fun showMenu(alias: String, title: String) {
+        when (alias) {
+            MenuConstant.ADAB -> router.gotoListContent(
+                requireActivity(),
+                CategoryConstant.AMALIYAH_KEY,
+                alias,
+                title
+            )
+            MenuConstant.SHOLAT -> SholatFragment().run {
+                show(this@MenuFragment.childFragmentManager, SholatFragment().tag)
+            }
+            MenuConstant.DZIKIR, MenuConstant.KHOTAMAN, MenuConstant.TAWASSUL, MenuConstant.TANBIH -> {
+                router.gotoContent(
+                    requireActivity(),
+                    CategoryConstant.AMALIYAH_KEY,
+                    alias,
+                    alias,
+                    title
+                )
+            }
+            MenuConstant.MANAQIB -> ManaqibFragment().run {
+                show(this@MenuFragment.childFragmentManager, ManaqibFragment().tag)
+            }
+            MenuConstant.SHOLAWAT, MenuConstant.DOA -> {
+                router.gotoListContent(
+                    requireActivity(),
+                    CategoryConstant.TQN_KEY,
+                    alias,
+                    title
+                )
+            }
+            MenuConstant.TUJUAN_DASAR, MenuConstant.DIAGRAM_LATIFAH, MenuConstant.ZIARAH,
+            MenuConstant.SILSILAH, MenuConstant.SYEKH, MenuConstant.TARHIM -> {
+                router.gotoContent(
+                    requireActivity(),
+                    CategoryConstant.TQN_KEY,
+                    alias,
+                    alias,
+                    title
+                )
+            }
+        }
+
     }
 
     override fun onInitData() {

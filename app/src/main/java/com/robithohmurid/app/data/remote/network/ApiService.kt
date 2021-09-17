@@ -1,8 +1,8 @@
 package com.robithohmurid.app.data.remote.network
 
 import com.robithohmurid.app.data.model.base.DataResponse
-import com.robithohmurid.app.data.model.MenuEntity
 import com.robithohmurid.app.data.model.response.ItemEntity
+import com.robithohmurid.app.data.model.response.ContentEntity
 import retrofit2.http.GET
 import retrofit2.http.Path
 
@@ -12,13 +12,17 @@ import retrofit2.http.Path
  */
 interface ApiService {
 
-    @GET("menu")
-    suspend fun getListMenu(): DataResponse<List<MenuEntity>>
-
     @GET("amaliyah/{category}/{content}")
     suspend fun getListContent(
         @Path("category") category: String,
         @Path("content") content: String
+    ): DataResponse<List<ContentEntity>>
+
+    @GET("amaliyah/{category}/{content}/{item}")
+    suspend fun getlistItem(
+        @Path("category") category: String,
+        @Path("content") content: String,
+        @Path("item") item: String,
     ): DataResponse<List<ItemEntity>>
 
 }

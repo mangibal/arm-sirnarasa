@@ -1,7 +1,6 @@
-package com.robithohmurid.app.data.remote
+package com.robithohmurid.app.data.remote.network
 
 import com.robithohmurid.app.BuildConfig
-import com.robithohmurid.app.data.remote.network.ApiService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module

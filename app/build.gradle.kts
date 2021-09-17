@@ -30,6 +30,16 @@ android {
 //        }
     }
 
+    signingConfigs {
+        create("release") {
+            keyAlias = "talagasirnarasa"
+            keyPassword = "38s1rn@r4s4"
+            storeFile =
+                file("../keystore/mursyidapp.keystore")
+            storePassword = "38s1rn@r4s4"
+        }
+    }
+
     buildTypes {
         getByName("release") {
             isMinifyEnabled = true
@@ -38,17 +48,31 @@ android {
 //            isZipAlignEnabled = true
 //            isJniDebuggable = false
 //            isRenderscriptDebuggable = false
-            buildConfigField("String", "BASE_URL", "\"${Properties.BASE_URL_DEBUG}\"")
+            buildConfigField("String", "BASE_URL", "\"${Properties.BASE_URL}\"")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-//            signingConfig = signingConfigs.getByName("release")
+            signingConfig = signingConfigs.getByName("release")
         }
         getByName("debug") {
             isDebuggable = true
             applicationIdSuffix = ".dev"
             buildConfigField("String", "BASE_URL", "\"${Properties.BASE_URL}\"")
+        }
+        create("internal") {
+            isMinifyEnabled = true
+            isDebuggable = false
+//            isShrinkResources = true
+//            isZipAlignEnabled = true
+//            isJniDebuggable = false
+//            isRenderscriptDebuggable = false
+            buildConfigField("String", "BASE_URL", "\"${Properties.BASE_URL}\"")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+            signingConfig = signingConfigs.getByName("release")
         }
     }
 
