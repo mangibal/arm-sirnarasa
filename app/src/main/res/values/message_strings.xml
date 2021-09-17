@@ -2,4 +2,5 @@
 <resources>
     <string name="msg_permission">Allow app to access %s</string>
     <string name="msg_press_again_to_exit">Tekan sekali lagi untuk keluar</string>
+    <string name="msg_data_kosong">Data belum tersedia</string>
 </resources>

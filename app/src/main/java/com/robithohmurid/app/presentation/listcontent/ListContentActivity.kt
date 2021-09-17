@@ -11,6 +11,7 @@ import com.robithohmurid.app.external.constant.IntentKey
 import com.robithohmurid.app.external.constant.MenuConstant
 import com.robithohmurid.app.external.custom.AppBar
 import com.robithohmurid.app.external.extension.app.observe
+import com.robithohmurid.app.external.extension.view.getString
 import com.robithohmurid.app.external.extension.view.initToolbar
 import com.robithohmurid.app.external.extension.view.setupList
 import com.robithohmurid.app.external.extension.view.showIf
@@ -90,32 +91,40 @@ class ListContentActivity : BaseActivity<ActivityListContentBinding, ListContent
     }
 
     private fun onLoadingData(isLoading: Boolean) {
-        binding.groupLoading.showIf(isLoading)
+        binding.pbContent.showIf(isLoading)
     }
 
     private fun onListContent(list: List<ContentEntity>) {
-        binding.rvListContent.showIf(list.isNotEmpty())
-        listContentAdapter.setItems(list)
+        with(binding) {
+            rvListContent.showIf(list.isNotEmpty())
+            listContentAdapter.setItems(list)
+            tvMemuat.run {
+                showIf(list.isEmpty())
+                if (list.isEmpty()) {
+                    text =  getString(R.string.msg_data_kosong)
+                }
+            }
+        }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu, menu)
-        val searchMenu = menu?.findItem(R.id.app_bar_search)
-        val searchView = (searchMenu?.actionView as SearchView)
-        searchView.setOnQueryTextListener(object :
-            SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean {
-//                listContentAdapter.filter.filter(query)
-                return false
-            }
-
-            override fun onQueryTextChange(newText: String?): Boolean {
-//                listContentAdapter.filter.filter(newText)
-                return false
-            }
-        })
-        return true
-    }
+//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+//        menuInflater.inflate(R.menu.menu, menu)
+//        val searchMenu = menu?.findItem(R.id.app_bar_search)
+//        val searchView = (searchMenu?.actionView as SearchView)
+//        searchView.setOnQueryTextListener(object :
+//            SearchView.OnQueryTextListener {
+//            override fun onQueryTextSubmit(query: String?): Boolean {
+////                listContentAdapter.filter.filter(query)
+//                return false
+//            }
+//
+//            override fun onQueryTextChange(newText: String?): Boolean {
+////                listContentAdapter.filter.filter(newText)
+//                return false
+//            }
+//        })
+//        return true
+//    }
 
 
 }

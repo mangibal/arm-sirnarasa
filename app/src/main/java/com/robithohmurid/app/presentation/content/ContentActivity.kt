@@ -1,14 +1,13 @@
 package com.robithohmurid.app.presentation.content
 
 import android.os.Bundle
+import com.robithohmurid.app.R
 import com.robithohmurid.app.data.model.response.ItemEntity
 import com.robithohmurid.app.databinding.ActivityContentBinding
 import com.robithohmurid.app.domain.abstraction.BaseActivity
 import com.robithohmurid.app.external.constant.IntentKey
 import com.robithohmurid.app.external.extension.app.observe
-import com.robithohmurid.app.external.extension.view.initToolbar
-import com.robithohmurid.app.external.extension.view.setupList
-import com.robithohmurid.app.external.extension.view.showIf
+import com.robithohmurid.app.external.extension.view.*
 
 class ContentActivity : BaseActivity<ActivityContentBinding, ContentViewModel>(
     ActivityContentBinding::inflate,
@@ -64,11 +63,20 @@ class ContentActivity : BaseActivity<ActivityContentBinding, ContentViewModel>(
     }
 
     private fun onLoadingData(isLoading: Boolean) {
-        binding.groupLoading.showIf(isLoading)
+        binding.pbContent.showIf(isLoading)
     }
 
     private fun onItemReceived(list: List<ItemEntity>) {
-        contentAdapter.setItems(list)
+        with(binding) {
+            rvContent.showIf(list.isNotEmpty())
+            tvMemuat.run {
+                showIf(list.isEmpty())
+                if (list.isEmpty()) {
+                    text = getString(R.string.msg_data_kosong)
+                }
+            }
+            contentAdapter.setItems(list)
+        }
     }
 
 }

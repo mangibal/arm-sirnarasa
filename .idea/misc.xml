@@ -7,17 +7,19 @@
         <entry key="app/src/main/res/drawable/ic_sholat.xml" value="0.38055555555555554" />
         <entry key="app/src/main/res/drawable/ic_tarhim.xml" value="0.38055555555555554" />
         <entry key="app/src/main/res/layout/activity_content.xml" value="0.3880208333333333" />
+        <entry key="app/src/main/res/layout/activity_jadwal_sholat.xml" value="0.21203703703703702" />
         <entry key="app/src/main/res/layout/activity_list_content.xml" value="0.3398148148148148" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.3398148148148148" />
         <entry key="app/src/main/res/layout/bottom_sheet_main.xml" value="0.3880208333333333" />
         <entry key="app/src/main/res/layout/dialog_location.xml" value="0.20260416666666667" />
         <entry key="app/src/main/res/layout/fragment_base_on_boarding.xml" value="0.37395833333333334" />
         <entry key="app/src/main/res/layout/item_config.xml" value="0.20572916666666666" />
+        <entry key="app/src/main/res/layout/item_content.xml" value="0.21851851851851853" />
       </map>
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="corretto-16" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="corretto-16" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

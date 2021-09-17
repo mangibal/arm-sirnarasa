@@ -16,12 +16,6 @@
 
     </com.robithohmurid.app.external.custom.AppBar>
 
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/group_loading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:constraint_referenced_ids="pb_content, tv_memuat" />
-
     <ProgressBar
         android:id="@+id/pb_content"
         android:layout_width="wrap_content"

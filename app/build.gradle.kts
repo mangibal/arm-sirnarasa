@@ -58,7 +58,7 @@ android {
         getByName("debug") {
             isDebuggable = true
             applicationIdSuffix = ".dev"
-            buildConfigField("String", "BASE_URL", "\"${Properties.BASE_URL_DEBUG}\"")
+            buildConfigField("String", "BASE_URL", "\"${Properties.BASE_URL}\"")
         }
         create("internal") {
             isMinifyEnabled = true
@@ -67,7 +67,7 @@ android {
 //            isZipAlignEnabled = true
 //            isJniDebuggable = false
 //            isRenderscriptDebuggable = false
-            buildConfigField("String", "BASE_URL", "\"${Properties.BASE_URL_DEBUG}\"")
+            buildConfigField("String", "BASE_URL", "\"${Properties.BASE_URL}\"")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
