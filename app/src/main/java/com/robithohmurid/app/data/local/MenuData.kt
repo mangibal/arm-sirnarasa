@@ -63,7 +63,7 @@ val listMenuTqn = listOf(
         R.drawable.ic_tqn, alias = MenuConstant.TUJUAN_DASAR
     ),
     MenuEntity(
-        "Diagram Latifah", "Latifah yang ada alam qolbu manusia",
+        "Diagram Tujuh Latifah", "Latifah yang ada dalam qolbu manusia",
         R.drawable.ic_latifah, alias = MenuConstant.DIAGRAM_LATIFAH
     ),
     MenuEntity(
