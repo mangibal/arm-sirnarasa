@@ -37,7 +37,7 @@
             android:paddingVertical="@dimen/dimen8"
             android:selectAllOnFocus="false"
             android:textIsSelectable="true"
-            android:textSize="@dimen/font20"
+            android:textSize="@dimen/font18"
             tools:text="Illahi anta maksudi" />
 
     </ScrollView>
