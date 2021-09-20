@@ -4,6 +4,7 @@ import android.os.Bundle
 import com.robithohmurid.app.R
 import com.robithohmurid.app.data.local.amaliyah.listAmaliyah
 import com.robithohmurid.app.data.local.amaliyah.listSholatHarian
+import com.robithohmurid.app.data.local.amaliyah.listSholatTahunan
 import com.robithohmurid.app.data.model.entity.ListingEntity
 import com.robithohmurid.app.data.model.response.ContentEntity
 import com.robithohmurid.app.databinding.ActivityListContentBinding
@@ -97,8 +98,23 @@ class ListContentActivity : BaseActivity<ActivityListContentBinding, ListContent
 
     private fun getListContent(key: String) {
         when (key) {
+            MenuConstant.ADAB -> {
+
+            }
             MenuConstant.SHOLAT_HARIAN -> {
                 onListContent(listSholatHarian)
+            }
+            MenuConstant.SHOLAT_TAHUNAN -> {
+                onListContent(listSholatTahunan)
+            }
+            MenuConstant.SHOLAWAT -> {
+
+            }
+            MenuConstant.DOA -> {
+
+            }
+            MenuConstant.MANQOBAH -> {
+
             }
         }
     }

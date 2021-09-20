@@ -12,6 +12,7 @@ import androidx.lifecycle.lifecycleScope
 import com.google.android.gms.location.LocationServices
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.robithohmurid.app.R
+import com.robithohmurid.app.data.local.amaliyah.dzikirData
 import com.robithohmurid.app.data.local.listAmaliyahGrid
 import com.robithohmurid.app.data.local.listNews
 import com.robithohmurid.app.data.local.servicesList
@@ -164,13 +165,14 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
                 show(supportFragmentManager, SholatFragment().tag)
             }
             MenuConstant.DZIKIR -> {
-                router.gotoContent(
-                    this,
-                    CategoryConstant.AMALIYAH_KEY,
-                    MenuConstant.DZIKIR,
-                    alias,
-                    title
-                )
+                router.gotoContent2(this, title, dzikirData.content)
+//                router.gotoContent(
+//                    this,
+//                    CategoryConstant.AMALIYAH_KEY,
+//                    MenuConstant.DZIKIR,
+//                    alias,
+//                    title
+//                )
             }
             MenuConstant.KHOTAMAN -> {
                 router.gotoContent(
