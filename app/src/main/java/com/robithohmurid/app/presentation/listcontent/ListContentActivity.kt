@@ -1,9 +1,10 @@
 package com.robithohmurid.app.presentation.listcontent
 
 import android.os.Bundle
-import android.view.Menu
-import android.widget.SearchView
 import com.robithohmurid.app.R
+import com.robithohmurid.app.data.local.amaliyah.listAmaliyah
+import com.robithohmurid.app.data.local.amaliyah.listSholatHarian
+import com.robithohmurid.app.data.model.entity.ListingEntity
 import com.robithohmurid.app.data.model.response.ContentEntity
 import com.robithohmurid.app.databinding.ActivityListContentBinding
 import com.robithohmurid.app.domain.abstraction.BaseActivity
@@ -20,6 +21,8 @@ class ListContentActivity : BaseActivity<ActivityListContentBinding, ListContent
     ActivityListContentBinding::inflate,
     ListContentViewModel::class
 ), AppBar.ToolbarListener {
+
+    private val listData: List<ListingEntity> = emptyList()
 
     private val listContentAdapter by lazy {
         return@lazy ListContentAdapter()
@@ -66,13 +69,14 @@ class ListContentActivity : BaseActivity<ActivityListContentBinding, ListContent
     private fun setupListContent() {
         with(binding) {
             listContentAdapter.setListener {
-                router.gotoContent(
-                    this@ListContentActivity,
-                    category = category,
-                    contentAlias = contentAlias,
-                    item = it.alias,
-                    title = it.name
-                )
+                router.gotoContent2(this@ListContentActivity, it.title, it.content)
+//                router.gotoContent(
+//                    this@ListContentActivity,
+//                    category = category,
+//                    contentAlias = contentAlias,
+//                    item = it.alias,
+//                    title = it.name
+//                )
             }
             rvListContent.apply {
                 setupList(this)
@@ -83,10 +87,19 @@ class ListContentActivity : BaseActivity<ActivityListContentBinding, ListContent
 
     override fun onInitData() {
         with(viewModel) {
-            observe(isLoading, ::onLoadingData)
-            observe(listContent, ::onListContent)
+//            observe(isLoading, ::onLoadingData)
+//            observe(listContent, ::onListContent)
+//
+//            getListContent(category, contentAlias)
+            getListContent(key = contentAlias)
+        }
+    }
 
-            getListContent(category, contentAlias)
+    private fun getListContent(key: String) {
+        when (key) {
+            MenuConstant.SHOLAT_HARIAN -> {
+                onListContent(listSholatHarian)
+            }
         }
     }
 
@@ -94,14 +107,14 @@ class ListContentActivity : BaseActivity<ActivityListContentBinding, ListContent
         binding.pbContent.showIf(isLoading)
     }
 
-    private fun onListContent(list: List<ContentEntity>) {
+    private fun onListContent(list: List<ListingEntity>) {
         with(binding) {
             rvListContent.showIf(list.isNotEmpty())
             listContentAdapter.setItems(list)
             tvMemuat.run {
                 showIf(list.isEmpty())
                 if (list.isEmpty()) {
-                    text =  getString(R.string.msg_data_kosong)
+                    text = getString(R.string.msg_data_kosong)
                 }
             }
         }

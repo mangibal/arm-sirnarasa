@@ -8,6 +8,7 @@ import com.robithohmurid.app.domain.abstraction.BaseActivity
 import com.robithohmurid.app.external.constant.IntentKey
 import com.robithohmurid.app.external.extension.app.observe
 import com.robithohmurid.app.external.extension.view.*
+import io.noties.markwon.Markwon
 
 class ContentActivity : BaseActivity<ActivityContentBinding, ContentViewModel>(
     ActivityContentBinding::inflate,
@@ -34,9 +35,15 @@ class ContentActivity : BaseActivity<ActivityContentBinding, ContentViewModel>(
         return@lazy dataReceived?.getString(IntentKey.TITLE_KEY) ?: ""
     }
 
+    private val bodyContent: String by lazy {
+        return@lazy dataReceived?.getString(IntentKey.CONTENT_KEY) ?: ""
+    }
+
     override fun onInitUI(savedInstanceState: Bundle?) {
         with(binding) {
             initToolbar(binding.toolbar, title)
+
+            Markwon.create(this@ContentActivity).setMarkdown(tvContent, bodyContent)
 
             contentAdapter.setListener {
 //                router.gotoContent(
@@ -55,10 +62,10 @@ class ContentActivity : BaseActivity<ActivityContentBinding, ContentViewModel>(
 
     override fun onInitData() {
         with(viewModel) {
-            observe(isLoading, ::onLoadingData)
-            observe(listItem, ::onItemReceived)
-
-            getListItem(category, contentId, itemId)
+//            observe(isLoading, ::onLoadingData)
+//            observe(listItem, ::onItemReceived)
+//
+//            getListItem(category, contentId, itemId)
         }
     }
 

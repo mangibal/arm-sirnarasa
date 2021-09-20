@@ -3,6 +3,7 @@ package com.robithohmurid.app.presentation.listcontent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.viewbinding.ViewBinding
+import com.robithohmurid.app.data.model.entity.ListingEntity
 import com.robithohmurid.app.data.model.response.ContentEntity
 import com.robithohmurid.app.databinding.ItemListContentBinding
 import com.robithohmurid.app.domain.abstraction.BaseAdapter
@@ -10,15 +11,15 @@ import com.robithohmurid.app.domain.abstraction.BaseHolder
 import com.robithohmurid.app.external.extension.view.onClick
 
 class ListContentAdapter :
-    BaseAdapter<ContentEntity, ItemListContentBinding, ListContentAdapter.ItemHolder>(
+    BaseAdapter<ListingEntity, ItemListContentBinding, ListContentAdapter.ItemHolder>(
         ItemListContentBinding::inflate
     ) {
 
     inner class ItemHolder(private val binding: ItemListContentBinding) :
-        BaseHolder<ContentEntity>(binding) {
-        override fun bind(data: ContentEntity) {
+        BaseHolder<ListingEntity>(binding) {
+        override fun bind(data: ListingEntity) {
             with(binding) {
-                tvTitleContent.text = data.name
+                tvTitleContent.text = data.title
                 root.onClick { listenerContainData.invoke(data) }
             }
         }

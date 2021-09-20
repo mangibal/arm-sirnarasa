@@ -17,6 +17,31 @@
         app:navigationIcon="@drawable/ic_back"
         app:titleTextColor="@color/white" />
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_content"
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="true"
+            android:focusable="true"
+            android:longClickable="true"
+            android:paddingHorizontal="@dimen/dimen16"
+            android:paddingVertical="@dimen/dimen8"
+            android:selectAllOnFocus="false"
+            android:textIsSelectable="true"
+            android:textSize="@dimen/font20"
+            tools:text="Illahi anta maksudi" />
+
+    </ScrollView>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_content"
         android:layout_width="0dp"
@@ -37,6 +62,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
     <com.google.android.material.textview.MaterialTextView
