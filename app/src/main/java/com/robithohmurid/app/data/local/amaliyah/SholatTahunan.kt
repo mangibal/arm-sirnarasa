@@ -10,5 +10,13 @@ val listSholatTahunan = listOf(
     ListingEntity(0,
     "Sholat Rojab", """
         
-    """.trimIndent())
+    """.trimIndent()),
+    ListingEntity(1,
+    "Sholat Nisfu Sa'ban", """
+        
+    """.trimIndent()),
+    ListingEntity(1,
+        "Sholat Sunat Lailatul Qodar", """
+        
+    """.trimIndent()),
 )
