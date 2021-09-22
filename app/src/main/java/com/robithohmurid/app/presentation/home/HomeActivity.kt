@@ -13,6 +13,7 @@ import com.google.android.gms.location.LocationServices
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.robithohmurid.app.R
 import com.robithohmurid.app.data.local.amaliyah.dzikirData
+import com.robithohmurid.app.data.local.amaliyah.khotamanData
 import com.robithohmurid.app.data.local.listAmaliyahGrid
 import com.robithohmurid.app.data.local.listNews
 import com.robithohmurid.app.data.local.servicesList
@@ -175,13 +176,7 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
 //                )
             }
             MenuConstant.KHOTAMAN -> {
-                router.gotoContent(
-                    this,
-                    CategoryConstant.AMALIYAH_KEY,
-                    MenuConstant.KHOTAMAN,
-                    alias,
-                    title
-                )
+                router.gotoContent2(this,title, khotamanData.content)
             }
             MenuConstant.MANAQIB -> ManaqibFragment().run {
                 show(supportFragmentManager, ManaqibFragment().tag)

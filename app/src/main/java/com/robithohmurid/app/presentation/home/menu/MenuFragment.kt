@@ -2,6 +2,7 @@ package com.robithohmurid.app.presentation.home.menu
 
 import android.os.Bundle
 import com.robithohmurid.app.data.local.amaliyah.dzikirData
+import com.robithohmurid.app.data.local.amaliyah.khotamanData
 import com.robithohmurid.app.data.local.listAmaliyah
 import com.robithohmurid.app.data.local.listMenuTqn
 import com.robithohmurid.app.databinding.FragmentLainnyaBinding
@@ -73,13 +74,7 @@ class MenuFragment : BaseBottomSheetDialogFragment<FragmentLainnyaBinding, HomeV
                 router.gotoContent2(requireActivity(), title, dzikirData.content)
             }
             MenuConstant.KHOTAMAN, MenuConstant.TAWASSUL, MenuConstant.TANBIH -> {
-                router.gotoContent(
-                    requireActivity(),
-                    CategoryConstant.AMALIYAH_KEY,
-                    alias,
-                    alias,
-                    title
-                )
+                router.gotoContent2(requireActivity(),title, khotamanData.content)
             }
             MenuConstant.MANAQIB -> ManaqibFragment().run {
                 show(this@MenuFragment.childFragmentManager, ManaqibFragment().tag)
