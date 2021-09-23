@@ -549,6 +549,7 @@ Setiap Raka'at membaca "Surat Al Kautsar" 7 kali
         Surat yang dibaca : setiap rakaat setelah membaca surat alfatihah membaca surat-surat pendek.  
 
         **8. Setelah selesai imam membaca Do’a**  
+        *Allohumma yaa Ghoniyyu ya a hamiidu yaa mubdi u yaa mu'iidu yaa kariimu yaa rohiimi yaa ghofuuru yaa waduudu agitsnii bijalaalika 'an haroomika wabithoo'atika 'am ma'shiyatika wabifadllika 'ammang siwaaka*
         
     """.trimIndent()
 
