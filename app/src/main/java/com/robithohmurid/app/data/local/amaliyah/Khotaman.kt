@@ -31,6 +31,7 @@ val khotamanData = ListingEntity(0,"Khotaman","""
      *Qulhu Alloohu ahad. Allohush shomad. Lam Yalid walam yuulad. Walam yakul lahuu kufuwan Ahad. 3x, 80x*  
 
     **Ilaa hadhrotisy Syaikh Ahmad Baaqir. Alfaatihah**  
+    
     SHOLAWAT:   
     *Alloohumma sholli ‘alaa Sayyidinaa Muhammadinin Nabiyyil Umiyyi wa ‘alaa aalihi wa shohbihii wasallim.* 3x, 11x, 100x  
     Alloohumma yaa Qoodiyal Haajaat. 3x, 100x  
@@ -42,11 +43,17 @@ val khotamanData = ListingEntity(0,"Khotaman","""
     Alloohumma yaa Arhamar Roohimiin. 3x, 100x   
       
      **Ilaa hadhrotil Syaikh Imaam Khowaajikaan. Alfaatihah.**  
-     SHOLAWAT: *Alloohumma sholli ‘alaa Sayyidinaa Muhammadinin Nabiyyil Ummiyyi wa ‘alaa aalihi wa shohbihii wasallim. 3x, 7x, 11x, 100x Laa haula walaa quwwata illaa billaahil ʹaliyyil azhiim.* 3x, 100x.  
-
-    SHOLAWAT: *Alloohumma sholli ‘alaa Sayyidinaa Muhammadinin Nabiyyil Ummiyyi wa ‘alaa aalihi wa shohbihii wasallim.* 3x, 7x, 100x  
+     
+     SHOLAWAT:  
+     *Alloohumma sholli ‘alaa Sayyidinaa Muhammadinin Nabiyyil Ummiyyi wa ‘alaa aalihi wa shohbihii wasallim. 3x, 7x, 11x, 100x  
+     
+     Laa haula walaa quwwata illaa billaahil ʹaliyyil azhiim.* 3x, 100x.  
+     
+    SHOLAWAT:  
+    *Alloohumma sholli ‘alaa Sayyidinaa Muhammadinin Nabiyyil Ummiyyi wa ‘alaa aalihi wa shohbihii wasallim.* 3x, 7x, 100x  
       
     **Ilaa Hadhrotil Imaamirrobbaanii. Alfatihah.**  
+    
     *Bismillaahir rohmaanirrohiim. Qul a’uudzu birobbil falaq. Min syarri maa kholaq, wamin sarri ghaasiqin idzaa waqob, wamin syarrin naffaa tsaati fil ‘uqod. Wamin syarri haasidin idzaa hasad.*  
 
     *Astaghfirullooh al adziim allaadzii laa ilaaha illaa huwal hayyul qoyyuum wa atuubu ilaihi.* 3x, 100x.  
@@ -54,32 +61,45 @@ val khotamanData = ListingEntity(0,"Khotaman","""
     *Bismillaahirrohmaanirrohiim Qul a’uudzu birobbinnaas, malikinnaas, ilaahinnaas, min syarril was waasil khonnaas. Alladzii yuwas wisu fii shuduu rinnaas minal jinnati wannaas.*  
 
     **Ilaa hadhroti Sayyidinaa Muzhohhir. Alfaatihah.**  
-    SHOLAWAT: *Alloohumma sholli ‘alaa Sayyidinaa Muhammadinin Nabiyyil Umiyyi wa ‘alaa aalihi wa shohbihii wasallim.* 3x, 7x, 11x, 100x  
+    
+    SHOLAWAT:  
+    *Alloohumma sholli ‘alaa Sayyidinaa Muhammadinin Nabiyyil Umiyyi wa ‘alaa aalihi wa shohbihii wasallim.* 3x, 7x, 11x, 100x  
       
     *Hasbunallooh wani’mal wakiil.* 3x, 100x, 500x.  
       
     SHOLAWAT: *Alloohumma sholli ‘alaa Sayyidinaa Muhammadinin Nabiyyil Ummiyyi wa ‘alaa aalihi wa shohbihii wasallim.* 3x, 7x, 11x, 100x   
 
     **Ilaa hadhrotisy Syaikh Abdul Qodir Jailaanii. Alfaatihah.**  
-    SHOLAWAT: *Alloohumma sholli ‘alaa Sayyidinaa Muhammadinin Nabiyyil Ummiyyi wa ‘alaa aalihi wa shohbihii wasallim.* 3x, 7x, 100x  
+      
+    SHOLAWAT: *Alloohumma sholli ‘alaa Sayyidinaa Muhammadinin Nabiyyil Ummiyyi wa ‘alaa aalihi wa shohbihii wasallim.* 3x, 7x, 100x    
       
      Ni’mal maulaa wani’man nashiir. 3x, 500x.  
        
      **Ilaa hadhroti Syaikhinal Mukarom Syaikh ‘Abdillaah Mubaarok bin Nuur Muhammad, Wassayyidisy Syaikhinal Mukarom Syaikh Ahmad Shoohibul Wafaa Taajul ‘Aarifiin, Wassayyidisy Syaikhinal Mukarom Sulthon Awliya fii Hadza zaman Syaikh Muhammad Abdul Gaos Saefulloh Maslul al Qodiri al Kamil an Naqsyabadii al Muttaqi al Muwaffaq al Quthub as Somadani al Mahdi qoddasalloohu sirrohum. Alfaatihah.**  
       
-    SHOLAWAT: *Alloohumma sholli ‘alaa Sayyidinaa Muhammadinin Nabiyyil Umiyyi wa ‘alaa aalihi wa shohbihii wasallim.* 3x, 7x, 11x, 100x  
+    SHOLAWAT:  
+    *Alloohumma sholli ‘alaa Sayyidinaa Muhammadinin Nabiyyil Umiyyi wa ‘alaa aalihi wa shohbihii wasallim.* 3x, 7x, 11x, 100x  
 
     *Yaa khofiyyal Luthfi adriknii biluthfikal khofii*. 3x, 100x  
       
-    SHOLAWAT: *Alloohumma sholli ‘alaa Sayyidinaa Muhammadinin Nabiyyil Ummiyyi wa ‘alaa aalihi wa shohbihii wasallim.* 3x, 7x, 11x, 100x  
+    SHOLAWAT:  
+    *Alloohumma sholli ‘alaa Sayyidinaa Muhammadinin Nabiyyil Ummiyyi wa ‘alaa aalihi wa shohbihii wasallim.* 3x, 7x, 11x, 100x  
       
-    **Ilaa hadhroti Imam Khawaajah an Naqsyabandiyyah. Alfaatihah**.   SHOLAWAT: Alloohumma sholli ‘alaa Sayyidinaa Muhammadinin Nabiyyil Umiyyi wa ‘alaa aalihi wa shohbihii wasallim. 3x, 7x, 100x  
+    **Ilaa hadhroti Imam Khawaajah an Naqsyabandiyyah. Alfaatihah**.  
+    
+    SHOLAWAT:  
+    *Alloohumma sholli ‘alaa Sayyidinaa Muhammadinin Nabiyyil Umiyyi wa ‘alaa aalihi wa shohbihii wasallim. 3x, 7x, 100x*  
       
-      Laa ilaaha illaa anta subhaanaka innii kuntum minazh zhoolimin. 3x, 500x SHOLAWAT: Alloohumma sholli ‘alaa Sayyidinaa Muhammadinin Nabiyyil Ummiyyi wa ‘alaa aalihi wa shohbihii wasallim. 3x, 7x, 11x, 100x  
+      Laa ilaaha illaa anta subhaanaka innii kuntum minazh zhoolimin. 3x, 500x  
+      
+      SHOLAWAT:  
+      *Alloohumma sholli ‘alaa Sayyidinaa Muhammadinin Nabiyyil Ummiyyi wa ‘alaa aalihi wa shohbihii wasallim. 3x, 7x, 11x, 100x*  
       
     **Ilaa hadhroti Sayyidinaa Maʹshuum. Alfaatihah**  
       
-      Kemudian Tawajjuh dilanjutkan dengan membaca: Ilaahi anta maqshuudi waridhooka mathluubi (3x) aʹthinii mahabbataka wa ma’rifataka. **Yaa Lathiif** (3 x) lalu lanjut dengan membaca **Yaa Lathiif** dengan hitungan maksimal sebanyak 16.641x.  
+      Kemudian Tawajjuh dilanjutkan dengan membaca:  
+      Ilaahi anta maqshuudi waridhooka mathluubi (3x) aʹthinii mahabbataka wa ma’rifataka.  
+      **Yaa Lathiif** (3 x) lalu lanjut dengan membaca **Yaa Lathiif** dengan hitungan maksimal sebanyak 16.641x.  
       
     Bacaan **Yaa Lathiif** di Khotaman antara Maghrib dan Isya atau Khotaman ba’da Lidaf’il Bala Isya biasanya dengan hitungan 129 x.  
     Setelah membaca Yaa Lathiif lalu berdo’a dengan do’a di bawah ini:  
@@ -88,7 +108,6 @@ val khotamanData = ListingEntity(0,"Khotaman","""
       
     Selesai membaca khataman dan doʹanya di atas, kemudian Ikhwan membaca doʹadoʹa sebagai berikut, masing masing dibaca 3 kali.  
       
-
      1. Doa untuk menggalang persatuan dan kesatuan baik di lingkungan
         keluarga, masyarakat maupun negara
 
