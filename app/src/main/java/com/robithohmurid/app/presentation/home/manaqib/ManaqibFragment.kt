@@ -1,6 +1,8 @@
 package com.robithohmurid.app.presentation.home.manaqib
 
 import android.os.Bundle
+import com.robithohmurid.app.data.local.amaliyah.tanbihData
+import com.robithohmurid.app.data.local.amaliyah.tawasulData
 import com.robithohmurid.app.data.local.listMenuManaqib
 import com.robithohmurid.app.databinding.FragmentManaqibBinding
 import com.robithohmurid.app.domain.abstraction.BaseBottomSheetDialogFragment
@@ -41,7 +43,7 @@ class ManaqibFragment : BaseBottomSheetDialogFragment<FragmentManaqibBinding, Ho
 
     private fun showMenu(alias: String, title: String) {
         when (alias) {
-            MenuConstant.MC_MANAQIB, MenuConstant.TANBIH, MenuConstant.TAWASSUL -> {
+            MenuConstant.MC_MANAQIB -> {
                 router.gotoContent(
                     requireActivity(),
                     category = CategoryConstant.AMALIYAH_KEY,
@@ -66,6 +68,12 @@ class ManaqibFragment : BaseBottomSheetDialogFragment<FragmentManaqibBinding, Ho
                     alias,
                     title
                 )
+            }
+            MenuConstant.TAWASSUL -> {
+                router.gotoContent2(requireActivity(), title, tawasulData.content)
+            }
+            MenuConstant.TANBIH -> {
+                router.gotoContent2(requireActivity(), title, tanbihData.content)
             }
         }
 
