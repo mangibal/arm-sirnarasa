@@ -65,4 +65,5 @@ val dzikirData = ListingEntity(0, "Dzikir", """
     _Ilaahii Anta maqshuudii wa ridhoo-Ka mathluubii, a’thinii Mahabbata-Ka wa Ma’rifata-Ka_  
 
     Kemudian tawajjuh; kepala nunduk ke arah di mana letak hati kita, Mata dipejamkan, bibir dirapatkan, lidah ditekuk ke atas, tahan nafas Sekuatnya (dan bisa berulang-ulang sampai tidak tahan nafas), Hidupkan hati dengan dzikir qolbi seiring denyut jantung.
+
 """.trimIndent())
