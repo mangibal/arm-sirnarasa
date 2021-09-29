@@ -178,12 +178,20 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
             MenuConstant.MANAQIB -> ManaqibFragment().run {
                 show(supportFragmentManager, ManaqibFragment().tag)
             }
-            MenuConstant.SHOLAWAT, MenuConstant.DOA -> {
+            MenuConstant.DOA -> {
                 router.gotoListContent(
                     this,
                     CategoryConstant.TQN_KEY,
                     alias,
                     title
+                )
+            }
+            MenuConstant.SHOLAWAT -> {
+                router.gotoListContent(
+                    this,
+                    category = CategoryConstant.AMALIYAH_KEY,
+                    alias = alias,
+                    title = title,
                 )
             }
             MenuConstant.LAINNYA -> MenuFragment().run {

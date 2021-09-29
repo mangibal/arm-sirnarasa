@@ -6,7 +6,7 @@ import com.robithohmurid.app.data.model.entity.ListingEntity
  * Created by Iqbal Fauzi on 29/09/21 19.43
  * iqbal.fauzi.if99@gmail.com
  */
-val sholawatData = listOf(
+val listSholawat = listOf(
     ListingEntity(0, "Sholawat Bani Hasyim", """
         
     """.trimIndent()),

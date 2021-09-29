@@ -1,7 +1,7 @@
 package com.robithohmurid.app.presentation.home.manaqib
 
 import android.os.Bundle
-import com.robithohmurid.app.data.local.amaliyah.sholawatData
+import com.robithohmurid.app.data.local.amaliyah.listSholawat
 import com.robithohmurid.app.data.local.amaliyah.tanbihData
 import com.robithohmurid.app.data.local.amaliyah.tawasulData
 import com.robithohmurid.app.data.local.listMenuManaqib
@@ -50,7 +50,7 @@ class ManaqibFragment : BaseBottomSheetDialogFragment<FragmentManaqibBinding, Ho
                 )
             }
             MenuConstant.SHOLAWAT_THORIQIYYAH -> {
-                router.gotoContent2(requireActivity(), sholawatData[4].title, sholawatData[4].content)
+                router.gotoContent2(requireActivity(), listSholawat[4].title, listSholawat[4].content)
             }
             MenuConstant.MANQOBAH -> {
                 router.gotoListContent(

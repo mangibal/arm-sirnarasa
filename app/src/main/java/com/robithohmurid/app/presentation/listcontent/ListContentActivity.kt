@@ -2,17 +2,15 @@ package com.robithohmurid.app.presentation.listcontent
 
 import android.os.Bundle
 import com.robithohmurid.app.R
-import com.robithohmurid.app.data.local.amaliyah.listAmaliyah
 import com.robithohmurid.app.data.local.amaliyah.listSholatHarian
 import com.robithohmurid.app.data.local.amaliyah.listSholatTahunan
+import com.robithohmurid.app.data.local.amaliyah.listSholawat
 import com.robithohmurid.app.data.model.entity.ListingEntity
-import com.robithohmurid.app.data.model.response.ContentEntity
 import com.robithohmurid.app.databinding.ActivityListContentBinding
 import com.robithohmurid.app.domain.abstraction.BaseActivity
 import com.robithohmurid.app.external.constant.IntentKey
 import com.robithohmurid.app.external.constant.MenuConstant
 import com.robithohmurid.app.external.custom.AppBar
-import com.robithohmurid.app.external.extension.app.observe
 import com.robithohmurid.app.external.extension.view.getString
 import com.robithohmurid.app.external.extension.view.initToolbar
 import com.robithohmurid.app.external.extension.view.setupList
@@ -108,7 +106,7 @@ class ListContentActivity : BaseActivity<ActivityListContentBinding, ListContent
                 onListContent(listSholatTahunan)
             }
             MenuConstant.SHOLAWAT -> {
-
+                onListContent(listSholawat)
             }
             MenuConstant.DOA -> {
 
