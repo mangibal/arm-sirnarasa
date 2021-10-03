@@ -5,6 +5,7 @@ import com.robithohmurid.app.R
 import com.robithohmurid.app.data.local.amaliyah.listSholatHarian
 import com.robithohmurid.app.data.local.amaliyah.listSholatTahunan
 import com.robithohmurid.app.data.local.amaliyah.listSholawat
+import com.robithohmurid.app.data.local.amaliyah.manaqib.manqobah.listManqobah
 import com.robithohmurid.app.data.model.entity.ListingEntity
 import com.robithohmurid.app.databinding.ActivityListContentBinding
 import com.robithohmurid.app.domain.abstraction.BaseActivity
@@ -112,7 +113,7 @@ class ListContentActivity : BaseActivity<ActivityListContentBinding, ListContent
 
             }
             MenuConstant.MANQOBAH -> {
-
+                onListContent(listManqobah)
             }
         }
     }
