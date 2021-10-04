@@ -45,7 +45,7 @@ class ManaqibFragment : BaseBottomSheetDialogFragment<FragmentManaqibBinding, Ho
                 router.gotoContent2(requireActivity(), title, mcManaqibData.content)
             }
             MenuConstant.SHOLAWAT_THORIQIYYAH -> {
-                router.gotoContent2(requireActivity(), listSholawat[4].title, listSholawat[4].content)
+                router.gotoContent2(requireActivity(), listSholawat[3].title, listSholawat[3].content)
             }
             MenuConstant.MANQOBAH -> {
                 router.gotoListContent(
