@@ -56,7 +56,7 @@ class JadwalSholatActivity : BaseActivity<ActivityJadwalSholatBinding, JadwalSho
         with(binding) {
 
             sholatAdapter.setListener {
-                root.snackBar(it.toString())
+//                root.snackBar(it.toString())
             }
 
             rvSholat.apply {
