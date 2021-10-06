@@ -3,7 +3,7 @@ package com.robithohmurid.app.data.local.amaliyah
 import com.robithohmurid.app.data.model.entity.ListingEntity
 
 val tawasulData = ListingEntity(0, "Tawasul","""
-    **Amaliyah Tawasul**
+    **Amaliyah Tawasul**  
     Tawasul berarti perantara atau penghubung, sebagaimana Alloh memiliki Ruhul Amiin, Jibril AS, untuk menyampaikan wahyu kepada Rosululloh sholallohu ‘alaihi wasallam. Terlebih lagi manusia kebanyakan yang dhaif lagi faqir, maka sangat perlu bertawasul melalui Balatentara Alloh yang disucikan ruhnya agar hajat keperluannya sampai hadhirat Alloh Yang Agung lagi Suci. Perintah Alloh Subhanahu wa Ta’ala dalam Al Quran:  
 
       يٰٓاَيُّهَا الَّذِيْنَ اٰمَنُوا اتَّقُوا اللّٰهَ وَابْتَغُوْٓا اِلَيْهِ الْوَسِيْلَةَ وَجَاهِدُوْا فِيْ سَبِيْلِهٖ لَعَلَّكُمْ تُفْلِحُوْنَ
