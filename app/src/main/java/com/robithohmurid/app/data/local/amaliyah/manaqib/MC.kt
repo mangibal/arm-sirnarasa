@@ -1,6 +1,5 @@
 package com.robithohmurid.app.data.local.amaliyah.manaqib
 
-import com.robithohmurid.app.data.model.entity.ListingContentEntity
 import com.robithohmurid.app.data.model.entity.ListingEntity
 
 val mcManaqibData = ListingEntity(0,"MC Manaqib","""

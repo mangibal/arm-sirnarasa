@@ -3,6 +3,7 @@ package com.robithohmurid.app.presentation.home.menu
 import android.os.Bundle
 import com.robithohmurid.app.data.local.amaliyah.dzikirData
 import com.robithohmurid.app.data.local.amaliyah.khotamanData
+import com.robithohmurid.app.data.local.amaliyah.tahlilData
 import com.robithohmurid.app.data.local.amaliyah.tawasulData
 import com.robithohmurid.app.data.local.listAmaliyah
 import com.robithohmurid.app.data.local.listMenuTqn
@@ -78,7 +79,7 @@ class MenuFragment : BaseBottomSheetDialogFragment<FragmentLainnyaBinding, HomeV
                 router.gotoContent2(requireActivity(), title, tawasulData.content)
             }
             MenuConstant.KHOTAMAN, MenuConstant.TANBIH -> {
-                router.gotoContent2(requireActivity(),title, khotamanData.content)
+                router.gotoContent2(requireActivity(), title, khotamanData.content)
             }
             MenuConstant.MANAQIB -> ManaqibFragment().run {
                 show(this@MenuFragment.childFragmentManager, ManaqibFragment().tag)
@@ -90,6 +91,9 @@ class MenuFragment : BaseBottomSheetDialogFragment<FragmentLainnyaBinding, HomeV
                     alias,
                     title
                 )
+            }
+            MenuConstant.ZIARAH -> {
+                router.gotoContent2(requireActivity(), title, tahlilData.content)
             }
             MenuConstant.TUJUAN_DASAR, MenuConstant.DIAGRAM_LATIFAH, MenuConstant.ZIARAH,
             MenuConstant.SILSILAH, MenuConstant.SYEKH, MenuConstant.TARHIM -> {
