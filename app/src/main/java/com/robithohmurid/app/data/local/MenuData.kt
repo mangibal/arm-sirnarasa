@@ -81,8 +81,8 @@ val listMenuTqn = listOf(
         R.drawable.ic_manaqib, alias = MenuConstant.SYEKH
     ),
     MenuEntity(
-        "Tarhim",
-        "Tarhim TQN Ma'had Suryalaya Sirnarasa",
+        "Tarhim & Dustur",
+        "Tarhim & Dustur TQN Ma'had Suryalaya Sirnarasa",
         R.drawable.ic_tarhim, alias = MenuConstant.TARHIM
     )
 )

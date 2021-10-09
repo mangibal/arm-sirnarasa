@@ -1,10 +1,7 @@
 package com.robithohmurid.app.presentation.home.menu
 
 import android.os.Bundle
-import com.robithohmurid.app.data.local.amaliyah.dzikirData
-import com.robithohmurid.app.data.local.amaliyah.khotamanData
-import com.robithohmurid.app.data.local.amaliyah.tahlilData
-import com.robithohmurid.app.data.local.amaliyah.tawasulData
+import com.robithohmurid.app.data.local.amaliyah.*
 import com.robithohmurid.app.data.local.listAmaliyah
 import com.robithohmurid.app.data.local.listMenuTqn
 import com.robithohmurid.app.data.local.tqn.namaSyekhAbdulQodirData
@@ -116,13 +113,7 @@ class MenuFragment : BaseBottomSheetDialogFragment<FragmentLainnyaBinding, HomeV
                 router.gotoContent2(requireActivity(), title, namaSyekhAbdulQodirData.content)
             }
             MenuConstant.TARHIM -> {
-                router.gotoContent(
-                    requireActivity(),
-                    CategoryConstant.TQN_KEY,
-                    alias,
-                    alias,
-                    title
-                )
+                router.gotoContent2(requireActivity(), title, tarhimData.content)
             }
         }
 

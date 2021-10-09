@@ -26,7 +26,7 @@ val listSholawat = listOf(
 
         **Artinya**: "Ya Allah, limpahkan sholawat atas Muhammad saw sebagai hamba-Mu, nabi-Mu dan utusan-Mu, sebagai nabi yang mulia di sisi-Mu.
     """.trimIndent()),
-    ListingEntity(2, "Sholawat Sebelum Istiqomah Sholat Subuh", """
+    ListingEntity(2, "Sholawat Sebelum Iqomah Sholat Subuh", """
           
 ### أللّهُمَّ صَلِّ وَسَلِّمْ وَزِدْ وَدِمْ وَأَنْعِمْ وَتَفَضَّلْ وَبَارِكْ بِجَلاَلِكَ وَكَمَالِكَ عَلَى زَيْنِ عِبَادِكَ
 ### وَأَشْرَفِ عُبَّادِكَ وَأَسْعَدِ اْلعَرَبِ وَالْعَجَمِ وَإِمَامِ طَيْبَةَ وَاْلحَرَمِ وَمَنْبَعِ اْلعِلْمِ وَالْحِلْمِ وِالْحِكْمَةِ وَاْلحِكَمِ
