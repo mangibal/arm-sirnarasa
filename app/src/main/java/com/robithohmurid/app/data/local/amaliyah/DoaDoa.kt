@@ -8,7 +8,7 @@ import com.robithohmurid.app.data.model.entity.ListingEntity
  */
 val doaDoa = listOf(
     ListingEntity(0, "Uluk Salam Kepada Wali Mursyid", """
-        ### السَّلَامُ عَلَيْك
+### السَّلَامُ عَلَيْك
 _Assalaamu'alaikum_  
 Salam untukmu  
 
