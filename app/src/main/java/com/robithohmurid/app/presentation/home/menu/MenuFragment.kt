@@ -85,7 +85,15 @@ class MenuFragment : BaseBottomSheetDialogFragment<FragmentLainnyaBinding, HomeV
             MenuConstant.MANAQIB -> ManaqibFragment().run {
                 show(this@MenuFragment.childFragmentManager, ManaqibFragment().tag)
             }
-            MenuConstant.SHOLAWAT, MenuConstant.DOA -> {
+            MenuConstant.DOA -> {
+                router.gotoListContent(
+                    requireActivity(),
+                    CategoryConstant.TQN_KEY,
+                    alias,
+                    title
+                )
+            }
+            MenuConstant.SHOLAWAT -> {
                 router.gotoListContent(
                     requireActivity(),
                     CategoryConstant.TQN_KEY,

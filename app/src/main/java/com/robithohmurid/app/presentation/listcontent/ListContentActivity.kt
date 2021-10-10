@@ -2,9 +2,7 @@ package com.robithohmurid.app.presentation.listcontent
 
 import android.os.Bundle
 import com.robithohmurid.app.R
-import com.robithohmurid.app.data.local.amaliyah.listSholatHarian
-import com.robithohmurid.app.data.local.amaliyah.listSholatTahunan
-import com.robithohmurid.app.data.local.amaliyah.listSholawat
+import com.robithohmurid.app.data.local.amaliyah.*
 import com.robithohmurid.app.data.local.amaliyah.manaqib.manqobah.listManqobah
 import com.robithohmurid.app.data.model.entity.ListingEntity
 import com.robithohmurid.app.databinding.ActivityListContentBinding
@@ -98,7 +96,7 @@ class ListContentActivity : BaseActivity<ActivityListContentBinding, ListContent
     private fun getListContent(key: String) {
         when (key) {
             MenuConstant.ADAB -> {
-
+                onListContent(adabAdab)
             }
             MenuConstant.SHOLAT_HARIAN -> {
                 onListContent(listSholatHarian)
@@ -110,7 +108,7 @@ class ListContentActivity : BaseActivity<ActivityListContentBinding, ListContent
                 onListContent(listSholawat)
             }
             MenuConstant.DOA -> {
-
+                onListContent(doaDoa)
             }
             MenuConstant.MANQOBAH -> {
                 onListContent(listManqobah)
