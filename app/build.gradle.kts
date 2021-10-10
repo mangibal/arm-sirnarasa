@@ -122,7 +122,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-reactivestreams-ktx:${Versions.viewModel}")
     implementation("androidx.lifecycle:lifecycle-extensions:${Versions.viewModelExt}")
     // Logger
-    implementation("com.jakewharton.timber:timber:4.7.1")
+    implementation("com.jakewharton.timber:timber:5.0.1")
     implementation("com.github.ajalt:timberkt:1.5.1")
     implementation("com.orhanobut:logger:2.2.0")
     // Kotlin Coroutines

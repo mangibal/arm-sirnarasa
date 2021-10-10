@@ -12,6 +12,9 @@ import androidx.lifecycle.lifecycleScope
 import com.google.android.gms.location.LocationServices
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.robithohmurid.app.R
+import com.robithohmurid.app.data.local.amaliyah.dzikirData
+import com.robithohmurid.app.data.local.amaliyah.khotamanData
+import com.robithohmurid.app.data.local.amaliyah.tawasulData
 import com.robithohmurid.app.data.local.listAmaliyahGrid
 import com.robithohmurid.app.data.local.listNews
 import com.robithohmurid.app.data.local.servicesList
@@ -164,32 +167,31 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
                 show(supportFragmentManager, SholatFragment().tag)
             }
             MenuConstant.DZIKIR -> {
-                router.gotoContent(
-                    this,
-                    CategoryConstant.AMALIYAH_KEY,
-                    MenuConstant.DZIKIR,
-                    alias,
-                    title
-                )
+                router.gotoContent2(this, title, dzikirData.content)
+            }
+            MenuConstant.TAWASSUL -> {
+                router.gotoContent2(this, title, tawasulData.content)
             }
             MenuConstant.KHOTAMAN -> {
-                router.gotoContent(
-                    this,
-                    CategoryConstant.AMALIYAH_KEY,
-                    MenuConstant.KHOTAMAN,
-                    alias,
-                    title
-                )
+                router.gotoContent2(this,title, khotamanData.content)
             }
             MenuConstant.MANAQIB -> ManaqibFragment().run {
                 show(supportFragmentManager, ManaqibFragment().tag)
             }
-            MenuConstant.SHOLAWAT, MenuConstant.DOA -> {
+            MenuConstant.DOA -> {
                 router.gotoListContent(
                     this,
                     CategoryConstant.TQN_KEY,
                     alias,
                     title
+                )
+            }
+            MenuConstant.SHOLAWAT -> {
+                router.gotoListContent(
+                    this,
+                    category = CategoryConstant.AMALIYAH_KEY,
+                    alias = alias,
+                    title = title,
                 )
             }
             MenuConstant.LAINNYA -> MenuFragment().run {

@@ -4,7 +4,7 @@ object Apps {
     const val buildTools = "30.0.3"
     const val minSdk = 21
     const val targetSdk = 30
-    const val versionCode = 3
+    const val versionCode = 5
     const val versionName = "1.0.0"
 }
 

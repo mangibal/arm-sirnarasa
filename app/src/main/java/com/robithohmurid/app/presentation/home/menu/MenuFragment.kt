@@ -1,8 +1,13 @@
 package com.robithohmurid.app.presentation.home.menu
 
 import android.os.Bundle
+import com.robithohmurid.app.data.local.amaliyah.*
 import com.robithohmurid.app.data.local.listAmaliyah
 import com.robithohmurid.app.data.local.listMenuTqn
+import com.robithohmurid.app.data.local.tqn.namaSyekhAbdulQodirData
+import com.robithohmurid.app.data.local.tqn.silsilahTqnData
+import com.robithohmurid.app.data.local.tqn.tujuanDasarData
+import com.robithohmurid.app.data.local.tqn.tujuhLatifahData
 import com.robithohmurid.app.databinding.FragmentLainnyaBinding
 import com.robithohmurid.app.domain.abstraction.BaseBottomSheetDialogFragment
 import com.robithohmurid.app.external.constant.CategoryConstant
@@ -68,19 +73,19 @@ class MenuFragment : BaseBottomSheetDialogFragment<FragmentLainnyaBinding, HomeV
             MenuConstant.SHOLAT -> SholatFragment().run {
                 show(this@MenuFragment.childFragmentManager, SholatFragment().tag)
             }
-            MenuConstant.DZIKIR, MenuConstant.KHOTAMAN, MenuConstant.TAWASSUL, MenuConstant.TANBIH -> {
-                router.gotoContent(
-                    requireActivity(),
-                    CategoryConstant.AMALIYAH_KEY,
-                    alias,
-                    alias,
-                    title
-                )
+            MenuConstant.DZIKIR -> {
+                router.gotoContent2(requireActivity(), title, dzikirData.content)
+            }
+            MenuConstant.TAWASSUL -> {
+                router.gotoContent2(requireActivity(), title, tawasulData.content)
+            }
+            MenuConstant.KHOTAMAN, MenuConstant.TANBIH -> {
+                router.gotoContent2(requireActivity(), title, khotamanData.content)
             }
             MenuConstant.MANAQIB -> ManaqibFragment().run {
                 show(this@MenuFragment.childFragmentManager, ManaqibFragment().tag)
             }
-            MenuConstant.SHOLAWAT, MenuConstant.DOA -> {
+            MenuConstant.DOA -> {
                 router.gotoListContent(
                     requireActivity(),
                     CategoryConstant.TQN_KEY,
@@ -88,15 +93,35 @@ class MenuFragment : BaseBottomSheetDialogFragment<FragmentLainnyaBinding, HomeV
                     title
                 )
             }
-            MenuConstant.TUJUAN_DASAR, MenuConstant.DIAGRAM_LATIFAH, MenuConstant.ZIARAH,
-            MenuConstant.SILSILAH, MenuConstant.SYEKH, MenuConstant.TARHIM -> {
-                router.gotoContent(
+            MenuConstant.SHOLAWAT -> {
+                router.gotoListContent(
                     requireActivity(),
                     CategoryConstant.TQN_KEY,
                     alias,
-                    alias,
                     title
                 )
+            }
+            MenuConstant.ZIARAH -> {
+                router.gotoContent2(requireActivity(), title, tahlilData.content)
+            }
+            MenuConstant.TUJUAN_DASAR -> {
+                router.gotoContent2(
+                    requireActivity(),
+                    tujuanDasarData.title,
+                    tujuanDasarData.content
+                )
+            }
+            MenuConstant.DIAGRAM_LATIFAH -> {
+                router.gotoContent2(requireActivity(), title, tujuhLatifahData.content)
+            }
+            MenuConstant.SILSILAH -> {
+                router.gotoContent2(requireActivity(), title, silsilahTqnData.content)
+            }
+            MenuConstant.SYEKH -> {
+                router.gotoContent2(requireActivity(), title, namaSyekhAbdulQodirData.content)
+            }
+            MenuConstant.TARHIM -> {
+                router.gotoContent2(requireActivity(), title, tarhimData.content)
             }
         }
 

@@ -13,5 +13,6 @@ data class MenuEntity(
     var name: String = "Sholat",
     var subtitle: String = "Sholat harian dan tahunan",
     var icon: Int = R.drawable.ic_kabah,
-    var alias: String = "sholat"
+    var alias: String = "sholat",
+    var bodyContent: String = ""
 ) : Parcelable

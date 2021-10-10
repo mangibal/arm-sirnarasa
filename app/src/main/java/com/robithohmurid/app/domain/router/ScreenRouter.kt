@@ -10,6 +10,7 @@ import android.content.Intent
  */
 interface ScreenRouter {
     fun gotoContent(context: Activity, category: String, contentAlias: String, item: String, title: String)
+    fun gotoContent2(context: Activity, title: String, bodyContent: String)
     fun gotoListContent(context: Activity, category: String, alias: String, title: String)
     fun gotoSettingSholat(context: Activity)
     fun gotoJadwalSholat(context: Activity)

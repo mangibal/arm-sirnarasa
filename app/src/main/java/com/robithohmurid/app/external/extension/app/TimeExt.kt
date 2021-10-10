@@ -26,6 +26,12 @@ val currentSecond: Int
 val currentTime: String
     get() = "$currentHour:$currentMinute:$currentSecond"
 
+fun Long.convertLongToTime(): String {
+    val date = Date(this)
+    val format = SimpleDateFormat("HH:mm", Locale.getDefault())
+    return format.format(date)
+}
+
 fun String.addMinutes(minute: Int, timeFormat: String = "HH.mm"): String {
     val timeFormatter = SimpleDateFormat(timeFormat, Locale.getDefault())
     val d: Date = timeFormatter.parse(this)
