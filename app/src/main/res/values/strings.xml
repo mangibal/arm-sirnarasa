@@ -21,9 +21,9 @@
     <string name="title_onboarding4">Internet</string>
     <string name="desc_onboarding4">Untuk pertama kali membuka aplikasi ini silahkan hubungkan koneksi internet terlebih dahulu</string>
     <string name="title_onboarding3">Kemudahan Akses</string>
-    <string name="desc_onboarding3">Banyak kemudahan yang dapat Anda dapatkan seperti Tuntunan Dzikir, Tawassul, Khotaman, jadwal manaqib, jadwal shalat, dan informasi terbaru tentang Sirnarsa</string>
+    <string name="desc_onboarding3">Banyak kemudahan yang dapat Anda dapatkan seperti Tuntunan Dzikir, Tawassul, Khotaman, serta tersedia juga jadwal shalat</string>
     <string name="title_onboarding2">Adab Sehari-hari</string>
     <string name="desc_onboarding2">Selain Amaliyah Mursyid, App ini juga terdapat adab sehari-hari Syekh Mursyid</string>
-    <string name="desc_onboarding1">Selamat datang di App\nAmaliyah Mursyid</string>
-    <string name="title_onboarding1">App Amaliyah Mursyid</string>
+    <string name="desc_onboarding1">Selamat datang di Aplikasi\nAmaliyah Robithoh Murid Sirnarasa</string>
+    <string name="title_onboarding1">ARM Sirnarasa</string>
 </resources>
