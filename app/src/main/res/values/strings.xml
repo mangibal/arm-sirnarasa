@@ -11,9 +11,9 @@
     <string name="fcm_message">FCM Message</string>
 
     <string name="label_subuh">Subuh</string>
-    <string name="label_dhuhur">Dhuhur</string>
-    <string name="label_ashar">Ashar</string>
-    <string name="label_maghrib">Maghrib</string>
+    <string name="label_dhuhur">Zuhur</string>
+    <string name="label_ashar">Asar</string>
+    <string name="label_maghrib">Magrib</string>
     <string name="label_isya">Isya</string>
     <string name="go_to_content">Go to content</string>
     <string name="title_onboarding5">Fitur Layanan Lainnya</string>

@@ -9,7 +9,7 @@ import com.robithohmurid.app.data.model.entity.ListingEntity
 val listSholatTahunan = listOf(
     ListingEntity(0,
     "Sholat Rojab", """  
-        Jumlah keseluruhan shalat sunat Rojab adalah 42 rakaat yang dilaksanakan di antara waktu maghrib & Isya’ yaitu:  
+        Jumlah keseluruhan shalat sunat Rojab adalah 42 rakaat yang dilaksanakan di antara waktu Magrib & Isya’ yaitu:  
         10 rakaat pada tanggal 1 Rojab  
         12 rakaat pada malam Jumaat pertama  
         10 rakaat berikutnya pada tanggal 15 Rojab  
@@ -61,7 +61,7 @@ val listSholatTahunan = listOf(
 
         *Laa ilaaha illalahu wahdahu la syariikalah Lahul mulku walahulhamdu yuhyi wayumiitu wahuwa hayyun. Laa yamuutu biyadihil khoiru wahuwa 'ala kulli syaiin qodiir. Wa shollallohu 'ala sayyidina muhammadin wa 'alaa alihitthohiriina wa lahaula wa la quwwata illa billahil 'aliyyil adzhim*  
 
-        **Wirid yang dibaca setiap setelah Maghrib dibulan rajab.**  
+        **Wirid yang dibaca setiap setelah Magrib dibulan rajab.**  
         **Dari tanggal 1 sampai 10 membaca :**  
         ### سُبْحَانَ اللهِ الْحَيُّ الْقَيُّوْمِ
         *Subhaanalloohil hayyul qoyyuum 100x*  
@@ -146,7 +146,7 @@ val listSholatTahunan = listOf(
             ### نَوَيْتُ صَوْمَ غَدٍ عَنْ أَدَ آءِ فَرْضِ شَهْرِ رَمَضَانَ هٰذِهِ السَّنَةِلِلّٰهِ تَعَلٰى إِيْمَانًا وَاحْتِسَابًا لِوَجْهِهِ الْكَرِيْمِ
             *Na Way tu Shouma Ghodin 'An Ada-I Far Dli Syahri Romadloona HaaDzihis Syanati Lillahi Ta'ala, Iimaanaw Wah Tisaa Ban, Liwaj Hihil Kariim.*  
 
-            **Catatan**: Khotaman Ba’da Magrib selama bulan Romadhon dipindahkan waktunya menjadi Ba’da Sholat Ashar.
+            **Catatan**: Khotaman Ba’da Magrib selama bulan Romadhon dipindahkan waktunya menjadi Ba’da Sholat Asar.
         """.trimIndent()),
     ListingEntity(3,
     "Sholat Sunat Lailatul Qodar", """

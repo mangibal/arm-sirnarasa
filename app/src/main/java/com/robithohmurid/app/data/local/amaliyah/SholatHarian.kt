@@ -296,16 +296,16 @@ Surat yang dibaca : Setelah membaca surat al-fatihah
 Setiap Raka'at membaca "Surat Al Kautsar" 7 kali
         """.trimIndent()),
     ListingEntity(
-        3, "Waktu Dzuhur", """
+        3, "Waktu Zuhur", """
             
-            **1. Shalat Sunnah Qobliyah Dzuhur**  
+            **1. Shalat Sunnah Qobliyah Zuhur**  
             Niat Shalat :   
             *“Ushalli Sunnata Qobla duhri Rok’ataini Lillahi Ta’ala”.*  
             **Artinya** : Saya niat sholat sunnah qobla duhur Lillahi Ta’ala dua roka'at karena Alloh Ta'ala  
             Jumlah Raka'at : 2 Raka'at  
             Surat yang dibaca : raka’at pertama dan kedua setelah membaca surat al-fatihah membaca surat-surat pendek.
 
-            **2. Shalat Fardhu Dzuhur**  
+            **2. Shalat Fardhu Zuhur**  
             Niat Shalat :  
             *“Ushalli fardlo duhri arba rokaatin Lillahi Ta’ala”.*   
             **Artinya** : Saya niat sholat fardu duhur empat rokaat Lillahi Ta’ala  
@@ -316,7 +316,7 @@ Setiap Raka'at membaca "Surat Al Kautsar" 7 kali
 
             Setelah Salam dilanjutkan dzikir zahar minimal 165x sesuai dengan tuntnan amaliyah dzikir harian.
 
-            **3. Shalat Sunnah Ba'diyah Dzuhur**  
+            **3. Shalat Sunnah Ba'diyah Zuhur**  
             Niat Shalat :  
             *“Ushalli Sunnata ba’da duhri Rok’ataini Lillahi Ta’ala”.*  
             **Artinya** : Saya niat sholat sunnah ba’da duhur Lillahi Ta’ala  
@@ -326,16 +326,16 @@ Setiap Raka'at membaca "Surat Al Kautsar" 7 kali
         """.trimIndent()
     ),
     ListingEntity(
-        4, "Waktu Ashar", """
+        4, "Waktu Asar", """
             
-            **1. Shalat Sunnah Qabliyyah Ashar**  
+            **1. Shalat Sunnah Qabliyyah Asar**  
             Niat Shalat :  
             *Ushollii sunnatal ashri rok'ataini lillaahi ta'ala*  
-            **Artinya** : Saya niat sholat sunnah Ashar dua roka'at karena Alloh Ta'ala  
+            **Artinya** : Saya niat sholat sunnah Asar dua roka'at karena Alloh Ta'ala  
             Jumlah Raka'at : 2 Raka'at 
             Surat yang dibaca : raka’at pertama dan kedua setelah membaca surat al-fatihah membaca surat-surat pendek.  
 
-            **2. Fardhu Ashar**  
+            **2. Fardhu Asar**  
             Niat Shalat :  
             *“Ushalli fardlo asri arba rokaatin Lillahi Ta’ala”.*
             **Artinya** : Saya niat sholat fardu asar empat rokaat Lillahi Ta’ala  
@@ -349,16 +349,16 @@ Setiap Raka'at membaca "Surat Al Kautsar" 7 kali
         """.trimIndent()
     ),
     ListingEntity(
-        5, "Waktu Maghrib", """
+        5, "Waktu Magrib", """
             
-            **1. Shalat Sunnah Qobliyah Maghrib**  
+            **1. Shalat Sunnah Qobliyah Magrib**  
             Niat Shalat :  
             *“Ushalli Sunnata Qobla magribi Rok’ataini Lillahi Ta’ala”.*  
             **Artinya** : Saya niat sholat sunnah qobla magrib Lillahi Ta’ala dua roka'at karena Alloh Ta'ala  
             Jumlah Rakaat : 2 Raka'at  
             Surat yang dibaca : raka’at pertama dan kedua setelah membaca surat al-fatihah membaca surat-surat pendek.  
 
-            **2. Shalat Fardhu Maghrib**  
+            **2. Shalat Fardhu Magrib**  
             Niat Shalat :  
             *“Ushalli fardlo magribi tsalasa rokaatin Lillahi Ta’ala”.*  
             **Artinya** : Saya niat sholat fardu magrib tiga rokaat Lillahi Ta’ala  
@@ -369,7 +369,7 @@ Setiap Raka'at membaca "Surat Al Kautsar" 7 kali
 
             Setelah Salam dilanjutkan Dzikir Zahar minimal 165x dan Khotaman sesuai dengan tuntnan amaliyah dzikir harian.  
 
-            **3. Shalat Sunnah Ba'diyah Maghrib**  
+            **3. Shalat Sunnah Ba'diyah Magrib**  
             Niat Shalat :  
             *“Ushalli Sunnata ba’da magrib Rok’ataini Lillahi Ta’ala”.*  
             **Artinya** : Saya niat sholat sunnah ba’da magrib Lillahi Ta’ala   
@@ -487,7 +487,7 @@ Setiap Raka'at membaca "Surat Al Kautsar" 7 kali
             ### اَللَّهُمَّ اِنَّكَ عَفُوٌّ كَرِيْمٌ تُحِبُّ الْعَفْوَ، فَاعْفُ عَنَّا
             *Allohumma innaka afuwwun tuhibbul afwa fa'fuannaa 3x*  
             **Artinya**: Yaa Alloh sesungguhnya Engkau pemaaf, suka memaafkan maka maafkanlah kami  
-            **Catatan**: Sholat Sunat Syukri Lailatul Qodar Dilaksanakan pada setiap malam sepuluh akhir bulan hijriah dan Khotaman Ba’da Isya selama sepuluh akhir bulan hijriah dipindahkan waktunya menjadi Ba’da Sholat Ashar.
+            **Catatan**: Sholat Sunat Syukri Lailatul Qodar Dilaksanakan pada setiap malam sepuluh akhir bulan hijriah dan Khotaman Ba’da Isya selama sepuluh akhir bulan hijriah dipindahkan waktunya menjadi Ba’da Sholat Asar.
 
             **HENDAK TIDUR**  
             Shalat Syukril Wudhu : 2 Raka'at  
