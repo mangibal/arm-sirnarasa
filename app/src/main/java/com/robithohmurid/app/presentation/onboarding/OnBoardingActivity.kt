@@ -26,7 +26,7 @@ class OnBoardingActivity : BaseActivity<ActivityOnBoardingBinding, OnBoardingVie
                 override fun onPageSelected(position: Int) {
                     super.onPageSelected(position)
                     when (position) {
-                        4 -> {
+                        3 -> {
                             btnNext.apply {
                                 text = getString(R.string.action_done)
                                 icon = null
