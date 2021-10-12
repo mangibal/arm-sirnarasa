@@ -81,7 +81,7 @@ class PrayHelper {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 listSholat.run {
                     removeIf { it.name == "Isyroq" }
-                    removeIf { it.name == "Magrib" }
+                    removeIf { it.name == "Maghrib" }
                 }
             } else {
                 listSholat.run {

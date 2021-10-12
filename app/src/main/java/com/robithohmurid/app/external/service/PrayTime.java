@@ -128,7 +128,7 @@ public class PrayTime {
         timeNames.add("Zuhur");
         timeNames.add("Asar");
         timeNames.add("Magrib");
-        timeNames.add("Magrib");
+        timeNames.add("Maghrib");
         timeNames.add("Isya");
 
         InvalidTime = "-----"; // The string used for invalid times
