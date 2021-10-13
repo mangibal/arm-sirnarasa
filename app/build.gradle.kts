@@ -42,7 +42,7 @@ android {
 
     buildTypes {
         getByName("release") {
-            isMinifyEnabled = true
+            isMinifyEnabled = false
             isDebuggable = false
 //            isShrinkResources = true
 //            isZipAlignEnabled = true
@@ -61,7 +61,7 @@ android {
             buildConfigField("String", "BASE_URL", "\"${Properties.BASE_URL}\"")
         }
         create("internal") {
-            isMinifyEnabled = true
+            isMinifyEnabled = false
             isDebuggable = false
 //            isShrinkResources = true
 //            isZipAlignEnabled = true
