@@ -66,7 +66,9 @@ class PrayHelper {
         val prayerNames = prayTime.timeNames
 
         val listSholat = mutableListOf<SholatEntity>()
+        val listSholatFinal = mutableListOf<SholatEntity>()
         listSholat.clear()
+        listSholatFinal.clear()
         for (i in prayerNames.indices) {
             listSholat.add(
                 SholatEntity(
@@ -78,19 +80,28 @@ class PrayHelper {
                 )
             )
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                listSholat.run {
-                    removeIf { it.name == "Isyroq" }
-                    removeIf { it.name == "Maghrib" }
-                }
-            } else {
-                listSholat.run {
-                    removeAt(1)
-                    removeAt(3)
-                }
+            if (listSholat[i].name != "Isyroq" || listSholat[i].name != "Maghrib") {
+                listSholatFinal.add(listSholat[i])
             }
+
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+//                listSholat.run {
+//                    removeIf { it.name == "Isyroq" }
+//                    removeIf { it.name == "Maghrib" }
+//                }
+//            } else {
+//                listSholat.map {
+//                    if (it.name == "Isyroq") {
+//
+//                    }
+//                }
+//                listSholat.run {
+//                    removeAt(1)
+//                    removeAt(3)
+//                }
+//            }
         }
-        return listSholat
+        return listSholatFinal
     }
 
 }

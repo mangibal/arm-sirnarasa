@@ -23,11 +23,11 @@ class OnBoardingPagerAdapter(fragment: FragmentActivity) :
             fragment.getString(R.string.desc_onboarding3),
             R.drawable.iv_ob3
         ),
-//        BaseOnBoardingFragment.newInstance(
-//            fragment.getString(R.string.title_onboarding4),
-//            fragment.getString(R.string.desc_onboarding4),
-//            R.drawable.iv_ob4
-//        ),
+        BaseOnBoardingFragment.newInstance(
+            fragment.getString(R.string.title_onboarding4),
+            fragment.getString(R.string.desc_onboarding4),
+            R.drawable.iv_ob4
+        ),
         BaseOnBoardingFragment.newInstance(
             fragment.getString(R.string.title_onboarding5),
             fragment.getString(R.string.desc_onboarding5),

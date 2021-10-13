@@ -9,7 +9,7 @@ val muqodimahData = ListingEntity(0, "Muqodimah","""
     (Artinya: Wahai pemimpin orang-orang yang bertaqwa)  
     *WA SHOFWATAL 'AABIDIINA*  
     (Artinya: Wahai ahli ibadah yang terbaik)  
-    *AA QOWIYAL ARKAAN*  
+    *YAA QOWIYAL ARKAAN*  
     (Artinya: Wahai yang kokoh pilarnya)  
     *YAA HABIBAR ROHMAAN*  
     (Artinya: Wahai kekasih Ar Rohman)  
