@@ -21,12 +21,16 @@ import androidx.browser.customtabs.CustomTabsIntent
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat
 import com.robithohmurid.app.R
+import com.robithohmurid.app.data.local.sholat.LocationData
+import com.robithohmurid.app.external.firebase.Crashlytics
+import java.io.IOException
 import java.util.*
 
 /**
  * Created by Iqbal Fauzi on 11/06/21 22.55
  * iqbal.fauzi.if99@gmail.com
  */
+val crashLytic = Crashlytics()
 val localeId: Locale
     get() = Locale("id", "ID")
 
@@ -41,14 +45,28 @@ fun Context.getLocationInfo(
     return geocoder.getFromLocation(latitude, longitude, 1)
 }
 
-fun Context.getCityName(latitude: Double, longitude: Double): String {
-    val geocoder = Geocoder(this, localeId)
-    return geocoder.getFromLocation(latitude, longitude, 1)[0].subAdminArea
+val defaultLocation = LocationData()
+
+fun Context.getCityName(latitude: Double = defaultLocation.latitude, longitude: Double=defaultLocation.longitude): String {
+    return try {
+        val geocoder = Geocoder(this, localeId)
+        geocoder.getFromLocation(latitude, longitude, 1)[0].subAdminArea
+    }catch (e : Exception){
+        e.printStackTrace()
+        crashLytic.recordError(e)
+        "Kab. Ciamis"
+    }
 }
 
-fun Context.getLocalityName(latitude: Double, longitude: Double): String {
-    val geocoder = Geocoder(this, localeId)
-    return geocoder.getFromLocation(latitude, longitude, 1)[0].locality
+fun Context.getLocalityName(latitude: Double = defaultLocation.latitude, longitude: Double=defaultLocation.longitude): String {
+    return try {
+        val geocoder = Geocoder(this, localeId)
+        geocoder.getFromLocation(latitude, longitude, 1)[0].locality
+    }catch (e : Exception){
+        e.printStackTrace()
+        crashLytic.recordError(e)
+        "Kecamatan Panjalu"
+    }
 }
 
 fun Context.appInstalled(uri: String): Boolean {
