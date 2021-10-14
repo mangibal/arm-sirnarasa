@@ -20,11 +20,9 @@ class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>(
         hideSystemUI()
         with(binding) {
             tvCredit.text = String.format(
-                "%s %s\n%s %s",
+                "%s %s",
                 getString(R.string.title_created_for),
-                getString(R.string.title_stid_sirnarasa),
-                getString(R.string.title_developed_by),
-                getString(R.string.title_talangraga)
+                getString(R.string.title_stid_sirnarasa)
             )
 
             lifecycleScope.launch(Dispatchers.IO) {
