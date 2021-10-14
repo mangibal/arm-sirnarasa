@@ -10,4 +10,5 @@ object IntentKey {
     const val CATEGORY_KEY = "categoryKey"
     const val CONTENT_KEY = "contentKey"
     const val ITEM_KEY = "itemKey"
+    const val UPDATE_KEY = "updateKey"
 }

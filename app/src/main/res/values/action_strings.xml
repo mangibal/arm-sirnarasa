@@ -4,4 +4,6 @@
     <string name="action_ok" translatable="false">OK</string>
     <string name="action_next">Lanjut</string>
     <string name="action_done">Selesai</string>
+    <string name="action_perbarui">Perbarui Sekarang</string>
+    <string name="action_nanti_saja">Nanti saja</string>
 </resources>

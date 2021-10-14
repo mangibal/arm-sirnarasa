@@ -26,4 +26,6 @@
     <string name="desc_onboarding2">Selain Amaliyah Mursyid, Aplikasi ini juga terdapat adab sehari-hari Syekh Mursyid</string>
     <string name="desc_onboarding1">Selamat datang di Aplikasi\nAmaliyah Robithoh Murid Sirnarasa</string>
     <string name="title_onboarding1">ARM Sirnarasa</string>
+
+    <string name="msg_update_app">Versi terbaru aplikasi telah tersedia. Mohon perbarui aplikasi ke versi terbaru!</string>
 </resources>
