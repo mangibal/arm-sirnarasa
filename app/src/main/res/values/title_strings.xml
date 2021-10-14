@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="title_created_by">Created By :</string>
+    <string name="title_created_for">Created for</string>
     <string name="title_stid_sirnarasa">STID Sirnarasa</string>
+    <string name="title_developed_by">Developed by</string>
+    <string name="title_talangraga">Talangraga</string>
     <string name="title_pengaturan">Pengaturan</string>
     <string name="title_setting_adzan">Adzan dan Jadwal Sholat</string>
     <string name="title_faq">F.A.Q.</string>

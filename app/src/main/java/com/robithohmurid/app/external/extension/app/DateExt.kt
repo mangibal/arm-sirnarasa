@@ -202,5 +202,11 @@ fun String.formatToString(
 ): String {
     val startDate = SimpleDateFormat(startFormat, Locale.getDefault())
     val endDate = SimpleDateFormat(endFormat, Locale.getDefault())
-    return endDate.format(startDate.parseObject(this))
+    val date = try {
+        endDate.format(startDate.parseObject(this))
+    } catch (ex: Exception) {
+        ex.printStackTrace()
+        ""
+    }
+    return date
 }
