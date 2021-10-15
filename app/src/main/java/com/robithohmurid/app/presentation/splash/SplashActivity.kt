@@ -30,18 +30,13 @@ class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>(
                 getString(R.string.title_stid_sirnarasa)
             )
 
-            checkConfig()
+            lifecycleScope.launch(Dispatchers.IO) {
+                delay(1500)
+                withContext(Dispatchers.Main) {
+                    checkConfig()
+                }
+            }
 
-//            lifecycleScope.launch(Dispatchers.IO) {
-//                delay(2000)
-//                withContext(Dispatchers.Main) {
-//                    if (viewModel.sessionHelper.isOnboarding()) {
-//                        router.gotoOnBoardingPage(this@SplashActivity)
-//                    } else {
-//                        router.gotoHomePage(this@SplashActivity)
-//                    }
-//                }
-//            }
         }
     }
 
