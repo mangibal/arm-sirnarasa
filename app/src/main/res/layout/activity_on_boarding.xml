@@ -18,6 +18,8 @@
         app:dotsSize="10dp"
         app:dotsSpacing="8dp"
         app:dotsWidthFactor="1.0"
+        android:clickable="false"
+        app:dotsClickable="false"
         app:layout_constraintBottom_toTopOf="@+id/btn_next"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

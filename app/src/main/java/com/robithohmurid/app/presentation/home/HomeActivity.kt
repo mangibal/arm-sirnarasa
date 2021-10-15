@@ -1,6 +1,8 @@
 package com.robithohmurid.app.presentation.home
 
 import android.Manifest
+import android.content.Context
+import android.content.ContextWrapper
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -64,6 +66,11 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
 
     private val mBottomSheetBinding: BottomSheetMainBinding by lazy {
         BottomSheetMainBinding.bind(binding.inclBottomSheet.root)
+    }
+
+    override fun attachBaseContext(newBase: Context) {
+        val localeUpdatedContext: ContextWrapper = LanguageUtils.updateLocale(newBase, localeId)
+        super.attachBaseContext(localeUpdatedContext)
     }
 
     override fun onBackPressed() {
@@ -270,8 +277,8 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
     private fun setCurrentTime() {
         with(binding) {
             val cal = getCalendarInstance()
+            val date = currentDate
             val calSubuh = getCalendarInstance().apply {
-                val date = mListSholat[0].date.split("-")
                 val time = mListSholat[0].time.split(":")
                 val month = if (date[1].toInt() > 0) {
                     date[1].toInt() - 1
@@ -287,7 +294,6 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
                 )
             }
             val calDhuhur = getCalendarInstance().apply {
-                val date = mListSholat[1].date.split("-")
                 val time = mListSholat[1].time.split(":")
                 val month = if (date[1].toInt() > 0) {
                     date[1].toInt() - 1
@@ -303,7 +309,6 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
                 )
             }
             val calAshar = getCalendarInstance().apply {
-                val date = mListSholat[2].date.split("-")
                 val time = mListSholat[2].time.split(":")
                 val month = if (date[1].toInt() > 0) {
                     date[1].toInt() - 1
@@ -319,7 +324,6 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
                 )
             }
             val calMaghrib = getCalendarInstance().apply {
-                val date = mListSholat[3].date.split("-")
                 val time = mListSholat[3].time.split(":")
                 val month = if (date[1].toInt() > 0) {
                     date[1].toInt() - 1
@@ -327,7 +331,7 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
                     date[1].toInt()
                 }
                 set(
-                    date[0].toInt(),
+                    date[0].code,
                     month,
                     date[2].toInt(),
                     time[0].toInt(),
@@ -335,7 +339,6 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
                 )
             }
             val calIsya = getCalendarInstance().apply {
-                val date = mListSholat[4].date.split("-")
                 val time = mListSholat[4].time.split(":")
                 val month = if (date[1].toInt() > 0) {
                     date[1].toInt() - 1
@@ -369,20 +372,9 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
                 cal > calIsya -> {
                     val tomorrowCalendar = getCalendarInstance()
                     tomorrowCalendar.add(Calendar.DATE, 1)
-                    val dateTimeFormat = tomorrowCalendar.time.toLocaleString()
-                    val dateFormatted = dateTimeFormat.formatToString(
-                        DateTimeFormat.CALENDAR_ID_FORMAT,
-                        DateTimeFormat.DEFAULT_DATE_FORMAT
-                    )
-
-                    val splitted = dateFormatted.split("-")
-                    val year = splitted[0].toInt()
-                    val month = if (splitted[1].toInt() > 0) {
-                        splitted[1].toInt() - 1
-                    } else {
-                        splitted[1].toInt()
-                    }
-                    val day = splitted[2].toInt()
+                    val year = tomorrowCalendar.getYearByCalendar()
+                    val month = tomorrowCalendar.getMonthByCalendar()
+                    val day = tomorrowCalendar.getDayByCalendar()
 
                     val listSholat =
                         prayerHelper.getPrayTimeList(year, month, day) as MutableList<SholatEntity>
