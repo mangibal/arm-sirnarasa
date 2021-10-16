@@ -1,6 +1,7 @@
 package com.robithohmurid.app.presentation.splash
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import androidx.core.net.toUri
@@ -10,6 +11,8 @@ import com.robithohmurid.app.R
 import com.robithohmurid.app.data.model.entity.UpdateEntity
 import com.robithohmurid.app.databinding.ActivitySplashBinding
 import com.robithohmurid.app.domain.abstraction.BaseActivity
+import com.robithohmurid.app.external.extension.app.getDrawableCompat
+import com.robithohmurid.app.external.extension.view.loadImage
 import com.robithohmurid.app.external.firebase.RemoteConfig
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -29,6 +32,13 @@ class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>(
                 getString(R.string.title_created_for),
                 getString(R.string.title_stid_sirnarasa)
             )
+
+            if (Build.VERSION.SDK_INT == 26) {
+                ivLogo.setImageDrawable(getDrawableCompat(R.drawable.ic_launcher_foreground))
+            } else {
+                ivLogo.setImageDrawable(getDrawableCompat(R.drawable.ic_logo))
+                ivBg.setImageDrawable(getDrawableCompat(R.drawable.bg_screen))
+            }
 
             lifecycleScope.launch(Dispatchers.IO) {
                 delay(1500)

@@ -1,5 +1,6 @@
 package com.robithohmurid.app.presentation.onboarding
 
+import android.os.Build
 import android.os.Bundle
 import androidx.core.view.ViewCompat
 import androidx.viewpager2.widget.ViewPager2
@@ -8,6 +9,7 @@ import com.robithohmurid.app.databinding.ActivityOnBoardingBinding
 import com.robithohmurid.app.domain.abstraction.BaseActivity
 import com.robithohmurid.app.domain.router.ScreenRouter
 import com.robithohmurid.app.external.extension.app.getDrawableCompat
+import com.robithohmurid.app.external.extension.view.loadImage
 import com.robithohmurid.app.external.extension.view.makeStatusBarTransparent
 import com.robithohmurid.app.external.extension.view.onClick
 import org.koin.android.ext.android.inject
@@ -20,6 +22,9 @@ class OnBoardingActivity : BaseActivity<ActivityOnBoardingBinding, OnBoardingVie
     override fun onInitUI(savedInstanceState: Bundle?) {
         setupStatusBar()
         with(binding) {
+            if (Build.VERSION.SDK_INT != 26) {
+                ivBg.setImageDrawable(getDrawableCompat(R.drawable.bg_screen))
+            }
             vpOnboarding.adapter = OnBoardingPagerAdapter(this@OnBoardingActivity)
             dotsIndicator.setViewPager2(vpOnboarding)
             vpOnboarding.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
@@ -54,6 +59,7 @@ class OnBoardingActivity : BaseActivity<ActivityOnBoardingBinding, OnBoardingVie
     override fun onInitData() {
 
     }
+
     private fun setupStatusBar() {
         with(binding) {
             makeStatusBarTransparent()
