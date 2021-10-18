@@ -53,10 +53,10 @@ class UpdateDialog : BaseDialogFragment<DialogUpdateBinding, BaseViewModel>(
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val dialog = super.onCreateDialog(savedInstanceState)
         dialog.run {
-            setCancelable(!isForceUpdate)
-            setCanceledOnTouchOutside(!isForceUpdate)
+            setCancelable(false)
+            setCanceledOnTouchOutside(false)
         }
-        isCancelable = !isForceUpdate
+        isCancelable = false
         return dialog
     }
 
