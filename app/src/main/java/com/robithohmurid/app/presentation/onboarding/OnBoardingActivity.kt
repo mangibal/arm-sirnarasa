@@ -22,7 +22,7 @@ class OnBoardingActivity : BaseActivity<ActivityOnBoardingBinding, OnBoardingVie
     override fun onInitUI(savedInstanceState: Bundle?) {
         setupStatusBar()
         with(binding) {
-            if (Build.VERSION.SDK_INT != 26) {
+            if (Build.VERSION.SDK_INT >= 28) {
                 ivBg.setImageDrawable(getDrawableCompat(R.drawable.bg_screen))
             }
             vpOnboarding.adapter = OnBoardingPagerAdapter(this@OnBoardingActivity)

@@ -33,7 +33,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>(
                 getString(R.string.title_stid_sirnarasa)
             )
 
-            if (Build.VERSION.SDK_INT == 26) {
+            if (Build.VERSION.SDK_INT < 28) {
                 ivLogo.setImageDrawable(getDrawableCompat(R.drawable.ic_launcher_foreground))
             } else {
                 ivLogo.setImageDrawable(getDrawableCompat(R.drawable.ic_logo))

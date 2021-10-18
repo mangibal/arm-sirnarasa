@@ -74,6 +74,8 @@ val tawasulData = ListingEntity(0, "Tawasul","""
     ‘alainaa. Waliman aushoonaa wastaushoonaa
     waqolladanaa‘indaka bidu’aail khoir. Kullu Syai’in lillaahi
     lahum. Alfaatihah*
+    
+    *Tsumma ilaa arwaahi waalidiinaa wa waalidiikum wa masyaaikhinaa wa masyaaikhikum wa amwaatinaa wa amwaatikum, waliman ahsana ilainaa wa liman lahuu haqqun ‘alainaa, wa liman aushoonaa wastaushoonaa, waqolladanaa ‘indaka bidu’aail khoir. Kullu sya'in lillaahi lahum, al Faatihah*
 
     *Tsumma ilaa arwaahi jamii’il mu’miniina wal muʹminaati
     walmuslimiina wal muslimaati. Al ahyaai minhum wal
