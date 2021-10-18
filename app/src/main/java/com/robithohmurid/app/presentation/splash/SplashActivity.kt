@@ -33,6 +33,8 @@ class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>(
                 getString(R.string.title_stid_sirnarasa)
             )
 
+            tvAppVersion.text = String.format("Version %s\nBuild %s", BuildConfig.VERSION_NAME, BuildConfig.VERSION_CODE)
+
             if (Build.VERSION.SDK_INT < 28) {
                 ivLogo.setImageDrawable(getDrawableCompat(R.drawable.ic_launcher_foreground))
             } else {

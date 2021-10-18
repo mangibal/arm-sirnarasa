@@ -14,7 +14,7 @@ import com.robithohmurid.app.external.extension.view.showIf
  * iqbal.fauzi.if99@gmail.com
  */
 class ConfigView(context: Context, attrs: AttributeSet) : ConstraintLayout(context, attrs) {
-    private lateinit var binding: ItemConfigBinding
+    private var binding: ItemConfigBinding
     private lateinit var listener: OnItemListener
 
     interface OnItemListener {
