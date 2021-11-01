@@ -1,6 +1,4 @@
 <resources>
-    <string name="app_name">ARM Sirnarasa</string>
-
     <string name="label_permission">Permission</string>
 
     <string name="hours">hour(s)</string>

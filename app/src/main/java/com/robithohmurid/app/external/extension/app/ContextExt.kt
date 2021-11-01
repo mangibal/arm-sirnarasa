@@ -94,10 +94,10 @@ fun Context.showSoftInput(edit: EditText) {
     imm.showSoftInput(edit, 0)
 }
 
-fun Context.toggleSoftInput() {
-    val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-    imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0)
-}
+//fun Context.toggleSoftInput() {
+//    val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+//    imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0)
+//}
 
 inline fun <reified T : Any> Context.intent() = Intent(this, T::class.java)
 inline fun <reified T : Any> Context.intent(body: Intent.() -> Unit): Intent {
@@ -133,7 +133,7 @@ fun Context.openWebPage(url: String): Boolean {
     // Try using Chrome Custom Tabs.
     try {
         val intent = CustomTabsIntent.Builder()
-            .setToolbarColor(getColorCompat(R.color.colorPrimary))
+//            .setToolbarColor(getColorCompat(R.color.colorPrimary))
             .setShowTitle(true)
             .build()
         intent.launchUrl(this, uri)

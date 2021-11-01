@@ -44,7 +44,7 @@ class ContentAdapter :
 
     override fun onViewAttachedToWindow(holder: ItemHolder) {
         super.onViewAttachedToWindow(holder)
-        if (holder.absoluteAdapterPosition == 0) {
+        if (holder.adapterPosition == 0) {
             holder.tvContent.apply {
                 isEnabled = true
                 isFocusable = true

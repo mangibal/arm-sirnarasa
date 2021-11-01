@@ -31,7 +31,7 @@ class NewsAdapter :
 
         override fun bind(data: NewsEntity) {
             with(binding) {
-                if (bindingAdapterPosition == mListItems.lastIndex) {
+                if (adapterPosition == mListItems.lastIndex) {
                     root.margin(right = 8F)
                 }
                 ivNews.setImageDrawable(root.context.getDrawableCompat(data.imageUrl))
