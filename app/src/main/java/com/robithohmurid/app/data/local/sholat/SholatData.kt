@@ -14,8 +14,8 @@ data class SholatEntity(
 val listSholat = listOf(
     SholatEntity(isNotification = true),
     SholatEntity(1, "Isyroq", "05:38", false),
-    SholatEntity(2, "Dzuhur", "11:49", false),
-    SholatEntity(3, "Ashar", "14:57", false),
-    SholatEntity(4, "Maghrib", "17:47", true),
-    SholatEntity(5, "Isya", "18:56", false),
+    SholatEntity(2, "Zuhur", "11:49", false),
+    SholatEntity(3, "Asar", "14:57", false),
+    SholatEntity(4, "Magrib", "17:47", true),
+    SholatEntity(5, "Isya'", "18:56", false),
 )

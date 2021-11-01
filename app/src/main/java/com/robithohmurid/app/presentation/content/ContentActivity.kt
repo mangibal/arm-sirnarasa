@@ -1,6 +1,7 @@
 package com.robithohmurid.app.presentation.content
 
 import android.os.Bundle
+import android.view.WindowManager
 import com.robithohmurid.app.R
 import com.robithohmurid.app.data.model.response.ItemEntity
 import com.robithohmurid.app.databinding.ActivityContentBinding
@@ -41,6 +42,7 @@ class ContentActivity : BaseActivity<ActivityContentBinding, ContentViewModel>(
 
     override fun onInitUI(savedInstanceState: Bundle?) {
         with(binding) {
+            keepScreenOn()
             initToolbar(binding.toolbar, title)
 
             Markwon.create(this@ContentActivity).setMarkdown(tvContent, bodyContent)
@@ -58,6 +60,10 @@ class ContentActivity : BaseActivity<ActivityContentBinding, ContentViewModel>(
                 adapter = contentAdapter
             }
         }
+    }
+
+    private fun keepScreenOn() {
+        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
     }
 
     override fun onInitData() {

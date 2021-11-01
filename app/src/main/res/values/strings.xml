@@ -1,6 +1,4 @@
 <resources>
-    <string name="app_name">ARM Sirnarasa</string>
-
     <string name="label_permission">Permission</string>
 
     <string name="hours">hour(s)</string>
@@ -11,19 +9,21 @@
     <string name="fcm_message">FCM Message</string>
 
     <string name="label_subuh">Subuh</string>
-    <string name="label_dhuhur">Dhuhur</string>
-    <string name="label_ashar">Ashar</string>
-    <string name="label_maghrib">Maghrib</string>
+    <string name="label_dhuhur">Zuhur</string>
+    <string name="label_ashar">Asar</string>
+    <string name="label_maghrib">Magrib</string>
     <string name="label_isya">Isya</string>
     <string name="go_to_content">Go to content</string>
     <string name="title_onboarding5">Fitur Layanan Lainnya</string>
     <string name="desc_onboarding5">Anda dapat mengakses website dan SIAKAD STID Sirnarasa</string>
     <string name="title_onboarding4">Internet</string>
-    <string name="desc_onboarding4">Untuk pertama kali membuka aplikasi ini silahkan hubungkan koneksi internet terlebih dahulu</string>
+    <string name="desc_onboarding4">Silahkan hubungkan koneksi internet terlebih dahulu untuk mendapat lokasi</string>
     <string name="title_onboarding3">Kemudahan Akses</string>
-    <string name="desc_onboarding3">Banyak kemudahan yang dapat Anda dapatkan seperti Tuntunan Dzikir, Tawassul, Khotaman, jadwal manaqib, jadwal shalat, dan informasi terbaru tentang Sirnarsa</string>
+    <string name="desc_onboarding3">Banyak kemudahan yang Anda dapatkan seperti Tuntunan Dzikir, Tawassul, Khotaman, serta tersedia jadwal shalat</string>
     <string name="title_onboarding2">Adab Sehari-hari</string>
-    <string name="desc_onboarding2">Selain Amaliyah Mursyid, App ini juga terdapat adab sehari-hari Syekh Mursyid</string>
-    <string name="desc_onboarding1">Selamat datang di App\nAmaliyah Mursyid</string>
-    <string name="title_onboarding1">App Amaliyah Mursyid</string>
+    <string name="desc_onboarding2">Selain Amaliyah Mursyid, Aplikasi ini juga terdapat adab sehari-hari Syekh Mursyid</string>
+    <string name="desc_onboarding1">Selamat datang di Aplikasi\nAmaliyah Robithoh Murid Sirnarasa</string>
+    <string name="title_onboarding1">ARM Sirnarasa</string>
+
+    <string name="msg_update_app">Versi terbaru aplikasi telah tersedia. Mohon perbarui aplikasi ke versi terbaru!</string>
 </resources>

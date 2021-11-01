@@ -125,10 +125,10 @@ public class PrayTime {
         timeNames = new ArrayList<String>();
         timeNames.add("Subuh");
         timeNames.add("Isyroq");
-        timeNames.add("Dhuhur");
-        timeNames.add("Ashar");
-        timeNames.add("Maghrib");
+        timeNames.add("Zuhur");
+        timeNames.add("Asar");
         timeNames.add("Magrib");
+        timeNames.add("Maghrib");
         timeNames.add("Isya");
 
         InvalidTime = "-----"; // The string used for invalid times

@@ -32,6 +32,10 @@ val currentDay: String
         }
     }
 
+fun Calendar.getDayByCalendar(): Int {
+    return get(Calendar.DAY_OF_MONTH)
+}
+
 val currentMonth: String
     get() {
         val month = (getCalendarInstance().get(Calendar.MONTH))
@@ -42,10 +46,18 @@ val currentMonth: String
         }
     }
 
+fun Calendar.getMonthByCalendar(): Int {
+    return get(Calendar.MONTH)
+}
+
 val currentYear: Int
     get() {
         return getCalendarInstance().get(Calendar.YEAR)
     }
+
+fun Calendar.getYearByCalendar(): Int {
+    return get(Calendar.YEAR)
+}
 
 fun getIslamicDate(): String {
     val dateMonth = (getCalendarInstance().get(Calendar.MONTH) + 1)
@@ -202,5 +214,11 @@ fun String.formatToString(
 ): String {
     val startDate = SimpleDateFormat(startFormat, Locale.getDefault())
     val endDate = SimpleDateFormat(endFormat, Locale.getDefault())
-    return endDate.format(startDate.parseObject(this))
+    val date = try {
+        endDate.format(startDate.parseObject(this))
+    } catch (ex: Exception) {
+        ex.printStackTrace()
+        ""
+    }
+    return date
 }

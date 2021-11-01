@@ -1,11 +1,19 @@
 package com.robithohmurid.app.presentation.splash
 
+import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.view.View
+import androidx.core.net.toUri
 import androidx.lifecycle.lifecycleScope
+import com.robithohmurid.app.BuildConfig
 import com.robithohmurid.app.R
+import com.robithohmurid.app.data.model.entity.UpdateEntity
 import com.robithohmurid.app.databinding.ActivitySplashBinding
 import com.robithohmurid.app.domain.abstraction.BaseActivity
+import com.robithohmurid.app.external.extension.app.getDrawableCompat
+import com.robithohmurid.app.external.extension.view.loadImage
+import com.robithohmurid.app.external.firebase.RemoteConfig
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -14,27 +22,60 @@ import kotlinx.coroutines.withContext
 class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>(
     ActivitySplashBinding::inflate,
     SplashViewModel::class
-) {
+), UpdateListener {
 
     override fun onInitUI(savedInstanceState: Bundle?) {
         hideSystemUI()
         with(binding) {
             tvCredit.text = String.format(
-                "%s\n%s",
-                getString(R.string.title_created_by),
+                "%s %s",
+                getString(R.string.title_created_for),
                 getString(R.string.title_stid_sirnarasa)
             )
 
+            tvAppVersion.text = String.format("Version %s\nBuild %s", BuildConfig.VERSION_NAME, BuildConfig.VERSION_CODE)
+
+            if (Build.VERSION.SDK_INT < 28) {
+                ivLogo.setImageDrawable(getDrawableCompat(R.drawable.ic_launcher_foreground))
+            } else {
+                ivLogo.setImageDrawable(getDrawableCompat(R.drawable.ic_logo))
+                ivBg.setImageDrawable(getDrawableCompat(R.drawable.bg_screen))
+            }
+
             lifecycleScope.launch(Dispatchers.IO) {
-                delay(2000)
+                delay(1500)
                 withContext(Dispatchers.Main) {
-                    if (viewModel.sessionHelper.isOnboarding()) {
-                        router.gotoOnBoardingPage(this@SplashActivity)
-                    } else {
-                        router.gotoHomePage(this@SplashActivity)
-                    }
+                    checkConfig()
                 }
             }
+
+        }
+    }
+
+    private fun checkConfig() {
+        if (viewModel.sessionHelper.isOnboarding()) {
+            router.gotoOnBoardingPage(this@SplashActivity)
+        } else {
+            remote.remoteConfig.fetch().addOnCompleteListener {
+                if (it.isSuccessful) {
+                    val updateConfig = remote.remoteConfig.getString(RemoteConfig.UPDATE_KEY)
+                    val updateEntity: UpdateEntity =
+                        gson.fromJson(updateConfig, UpdateEntity::class.java) ?: UpdateEntity()
+                    checkUpdate(updateEntity)
+                } else {
+                    router.gotoHomePage(this@SplashActivity)
+                }
+            }
+        }
+    }
+
+    private fun checkUpdate(updateEntity: UpdateEntity) {
+        if (updateEntity.versionCode > BuildConfig.VERSION_CODE) {
+            UpdateDialog().run {
+                show(supportFragmentManager, this.tag)
+            }
+        } else {
+            router.gotoHomePage(this@SplashActivity)
         }
     }
 
@@ -56,6 +97,15 @@ class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>(
 
     override fun onInitData() {
 
+    }
+
+    override fun onUpdateListener() {
+        val url = "https://play.google.com/store/apps/details?id=com.robithohmurid.app"
+        startActivity(Intent(Intent.ACTION_VIEW, url.toUri()))
+    }
+
+    override fun onLaterListener() {
+        router.gotoHomePage(this@SplashActivity)
     }
 
 }

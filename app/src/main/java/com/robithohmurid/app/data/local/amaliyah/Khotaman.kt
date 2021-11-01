@@ -101,7 +101,7 @@ val khotamanData = ListingEntity(0,"Khotaman","""
       Ilaahi anta maqshuudi waridhooka mathluubi (3x) aʹthinii mahabbataka wa ma’rifataka.  
       **Yaa Lathiif** (3 x) lalu lanjut dengan membaca **Yaa Lathiif** dengan hitungan maksimal sebanyak 16.641x.  
       
-    Bacaan **Yaa Lathiif** di Khotaman antara Maghrib dan Isya atau Khotaman ba’da Lidaf’il Bala Isya biasanya dengan hitungan 129 x.  
+    Bacaan **Yaa Lathiif** di Khotaman antara Magrib dan Isya atau Khotaman ba’da Lidaf’il Bala Isya biasanya dengan hitungan 129 x.  
     Setelah membaca Yaa Lathiif lalu berdo’a dengan do’a di bawah ini:  
       
      *Bismillaahirrohmaanirrohiim Ya Lathiif (3x) Yaa maw wasi’a luthfuhu ahlas samaawaati wal ardhi Nasaluka bikhofiyyi khofiyyi luthfikal khofiyyi. Antukhfiyanaa fii khofiyyi khofiyyi luthfikal khofiyyi. Innaka qulta waqoulukal haqq. Allahu Latiifun bi’ yarzuqu man yasyaau ibaadihii wahuwal qawiyyul ‘aziiz Alloohumma innaa nas aluka yaa qowiyyu yaa ‘aziizu yaa muʹiin Biquwwatika wa ‘izzatika, Yaa matiinu antakuuna lanaa‘aunanwamu’iinan fii jamii’il aqwaali wal ahwaali wal af’aa li wajamii’i maa nahnu fiihi min fi’lil khoiroot. Wa antadfa’a annaa kulla syarrin waniqmatin, wamihnatin qodistahqoinaa haa min ghoflatinaa. Wa dzunuu binaa fainnaka antal ghofuurur rohiim. Waqod qulta wa qoulukal haqqu waya’fuu ‘ankatsiir. Alloohumma bihaqqi man lathafta bihii wawajjahtahuu ‘indaka waja’altal luthfal khofiyya taabi’an lahuu haitsu tawajjaha nas aluka an tuwajji hanaaʹindaka wa antukhfiyanaa. Biluthfika innaka ‘alaa kulli syai in qodiir. Wa shollalloohu ‘alaa Sayyidinaa Muhammadin wa ‘alaa aalihii wa shohbihii wasallam. Walhamdu lillaahi robbil ‘aalamin. Alfaatihah*  

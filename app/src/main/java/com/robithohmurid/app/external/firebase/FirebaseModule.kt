@@ -8,4 +8,5 @@ import org.koin.dsl.module
  */
 val firebaseModule = module {
     single { CloudMessaging() }
+    single { RemoteConfig() }
 }

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?><!-- START xml_defaults -->
+<defaultsMap>
+    <entry>
+        <key>update_config</key>
+        <value>{
+            "versionCode": 7,
+            "versionName": "1.0.0",
+            "isUpdate": false,
+            "isForceUpdate": false
+            }
+        </value>
+    </entry>
+</defaultsMap><!-- END xml_defaults -->

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="title_created_by">Created By :</string>
+    <string name="title_created_for">Created for</string>
     <string name="title_stid_sirnarasa">STID Sirnarasa</string>
+    <string name="title_developed_by">Developed by</string>
+    <string name="title_talangraga">Talangraga</string>
     <string name="title_pengaturan">Pengaturan</string>
     <string name="title_setting_adzan">Adzan dan Jadwal Sholat</string>
     <string name="title_faq">F.A.Q.</string>
@@ -9,13 +11,14 @@
     <string name="title_tentang_kami">Tentang Kami</string>
     <string name="title_beri_rating">Beri Rating</string>
     <string name="title_bagikan_app">Bagikan Aplikasi ini</string>
+    <string name="title_update_app">Update Aplikasi</string>
 
     <string name="title_pemberitahuan_adzan">Pemberitahuan Adzan</string>
     <string name="title_shortcut_jadwal_sholat">Shortcut Jadwal Sholat</string>
     <string name="title_lokasi">Lokasi</string>
     <string name="title_metode_hitung_sholat">Metode Perhitungan Waktu Sholat</string>
     <string name="title_koreksi_manual">Koreksi Manual</string>
-    <string name="title_perhitungan_ashar">Perhitungan Waktu Ashar - Metode Hukum Perhitungan</string>
+    <string name="title_perhitungan_ashar">Perhitungan Waktu Asar - Metode Hukum Perhitungan</string>
     <string name="title_garis_lintang">Penyesuaian Garis Lintang Tinggi</string>
     <string name="title_waktu_musim_panas">Waktu Musim Panas</string>
     <string name="title_imsak">Imsak</string>

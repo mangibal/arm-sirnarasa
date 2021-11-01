@@ -177,7 +177,7 @@
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tv_dhuhur"
                 style="@style/TextViewStyle"
-                android:text="Dhuhur\n11:29"
+                android:text="Zuhur\n11:29"
                 android:textAlignment="center"
                 android:textColor="@color/gray"
                 android:textSize="@dimen/font14"
@@ -199,7 +199,7 @@
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tv_ashar"
                 style="@style/TextViewStyle"
-                android:text="Ashar\n14:57"
+                android:text="Asar\n14:57"
                 android:textAlignment="center"
                 android:textColor="@color/gray"
                 android:textSize="@dimen/font14"
@@ -221,7 +221,7 @@
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tv_maghrib"
                 style="@style/TextViewStyle"
-                android:text="Maghrib\n17:47"
+                android:text="Magrib\n17:47"
                 android:textAlignment="center"
                 android:textColor="@color/gray"
                 android:textSize="@dimen/font14"

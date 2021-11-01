@@ -19,6 +19,7 @@ import com.robithohmurid.app.external.extension.app.localeId
 import com.robithohmurid.app.external.extension.app.showToast
 import com.robithohmurid.app.external.firebase.CloudMessaging
 import com.robithohmurid.app.external.firebase.Crashlytics
+import com.robithohmurid.app.external.firebase.RemoteConfig
 import com.robithohmurid.app.external.service.PrayHelper
 import com.robithohmurid.app.external.service.PrayTime
 import org.koin.android.ext.android.inject
@@ -54,8 +55,10 @@ abstract class BaseActivity<VB : ViewBinding, out VM : BaseViewModel>(
     protected val prayTime: PrayTime by inject()
     protected val viewModel: VM by viewModel(clazz = kClass)
     protected val crashlytics: Crashlytics by inject()
+    protected val remote: RemoteConfig by inject()
     protected val messaging: CloudMessaging by inject()
     protected val router: ScreenRouter by inject()
+    protected val gson = Gson()
 
     protected lateinit var mFusedLocationClient: FusedLocationProviderClient
 

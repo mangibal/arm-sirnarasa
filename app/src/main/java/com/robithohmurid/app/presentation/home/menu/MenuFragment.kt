@@ -79,7 +79,10 @@ class MenuFragment : BaseBottomSheetDialogFragment<FragmentLainnyaBinding, HomeV
             MenuConstant.TAWASSUL -> {
                 router.gotoContent2(requireActivity(), title, tawasulData.content)
             }
-            MenuConstant.KHOTAMAN, MenuConstant.TANBIH -> {
+            MenuConstant.TANBIH -> {
+                router.gotoContent2(requireActivity(), title, tanbihData.content)
+            }
+            MenuConstant.KHOTAMAN -> {
                 router.gotoContent2(requireActivity(), title, khotamanData.content)
             }
             MenuConstant.MANAQIB -> ManaqibFragment().run {
