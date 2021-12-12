@@ -15,13 +15,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MursyidApp"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".presentation.main.MainActivity"
+            android:exported="false" />
         <activity android:name=".presentation.sholat.setting.SholatSettingActivity" />
         <activity android:name=".presentation.sholat.jadwal.JadwalSholatActivity" />
         <activity android:name=".presentation.content.ContentActivity" />
         <activity android:name=".presentation.listcontent.ListContentActivity" />
         <activity android:name=".presentation.settings.SettingsActivity" />
         <activity android:name=".presentation.onboarding.OnBoardingActivity" />
-        <activity android:name=".presentation.home.HomeActivity" />
+        <activity android:name=".presentation.main.home.HomeFragment" />
         <activity
             android:name=".presentation.splash.SplashActivity"
             android:exported="true"
@@ -41,7 +44,6 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-
     </application>
 
 </manifest>

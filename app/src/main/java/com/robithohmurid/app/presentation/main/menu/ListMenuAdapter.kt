@@ -1,4 +1,4 @@
-package com.robithohmurid.app.presentation.home.menu
+package com.robithohmurid.app.presentation.main.menu
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

@@ -1,4 +1,4 @@
-package com.robithohmurid.app.presentation.home
+package com.robithohmurid.app.presentation.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -18,7 +18,7 @@ import kotlinx.coroutines.launch
  * Created by Iqbal Fauzi on 03/06/21 21.29
  * iqbal.fauzi.if99@gmail.com
  */
-class HomeViewModel(private val repo: IRepository) : BaseViewModel() {
+class MainViewModel(private val repo: IRepository) : BaseViewModel() {
 
     private val _loadingMenu: MutableLiveData<Boolean> = MutableLiveData()
     val loadingMenu: LiveData<Boolean> = _loadingMenu

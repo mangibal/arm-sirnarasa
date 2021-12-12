@@ -1,8 +1,7 @@
-package com.robithohmurid.app.presentation.home.menu
+package com.robithohmurid.app.presentation.main.menu
 
 import android.os.Bundle
 import com.robithohmurid.app.data.local.amaliyah.*
-import com.robithohmurid.app.data.local.listAmaliyah
 import com.robithohmurid.app.data.local.listMenuTqn
 import com.robithohmurid.app.data.local.tqn.namaSyekhAbdulQodirData
 import com.robithohmurid.app.data.local.tqn.silsilahTqnData
@@ -13,17 +12,17 @@ import com.robithohmurid.app.domain.abstraction.BaseBottomSheetDialogFragment
 import com.robithohmurid.app.external.constant.CategoryConstant
 import com.robithohmurid.app.external.constant.MenuConstant
 import com.robithohmurid.app.external.extension.view.setupList
-import com.robithohmurid.app.presentation.home.HomeViewModel
-import com.robithohmurid.app.presentation.home.manaqib.ManaqibFragment
-import com.robithohmurid.app.presentation.home.sholat.SholatFragment
+import com.robithohmurid.app.presentation.main.MainViewModel
+import com.robithohmurid.app.presentation.main.manaqib.ManaqibFragment
+import com.robithohmurid.app.presentation.main.sholat.SholatFragment
 
 /**
  * Created by Iqbal Fauzi on 19/06/21 19.53
  * iqbal.fauzi.if99@gmail.com
  */
-class MenuFragment : BaseBottomSheetDialogFragment<FragmentLainnyaBinding, HomeViewModel>(
+class MenuFragment : BaseBottomSheetDialogFragment<FragmentLainnyaBinding, MainViewModel>(
     FragmentLainnyaBinding::inflate,
-    HomeViewModel::class
+    MainViewModel::class
 ) {
 
     private val listAmaliyahAdapter: ListMenuAdapter by lazy { ListMenuAdapter() }
@@ -54,7 +53,7 @@ class MenuFragment : BaseBottomSheetDialogFragment<FragmentLainnyaBinding, HomeV
             rvAmaliyah.adapter = listAmaliyahAdapter
 
             listAmaliyahAdapter.run {
-                setItems(listAmaliyah)
+                setItems(com.robithohmurid.app.data.local.listAmaliyah)
                 setListener {
                     showMenu(it.alias, it.name)
                 }

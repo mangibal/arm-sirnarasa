@@ -1,21 +1,20 @@
 package com.robithohmurid.app.presentation.dialog
 
 import android.content.Context
-import android.location.LocationListener
 import android.os.Bundle
 import com.robithohmurid.app.data.local.sholat.LocationData
 import com.robithohmurid.app.databinding.DialogLocationBinding
 import com.robithohmurid.app.domain.abstraction.BaseDialogFragment
 import com.robithohmurid.app.external.extension.view.onClick
-import com.robithohmurid.app.presentation.home.HomeViewModel
+import com.robithohmurid.app.presentation.main.MainViewModel
 
 /**
  * Created by Iqbal Fauzi 18/08/2021
  * iqbal.fauzi.if99@gmail.com
  */
-class LocationDialogFragment : BaseDialogFragment<DialogLocationBinding, HomeViewModel>(
+class LocationDialogFragment : BaseDialogFragment<DialogLocationBinding, MainViewModel>(
     DialogLocationBinding::inflate,
-    HomeViewModel::class
+    MainViewModel::class
 ) {
 
     private var listener: OnLocationSelectedListener? = null

@@ -1,4 +1,4 @@
-package com.robithohmurid.app.presentation.home.adapter
+package com.robithohmurid.app.presentation.main.adapter
 
 import androidx.viewbinding.ViewBinding
 import com.robithohmurid.app.data.model.entity.ContentEntity

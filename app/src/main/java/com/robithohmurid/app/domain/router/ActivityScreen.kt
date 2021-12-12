@@ -9,7 +9,7 @@ sealed class ActivityScreen {
     object JadwalSholat: ActivityScreen()
     object Settings: ActivityScreen()
     object OnBoarding: ActivityScreen()
-    object Home: ActivityScreen()
+    object Main: ActivityScreen()
     object ListContent: ActivityScreen()
     object Content: ActivityScreen()
 }

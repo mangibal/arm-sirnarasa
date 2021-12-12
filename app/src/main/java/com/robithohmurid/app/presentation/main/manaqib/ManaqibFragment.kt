@@ -1,4 +1,4 @@
-package com.robithohmurid.app.presentation.home.manaqib
+package com.robithohmurid.app.presentation.main.manaqib
 
 import android.os.Bundle
 import com.robithohmurid.app.data.local.amaliyah.listSholawat
@@ -11,16 +11,16 @@ import com.robithohmurid.app.domain.abstraction.BaseBottomSheetDialogFragment
 import com.robithohmurid.app.external.constant.CategoryConstant
 import com.robithohmurid.app.external.constant.MenuConstant
 import com.robithohmurid.app.external.extension.view.setupGridList
-import com.robithohmurid.app.presentation.home.HomeViewModel
-import com.robithohmurid.app.presentation.home.adapter.MenuGridAdapter
+import com.robithohmurid.app.presentation.main.MainViewModel
+import com.robithohmurid.app.presentation.main.adapter.MenuGridAdapter
 
 /**
  * Created by Iqbal Fauzi on 19/06/21 19.53
  * iqbal.fauzi.if99@gmail.com
  */
-class ManaqibFragment : BaseBottomSheetDialogFragment<FragmentManaqibBinding, HomeViewModel>(
+class ManaqibFragment : BaseBottomSheetDialogFragment<FragmentManaqibBinding, MainViewModel>(
     FragmentManaqibBinding::inflate,
-    HomeViewModel::class
+    MainViewModel::class
 ) {
 
     private val menuAdapter: MenuGridAdapter by lazy { MenuGridAdapter() }

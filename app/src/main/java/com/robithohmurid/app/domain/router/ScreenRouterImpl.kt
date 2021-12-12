@@ -10,8 +10,8 @@ import com.robithohmurid.app.domain.abstraction.BaseActivity
 import com.robithohmurid.app.external.constant.IntentKey
 import com.robithohmurid.app.external.extension.app.logError
 import com.robithohmurid.app.presentation.content.ContentActivity
-import com.robithohmurid.app.presentation.home.HomeActivity
 import com.robithohmurid.app.presentation.listcontent.ListContentActivity
+import com.robithohmurid.app.presentation.main.MainActivity
 import com.robithohmurid.app.presentation.onboarding.OnBoardingActivity
 import com.robithohmurid.app.presentation.settings.SettingsActivity
 import com.robithohmurid.app.presentation.sholat.jadwal.JadwalSholatActivity
@@ -90,7 +90,7 @@ class ScreenRouterImpl(private val application: Application) : ScreenRouter {
     }
 
     override fun gotoHomePage(context: Activity) {
-        val screen = getIntentScreen(context, ActivityScreen.Home)
+        val screen = getIntentScreen(context, ActivityScreen.Main)
         screen.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
         openActivity(context, screen)
     }
@@ -101,7 +101,7 @@ class ScreenRouterImpl(private val application: Application) : ScreenRouter {
             ActivityScreen.JadwalSholat -> JadwalSholatActivity::class.java
             ActivityScreen.Settings -> SettingsActivity::class.java
             ActivityScreen.OnBoarding -> OnBoardingActivity::class.java
-            ActivityScreen.Home -> HomeActivity::class.java
+            ActivityScreen.Main -> MainActivity::class.java
             ActivityScreen.ListContent -> ListContentActivity::class.java
             ActivityScreen.Content -> ContentActivity::class.java
         }

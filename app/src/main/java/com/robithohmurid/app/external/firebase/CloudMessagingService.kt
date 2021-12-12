@@ -12,7 +12,7 @@ import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 import com.robithohmurid.app.R
 import com.robithohmurid.app.external.extension.app.logInfo
-import com.robithohmurid.app.presentation.home.HomeActivity
+import com.robithohmurid.app.presentation.main.home.HomeFragment
 
 /**
  * Created by Iqbal Fauzi on 06/07/21 19.49
@@ -35,7 +35,7 @@ class CloudMessagingService : FirebaseMessagingService() {
     }
 
     private fun sendNotification(messageBody: String) {
-        val intent = Intent(this, HomeActivity::class.java)
+        val intent = Intent(this, HomeFragment::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         val pendingIntent = PendingIntent.getActivity(
             this, 0 /* Request code */, intent,

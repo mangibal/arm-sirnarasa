@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
+import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.gson.Gson
 import com.robithohmurid.app.domain.router.ScreenRouter
 import com.robithohmurid.app.external.service.PrayHelper
@@ -28,6 +29,8 @@ abstract class BaseFragment<VB : ViewBinding, out VM : BaseViewModel>(
     protected val prayerHelper: PrayHelper by inject()
     protected val viewModel: VM by viewModel(clazz = kClass)
     protected val router: ScreenRouter by inject()
+
+    protected lateinit var mFusedLocationClient: FusedLocationProviderClient
 
     protected var dataReceived: Bundle? = null
     protected val gson = Gson()

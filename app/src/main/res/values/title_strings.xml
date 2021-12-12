@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="title_home">Home</string>
+    <string name="title_calendar">Calendar</string>
+    <string name="title_info">Info</string>
+
     <string name="title_created_for">Created for</string>
     <string name="title_stid_sirnarasa">STID Sirnarasa</string>
     <string name="title_developed_by">Developed by</string>

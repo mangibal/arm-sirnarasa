@@ -1,4 +1,4 @@
-package com.robithohmurid.app.presentation.home.adapter
+package com.robithohmurid.app.presentation.main.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

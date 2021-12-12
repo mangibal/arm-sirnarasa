@@ -1,8 +1,6 @@
-package com.robithohmurid.app.presentation.home
+package com.robithohmurid.app.presentation.main.home
 
 import android.Manifest
-import android.content.Context
-import android.content.ContextWrapper
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -13,7 +11,6 @@ import androidx.core.view.ViewCompat
 import androidx.lifecycle.lifecycleScope
 import com.google.android.gms.location.LocationServices
 import com.google.android.material.bottomsheet.BottomSheetBehavior
-import com.robithohmurid.app.R
 import com.robithohmurid.app.data.local.amaliyah.dzikirData
 import com.robithohmurid.app.data.local.amaliyah.khotamanData
 import com.robithohmurid.app.data.local.amaliyah.tawasulData
@@ -24,21 +21,22 @@ import com.robithohmurid.app.data.local.sholat.LocationData
 import com.robithohmurid.app.data.model.entity.SholatEntity
 import com.robithohmurid.app.data.model.response.ContentEntity
 import com.robithohmurid.app.data.model.response.ItemEntity
-import com.robithohmurid.app.databinding.ActivityMainBinding
 import com.robithohmurid.app.databinding.BottomSheetMainBinding
-import com.robithohmurid.app.domain.abstraction.BaseActivity
+import com.robithohmurid.app.databinding.FragmentHomeBinding
+import com.robithohmurid.app.domain.abstraction.BaseFragment
 import com.robithohmurid.app.external.constant.CategoryConstant
 import com.robithohmurid.app.external.constant.DateTimeFormat
 import com.robithohmurid.app.external.constant.MenuConstant
 import com.robithohmurid.app.external.extension.app.*
 import com.robithohmurid.app.external.extension.view.*
 import com.robithohmurid.app.presentation.dialog.LocationDialogFragment
-import com.robithohmurid.app.presentation.home.adapter.MenuGridAdapter
-import com.robithohmurid.app.presentation.home.adapter.NewsAdapter
-import com.robithohmurid.app.presentation.home.adapter.ServicesAdapter
-import com.robithohmurid.app.presentation.home.manaqib.ManaqibFragment
-import com.robithohmurid.app.presentation.home.menu.MenuFragment
-import com.robithohmurid.app.presentation.home.sholat.SholatFragment
+import com.robithohmurid.app.presentation.main.MainViewModel
+import com.robithohmurid.app.presentation.main.adapter.MenuGridAdapter
+import com.robithohmurid.app.presentation.main.adapter.NewsAdapter
+import com.robithohmurid.app.presentation.main.adapter.ServicesAdapter
+import com.robithohmurid.app.presentation.main.manaqib.ManaqibFragment
+import com.robithohmurid.app.presentation.main.menu.MenuFragment
+import com.robithohmurid.app.presentation.main.sholat.SholatFragment
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -46,14 +44,13 @@ import kotlinx.coroutines.withContext
 import java.util.*
 import java.util.concurrent.TimeUnit
 
-class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
-    ActivityMainBinding::inflate,
-    HomeViewModel::class
+class HomeFragment : BaseFragment<FragmentHomeBinding, MainViewModel>(
+    FragmentHomeBinding::inflate,
+    MainViewModel::class
 ), LocationDialogFragment.OnLocationSelectedListener {
 
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
 
-    private var mDoubleTapExit = false
     private var mLocationType = 0
 
     private var countDownTimer: CountDownTimer? = null
@@ -68,31 +65,13 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
         BottomSheetMainBinding.bind(binding.inclBottomSheet.root)
     }
 
-    override fun attachBaseContext(newBase: Context) {
-        val localeUpdatedContext: ContextWrapper = LanguageUtils.updateLocale(newBase, localeId)
-        super.attachBaseContext(localeUpdatedContext)
-    }
-
-    override fun onBackPressed() {
-        if (mDoubleTapExit) {
-            super.onBackPressed()
-            return
-        }
-
-        mDoubleTapExit = true
-        showToast(getString(R.string.msg_press_again_to_exit))
-
-        // return to normal state
-        lifecycleScope.launch(Dispatchers.IO) {
-            delay(2000)
-            withContext(Dispatchers.Main) {
-                mDoubleTapExit = false
-            }
-        }
-    }
+//    override fun attachBaseContext(newBase: Context) {
+//        val localeUpdatedContext: ContextWrapper = LanguageUtils.updateLocale(newBase, localeId)
+//        super.attachBaseContext(localeUpdatedContext)
+//    }
 
     override fun onInitUI(savedInstanceState: Bundle?) {
-        setupStatusBar()
+//        setupStatusBar()
         setupPrayerSection()
         setupDateSection()
         setupBottomSheet()
@@ -117,7 +96,7 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
 
     private fun setupStatusBar() {
         with(binding) {
-            makeStatusBarTransparent()
+            requireActivity().makeStatusBarTransparent()
             ViewCompat.setOnApplyWindowInsetsListener(root) { _, insets ->
                 ivSetting.setMarginTop(insets.systemWindowInsetTop)
                 insets.consumeSystemWindowInsets()
@@ -132,25 +111,25 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
             tvKabupaten.onClick { showLocationDialog() }
             tvKecamatan.onClick { showLocationDialog() }
 
-            ivSetting.onClick { router.gotoSettings(this@HomeActivity) }
-            cvPrayer.onClick { router.gotoJadwalSholat(this@HomeActivity) }
+            ivSetting.onClick { router.gotoSettings(requireActivity()) }
+            cvPrayer.onClick { router.gotoJadwalSholat(requireActivity()) }
         }
     }
 
     private fun showLocationDialog() {
         try {
             LocationDialogFragment().run {
-                show(supportFragmentManager, LocationDialogFragment().tag)
+                show(parentFragmentManager, LocationDialogFragment().tag)
             }
         } catch (ex: ClassNotFoundException) {
             ex.printStackTrace()
-            showToast(ex.message.toString())
+            requireContext().showToast(ex.message.toString())
         }
     }
 
     private fun setupAmaliyahMenu() {
         with(binding) {
-            setupGridList(inclBottomSheet.rvAmaliyah, 4)
+            requireContext().setupGridList(inclBottomSheet.rvAmaliyah, 4)
             inclBottomSheet.rvAmaliyah.adapter = menuGridAdapter
 
             menuGridAdapter.run {
@@ -165,29 +144,29 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
     private fun showMenu(alias: String, title: String) {
         when (alias) {
             MenuConstant.ADAB -> router.gotoListContent(
-                this,
+                requireActivity(),
                 CategoryConstant.AMALIYAH_KEY,
                 alias,
                 title
             )
             MenuConstant.SHOLAT -> SholatFragment().run {
-                show(supportFragmentManager, SholatFragment().tag)
+                show(parentFragmentManager, SholatFragment().tag)
             }
             MenuConstant.DZIKIR -> {
-                router.gotoContent2(this, title, dzikirData.content)
+                router.gotoContent2(requireActivity(), title, dzikirData.content)
             }
             MenuConstant.TAWASSUL -> {
-                router.gotoContent2(this, title, tawasulData.content)
+                router.gotoContent2(requireActivity(), title, tawasulData.content)
             }
             MenuConstant.KHOTAMAN -> {
-                router.gotoContent2(this,title, khotamanData.content)
+                router.gotoContent2(requireActivity(), title, khotamanData.content)
             }
             MenuConstant.MANAQIB -> ManaqibFragment().run {
-                show(supportFragmentManager, ManaqibFragment().tag)
+                show(parentFragmentManager, ManaqibFragment().tag)
             }
             MenuConstant.DOA -> {
                 router.gotoListContent(
-                    this,
+                    requireActivity(),
                     CategoryConstant.TQN_KEY,
                     alias,
                     title
@@ -195,14 +174,14 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
             }
             MenuConstant.SHOLAWAT -> {
                 router.gotoListContent(
-                    this,
+                    requireActivity(),
                     category = CategoryConstant.AMALIYAH_KEY,
                     alias = alias,
                     title = title,
                 )
             }
             MenuConstant.LAINNYA -> MenuFragment().run {
-                show(supportFragmentManager, MenuFragment().tag)
+                show(parentFragmentManager, MenuFragment().tag)
             }
         }
 
@@ -210,13 +189,13 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
 
     private fun setupServicesMenu() {
         with(binding) {
-            setupGridList(inclBottomSheet.rvOtherServices, 4)
+            requireContext().setupGridList(inclBottomSheet.rvOtherServices, 4)
             inclBottomSheet.rvOtherServices.adapter = servicesAdapter
 
             servicesAdapter.run {
                 setItems(servicesList)
                 setListener {
-                    openWebPage(it.url)
+                    requireContext().openWebPage(it.url)
                 }
             }
 
@@ -225,7 +204,7 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
 
     private fun setupNewsMenu() {
         with(binding) {
-            setupList(inclBottomSheet.rvNews, false)
+            requireContext().setupList(inclBottomSheet.rvNews, false)
             inclBottomSheet.rvNews.adapter = newsAdapter
 
             newsAdapter.run {
@@ -277,7 +256,7 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
     private fun setCurrentTime() {
         with(binding) {
             val cal = getCalendarInstance()
-            val date = currentDate
+//            val date = currentDate
             val year = cal.getYearByCalendar()
             val months = cal.getMonthByCalendar()
             val day = cal.getDayByCalendar()
@@ -442,15 +421,15 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
 
     private fun requestLocationPermission() {
         if (ActivityCompat.checkSelfPermission(
-                this,
+                requireActivity(),
                 Manifest.permission.ACCESS_FINE_LOCATION
             ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
-                this,
+                requireActivity(),
                 Manifest.permission.ACCESS_COARSE_LOCATION
             ) != PackageManager.PERMISSION_GRANTED
         ) {
             ActivityCompat.requestPermissions(
-                this,
+                requireActivity(),
                 arrayOf(
                     Manifest.permission.ACCESS_FINE_LOCATION,
                     Manifest.permission.ACCESS_COARSE_LOCATION
@@ -485,7 +464,7 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
             when (grantResults[0]) {
                 PackageManager.PERMISSION_GRANTED -> requestLocationPermission()
                 PackageManager.PERMISSION_DENIED -> {
-                    showToast("Izin ditolak")
+                    requireContext().showToast("Izin ditolak")
                     requestLocationPermission()
                 }
             }
@@ -494,7 +473,7 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
 
     override fun onInitData() {
         mLocationType = prayerHelper.getLocationType()
-        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(requireContext())
 
         if (mLocationType == 0) {
             requestLocationPermission()
@@ -514,7 +493,7 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
 
     private fun onListContentReceived(data: List<ContentEntity>) {
         logInfo(data.toString())
-        showToast(data.toString())
+        requireContext().showToast(data.toString())
         if (data.isNotEmpty()) {
             viewModel.getListItem(data[0].alias)
         }
@@ -522,13 +501,13 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(
 
     private fun onListItemReceived(data: List<ItemEntity>) {
         logInfo(data.toString())
-        showToast(data.toString())
+        requireContext().showToast(data.toString())
     }
 
     private fun setLocationInfo(latitude: Double, longitude: Double) {
         with(binding) {
-            tvKabupaten.text = getCityName(latitude, longitude)
-            tvKecamatan.text = getLocalityName(latitude, longitude)
+            tvKabupaten.text = requireContext().getCityName(latitude, longitude)
+            tvKecamatan.text = requireContext().getLocalityName(latitude, longitude)
         }
     }
 
