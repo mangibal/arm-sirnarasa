@@ -81,7 +81,7 @@ val tahlilData = ListingEntity(0,"Tahlil/Ziarah Kubur","""
     ### **قُلْ اَعُوْذُ بِرَبِّ الْفَلَقِۙ مِنْ شَرِّ مَا خَلَقَۙ وَمِنْ شَرِّ غَاسِقٍ اِذَا وَقَبَۙ وَمِنْ شَرِّ النَّفّٰثٰتِ فِى الْعُقَدِۙ وَمِنْ شَرِّ حَاسِدٍ اِذَا حَسَدَ**
 
     _Bismillaahirrohmaanirrohiim__._  
-    _Qul_ _a’uudzu birobbil falaqj, Min syarri maa kholaqk Wa min syarri ghoosiqin idzaa waqobl Wa min syarrin naffaatsaati fil ‘uqodm Wa min syarri haasidin idzaa hasad_  
+    _Qul_ _a’uudzu  birobbil  falaq, Min  syarri  maa  kholaq  Wa  min  syarri  ghoosiqin  idzaa  waqob  Wa  min  syarrin  naffaatsaati  fil ‘uqod  Wa  min  syarri  haasidin  idzaa  hasad_  
     **Artinya :** Dengan menyebut Nama Alloh yang Maha Pengasih lagi Maha Penyayang. Katakan Aku berlindung kepada Tuhan Yang Maha Menguasai subuh, dari kejahatan makhluk-Nya. Dan dari kejahatan malam apabila telah gelap gulita. Dan dari kejahatan wanita-wanita tukang sihir yang menghembus pada buhul-buhul. Dan dari kejahatan orang yang dengki apabila ia dengki.  
 
     ### **لَااِلٰهَ إِلَّا اللّٰهُ وَاللّٰهُ أَكْبَرُ وَلِلّٰهِ الْحَمْدُ**
@@ -93,7 +93,7 @@ val tahlilData = ListingEntity(0,"Tahlil/Ziarah Kubur","""
     ### **قُلْ اَعُوْذُ بِرَبِّ النَّاسِۙ مَلِكِ النَّاسِۙ اِلٰهِ النَّاسِۙ مِنْ شَرِّ الْوَسْوَاسِ ەۙ الْخَنَّاسِۖ الَّذِيْ يُوَسْوِسُ فِيْ صُدُوْرِ النَّاسِۙ مِنَ الْجِنَّةِ وَالنَّاسِ**
 
     _Bismillaahirrohmaanirrohiim__._  
-    _Qul_ _a’uudzu birobbin naasj Malikin naas Ilaahin naas Min syarril waswaasil khonnaas Alladzii yuwaswisu fii shuduurin naasn Minal jinnati wan naas_  
+    _Qul_ _a’uudzu  birobbin  naas  Malikin  naas Ilaahin  naas  Min  syarril  waswaasil  khonnaas  Alladzii  yuwaswisu  fii  shuduurin  naas  Minal  jinnati  wan  naas_  
     **Artinya :** Dengan menyebut Nama Alloh yang Maha Pengasih lagi Maha Penyayang. Katakanlah: Aku berlindung kepada Tuhan manusia. Raja Manusia. Sembahan Manusia. Dari kejahatan (bisikan) syetan yang biasa bersembunyi. Yang membisikan (kejahatan) ke dalam dada manusia. Dari jin dan manusia.  
 
     Q.S Al Fatihah  
@@ -101,7 +101,7 @@ val tahlilData = ListingEntity(0,"Tahlil/Ziarah Kubur","""
     ### **اَلْحَمْدُ لِلّٰهِ رَبِّ الْعٰلَمِيْنَۙ الرَّحْمٰنِ الرَّحِيْمِۙ مٰلِكِ يَوْمِ الدِّيْنِۗ اِيَّاكَ نَعْبُدُ وَاِيَّاكَ نَسْتَعِيْنُۗ اِهْدِنَا الصِّرَاطَ الْمُسْتَقِيْمَ ۙ صِرَاطَ الَّذِيْنَ اَنْعَمْتَ عَلَيْهِمْ ەۙ غَيْرِ الْمَغْضُوْبِ عَلَيْهِمْ وَلَا الضَّاۤلِّيْنَ**
 
     _Bismillaahirrohmanirrohiim_  
-    _Alhamdulillaahi_ _Robbil 'aalamiin Ar Rohmaanir Rohiim Maaliki yawmid diinm Iyyaa-Ka na'budu wa iyyaa-Ka nasta'iinn Ihdinas shirootol mustaqiim_ _Shirootholladziina_ _an'am-Ta 'alaihim ghoiril maghdhuubi 'alaihim waladdhoooolliin_  
+    _Alhamdulillaahi_ _Robbil  'aalamiin  Ar  Rohmaanir  Rohiim  Maaliki  yaumiddiin Iyyaa-Ka  na'budu  wa  iyyaa-Ka  nasta'iinn  Ihdinas  shirootol  mustaqiim_ _Shirootholladziina_ _an'am-Ta 'alaihim  ghoiril  maghdhuubi  'alaihim  waladdhoooolliin_  
     **Artinya :** Dengan menyebut Nama Alloh yang Maha Pemurah lagi Maha Penyayang. Segala puji bagi Alloh, Tuhan semesta alam. Maha Pemurah lagi Maha Penyayang Yang menguasai hari pembalasan. Hanya Engkaulah yang kami sembah dan hanya Engkaulah kami mohon pertolongan. Tunjukilah kami jalan yang lurus. (yaitu) jalan orang-orang yang telah Engkau anugerahkan nikmat kepada mereka; bukan (jalan) mereka yang dimurkai dan bukan (pula jalan) mereka yang sesat.  
 
     Q.S Al-Baqarah Ayat 1 - 5  
@@ -109,7 +109,7 @@ val tahlilData = ListingEntity(0,"Tahlil/Ziarah Kubur","""
     ### **الۤمّۤ ۚ ذٰلِكَ الْكِتٰبُ لَا رَيْبَ ۛ فِيْهِ ۛ هُدًى لِّلْمُتَّقِيْنَۙ الَّذِيْنَ يُؤْمِنُوْنَ بِالْغَيْبِ وَيُقِيْمُوْنَ الصَّلٰوةَ وَمِمَّا رَزَقْنٰهُمْ يُنْفِقُوْنَ ۙ وَالَّذِيْنَ يُؤْمِنُوْنَ بِمَآ اُنْزِلَ اِلَيْكَ وَمَآ اُنْزِلَ مِنْ قَبْلِكَ ۚ وَبِالْاٰخِرَةِ هُمْ يُوْقِنُوْنَۗ اُولٰۤىِٕكَ عَلٰى هُدًى مِّنْ رَّبِّهِمْ ۙ وَاُولٰۤىِٕكَ هُمُ الْمُفْلِحُوْنَ**
 
     _Bismillaahirrohmaanirrohim__._  
-    _Alif Laam Miiimj Zaalikal Kitaabu laa roiba fiihi hudal lil muttaqiink Alladziina yu'minuuna bil ghoibi wa yuqiimuunas sholaata wa mimmaa rozaqnaahum yunfiquunl Wallaziina yu'minuuna bimaa unzila ilaika wa maa unzila min qoblika wa bil aakhiroti hum yuuqinuunm Ulaaika 'alaa hudam mir Robbihim wa ulaa'ika humul muflihuunn._  
+    _Alif  Laam  Miim Dzaalikal  Kitaabu  laa  roiba  fiihi  hudal  lil  muttaqin  Alladziina  yu'minuuna  bil  ghoibi  wa  yuqiimuunas  sholaata  wa  mimmaa  rozaqnaahum  yunfiquun  Wallaziina  yu'minuuna  bimaa  unzila  ilaika  wa  maa  unzila  min  qoblika  wa  bil  aakhiroti  hum  yuuqinuun  Ulaa Ika  'alaa  hudam  mir  Robbihim  wa  ulaa'ika  humul  muflihuun._  
     **Artinya :** Dengan menyebut Nama Alloh yang Maha Pengasih lagi Maha Penyayang. _Alif, laam miim_. Kitab (Al Qur’an) ini tidak ada keraguan padanya; petunjuk bagi mereka yang bertakwa. (yaitu) mereka yang beriman kepada yang ghaib, yang mendirikan sholat, dan menafkahkan sebagian rezeki yang Kami anugerahkan kepada mereka. Dan mereka beriman kepada Kitab (Al Qur’an) yang telah diturunkan kepadamu dan kitab-kitab yang telah diturunkan sebelummu, serta mereka yakin akan adanya (kehidupan) akhirat. Mereka itulah yang tetap mendapat petunjuk dari Tuhannya. Dan merekalah orang-orang yang beruntung.  
 
     ### _وَإِلٰـهُكُمْ إِلٰهٌ وَّاحِدٌ لَاۤ إِلٰهَ إِلَّا هُوَ الرَّحْمٰنُ الرَّحِيْمُ_
@@ -118,7 +118,7 @@ val tahlilData = ListingEntity(0,"Tahlil/Ziarah Kubur","""
 
     Q.S Al-Baqarah Ayat 255 (Ayat Kursi)  
     ### **اَللّٰهُ لَآ اِلٰهَ اِلَّا هُوَۚ اَلْحَيُّ الْقَيُّوْمُ ەۚ لَا تَأْخُذُهٗ سِنَةٌ وَّلَا نَوْمٌۗ لَهٗ مَا فِى السَّمٰوٰتِ وَمَا فِى الْاَرْضِۗ مَنْ ذَا الَّذِيْ يَشْفَعُ عِنْدَهٗٓ اِلَّا بِاِذْنِهٖۗ يَعْلَمُ مَا بَيْنَ اَيْدِيْهِمْ وَمَا خَلْفَهُمْۚ وَلَا يُحِيْطُوْنَ بِشَيْءٍ مِّنْ عِلْمِهٖٓ اِلَّا بِمَا شَاۤءَۚ وَسِعَ كُرْسِيُّهُ السَّمٰوٰتِ وَالْاَرْضَۚ وَلَا يَـُٔوْدُهٗ حِفْظُهُمَاۚ وَهُوَ الْعَلِيُّ الْعَظِيْمُ**  
-    _Alloohu_ _laa ilaaha illa Huwal Hayyul Qoyyuum, laa ta'hudzuhu sinatuw wa laa nawm lahuu maa fis samaawati wa maa fil 'ardhi man dzal ladzii yasyfa'u indahuu illa bi'idznihi ya'lamu maa baina aidiihim wa maa kholfahum wa laa yuhiithuuna bisyai'in min 'ilmihii illaa bimaa syaa'a wasi'a Kursiyyuhus samaawati wal 'ardho wa laa ya'uudhuhu hifzhuhumaa wa Huwal 'Aliyyul 'Azhiim_.  
+    _Alloohu_ _laa  ilaaha  illa  Huwal  Hayyul  Qoyyuum,  laa  ta'khudzuhu  sinatuw  walaa  naum  lahuu  maa  fissamaawaati  wamaa fil 'ardhi  man  dzal  ladzii  yasyfa'u  indahuu  illaa  bi'idznihi  ya'lamu  maa  baina  aidiihim  wamaa  kholfahum  walaa  yuhiithuuna  bisyai'in  min 'ilmihii  illaa  bimaa  syaa'a  wasi'a  Kursiyyuhus  samaawati  wal  ardho  walaa  ya'uudhuhu  hifzhuhumaa  wa  Huwal  'Aliyyul  'Azhiim_.  
     **Artinya :** Alloh tidak ada tuhan melainkan Dia yang hidup kekal lagi terus menerus mengurus (makhluk-Nya); tidak mengantuk dan tidak tidur. Kepunyaan-Nya apa yang dilangit dan apa yang dibumi. Siapakah yang dapat memberi syafa’at di sisi Alloh tanpa izin-Nya? Alloh mengetahui apa-apa yang dihadapan mereka, dan mereka tidak mengetahui apa-apa dari ilmu Alloh melainkan apa yang dikehendaki-Nya. Kursi Alloh meliputi langit dan bumi. Dan Alloh tidak merasa berat memelihara keduanya, dan Alloh Maha Tinggi lagi Maha Besar.  
 
     ### **أَسْتَغْفِرُ اللّٰهَ الْغَفُوْرَ الرَّحِيْمَ (x3)**
