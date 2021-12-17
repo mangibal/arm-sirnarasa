@@ -31,7 +31,7 @@ android {
         applicationId "com.robithohmurid.app"
         minSdk 21
         targetSdk 31
-        versionCode 14
+        versionCode 15
         versionName "1.0.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
