@@ -12,8 +12,10 @@ val adabAdab = listOf(
     """.trimIndent()),
     ListingEntity(1, "1. Adab Berwudhu", """
 **الحَمْدُ لِلّهِ الَّذِي جَعَلَ المَاءَ طَهُوْرًا**  
+- Menghadap air sambil membaca
 *Alhamdulillahiladzi ja’alal maa a thahuura*  
-**Artinya :** "Segala puji bagi Allah yang menjadikan air ini suci."  
+**Artinya :** "Segala puji bagi Allah yang menjadikan air ini suci." 
+ 
 - Mencuci kedua telapak tangan tiga kali Dengan gerakan menyeka pada sela-sela jari telapak tangan yang dimulai dari tangan kanan kemudian tangan kiri sambil membaca do’a:  
 
 **اللَّهُمَّ إِنِّي أّسْأَلُكَ اليُمْنَ وَالبَرَكَةَ وَأَعُوْذُ بِكَ مِنَ الشُّؤْمِ وَالهَلَكَةِ**  
