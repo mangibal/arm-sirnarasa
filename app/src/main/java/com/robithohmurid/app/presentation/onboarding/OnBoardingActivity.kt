@@ -9,7 +9,6 @@ import com.robithohmurid.app.databinding.ActivityOnBoardingBinding
 import com.robithohmurid.app.domain.abstraction.BaseActivity
 import com.robithohmurid.app.domain.router.ScreenRouter
 import com.robithohmurid.app.external.extension.app.getDrawableCompat
-import com.robithohmurid.app.external.extension.view.loadImage
 import com.robithohmurid.app.external.extension.view.makeStatusBarTransparent
 import com.robithohmurid.app.external.extension.view.onClick
 import org.koin.android.ext.android.inject
@@ -37,7 +36,7 @@ class OnBoardingActivity : BaseActivity<ActivityOnBoardingBinding, OnBoardingVie
                                 icon = null
                                 onClick {
                                     viewModel.sessionHelper.disableOnBoarding()
-                                    screenRouter.gotoHomePage(this@OnBoardingActivity)
+                                    screenRouter.navigateToHomePage(this@OnBoardingActivity)
                                 }
                             }
                         }

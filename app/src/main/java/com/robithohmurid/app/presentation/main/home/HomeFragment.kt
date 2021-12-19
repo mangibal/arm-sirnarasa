@@ -111,8 +111,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, MainViewModel>(
             tvKabupaten.onClick { showLocationDialog() }
             tvKecamatan.onClick { showLocationDialog() }
 
-            ivSetting.onClick { router.gotoSettings(requireActivity()) }
-            cvPrayer.onClick { router.gotoJadwalSholat(requireActivity()) }
+            ivSetting.onClick { router.navigateToSettings(requireActivity()) }
+            cvPrayer.onClick { router.navigateToJadwalSholat(requireActivity()) }
         }
     }
 
@@ -143,7 +143,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, MainViewModel>(
 
     private fun showMenu(alias: String, title: String) {
         when (alias) {
-            MenuConstant.ADAB -> router.gotoListContent(
+            MenuConstant.ADAB -> router.navigateToListContent(
                 requireActivity(),
                 CategoryConstant.AMALIYAH_KEY,
                 alias,
@@ -153,19 +153,19 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, MainViewModel>(
                 show(parentFragmentManager, SholatFragment().tag)
             }
             MenuConstant.DZIKIR -> {
-                router.gotoContent2(requireActivity(), title, dzikirData.content)
+                router.navigateToContent(requireActivity(), title, dzikirData.content)
             }
             MenuConstant.TAWASSUL -> {
-                router.gotoContent2(requireActivity(), title, tawasulData.content)
+                router.navigateToContent(requireActivity(), title, tawasulData.content)
             }
             MenuConstant.KHOTAMAN -> {
-                router.gotoContent2(requireActivity(), title, khotamanData.content)
+                router.navigateToContent(requireActivity(), title, khotamanData.content)
             }
             MenuConstant.MANAQIB -> ManaqibFragment().run {
                 show(parentFragmentManager, ManaqibFragment().tag)
             }
             MenuConstant.DOA -> {
-                router.gotoListContent(
+                router.navigateToListContent(
                     requireActivity(),
                     CategoryConstant.TQN_KEY,
                     alias,
@@ -173,7 +173,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, MainViewModel>(
                 )
             }
             MenuConstant.SHOLAWAT -> {
-                router.gotoListContent(
+                router.navigateToListContent(
                     requireActivity(),
                     category = CategoryConstant.AMALIYAH_KEY,
                     alias = alias,

@@ -67,7 +67,7 @@ class ListContentActivity : BaseActivity<ActivityListContentBinding, ListContent
     private fun setupListContent() {
         with(binding) {
             listContentAdapter.setListener {
-                router.gotoContent2(this@ListContentActivity, it.title, it.content)
+                router.navigateToContent(this@ListContentActivity, it.title, it.content)
 //                router.gotoContent(
 //                    this@ListContentActivity,
 //                    category = category,

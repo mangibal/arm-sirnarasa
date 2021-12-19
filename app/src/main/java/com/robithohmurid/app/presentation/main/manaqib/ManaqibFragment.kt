@@ -42,13 +42,13 @@ class ManaqibFragment : BaseBottomSheetDialogFragment<FragmentManaqibBinding, Ma
     private fun showMenu(alias: String, title: String) {
         when (alias) {
             MenuConstant.MC_MANAQIB -> {
-                router.gotoContent2(requireActivity(), title, mcManaqibData.content)
+                router.navigateToContent(requireActivity(), title, mcManaqibData.content)
             }
             MenuConstant.SHOLAWAT_THORIQIYYAH -> {
-                router.gotoContent2(requireActivity(), listSholawat[3].title, listSholawat[3].content)
+                router.navigateToContent(requireActivity(), listSholawat[3].title, listSholawat[3].content)
             }
             MenuConstant.MANQOBAH -> {
-                router.gotoListContent(
+                router.navigateToListContent(
                     requireActivity(),
                     CategoryConstant.AMALIYAH_KEY,
                     alias,
@@ -56,10 +56,10 @@ class ManaqibFragment : BaseBottomSheetDialogFragment<FragmentManaqibBinding, Ma
                 )
             }
             MenuConstant.TAWASSUL -> {
-                router.gotoContent2(requireActivity(), title, tawasulData.content)
+                router.navigateToContent(requireActivity(), title, tawasulData.content)
             }
             MenuConstant.TANBIH -> {
-                router.gotoContent2(requireActivity(), title, tanbihData.content)
+                router.navigateToContent(requireActivity(), title, tanbihData.content)
             }
         }
 

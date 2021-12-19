@@ -12,7 +12,6 @@ import com.robithohmurid.app.data.model.entity.UpdateEntity
 import com.robithohmurid.app.databinding.ActivitySplashBinding
 import com.robithohmurid.app.domain.abstraction.BaseActivity
 import com.robithohmurid.app.external.extension.app.getDrawableCompat
-import com.robithohmurid.app.external.extension.view.loadImage
 import com.robithohmurid.app.external.firebase.RemoteConfig
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -54,7 +53,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>(
 
     private fun checkConfig() {
         if (viewModel.sessionHelper.isOnboarding()) {
-            router.gotoOnBoardingPage(this@SplashActivity)
+            router.navigateToOnBoardingPage(this@SplashActivity)
         } else {
             remote.remoteConfig.fetch().addOnCompleteListener {
                 if (it.isSuccessful) {
@@ -63,7 +62,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>(
                         gson.fromJson(updateConfig, UpdateEntity::class.java) ?: UpdateEntity()
                     checkUpdate(updateEntity)
                 } else {
-                    router.gotoHomePage(this@SplashActivity)
+                    router.navigateToHomePage(this@SplashActivity)
                 }
             }
         }
@@ -75,7 +74,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>(
                 show(supportFragmentManager, this.tag)
             }
         } else {
-            router.gotoHomePage(this@SplashActivity)
+            router.navigateToHomePage(this@SplashActivity)
         }
     }
 
@@ -105,7 +104,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>(
     }
 
     override fun onLaterListener() {
-        router.gotoHomePage(this@SplashActivity)
+        router.navigateToHomePage(this@SplashActivity)
     }
 
 }

@@ -30,7 +30,7 @@ class SholatFragment : BaseBottomSheetDialogFragment<FragmentManaqibBinding, Mai
             menuAdapter.run {
                 setItems(listSholat)
                 setListener {
-                    router.gotoListContent(
+                    router.navigateToListContent(
                         requireActivity(),
                         category = CategoryConstant.AMALIYAH_KEY,
                         alias = it.alias,

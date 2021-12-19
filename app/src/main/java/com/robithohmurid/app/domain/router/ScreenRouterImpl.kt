@@ -27,24 +27,7 @@ class ScreenRouterImpl(private val application: Application) : ScreenRouter {
         const val TAG = "ROUTER"
     }
 
-    override fun gotoContent(
-        context: Activity,
-        category: String,
-        contentAlias: String,
-        item: String,
-        title: String
-    ) {
-        val screen = getIntentScreen(context, ActivityScreen.Content)
-        val bundle = Bundle().apply {
-            putString(IntentKey.CATEGORY_KEY, category)
-            putString(IntentKey.CONTENT_KEY, contentAlias)
-            putString(IntentKey.ITEM_KEY, item)
-            putString(IntentKey.TITLE_KEY, title)
-        }
-        openActivity(context, screen, bundle)
-    }
-
-    override fun gotoContent2(context: Activity, title: String, bodyContent: String) {
+    override fun navigateToContent(context: Activity, title: String, bodyContent: String) {
         val screen = getIntentScreen(context, ActivityScreen.Content)
         val bundle = Bundle().apply {
             putString(IntentKey.TITLE_KEY, title)
@@ -53,7 +36,7 @@ class ScreenRouterImpl(private val application: Application) : ScreenRouter {
         openActivity(context, screen, bundle)
     }
 
-    override fun gotoListContent(
+    override fun navigateToListContent(
         context: Activity,
         category: String,
         alias: String,
@@ -73,23 +56,23 @@ class ScreenRouterImpl(private val application: Application) : ScreenRouter {
         openActivity(context, screen)
     }
 
-    override fun gotoJadwalSholat(context: Activity) {
+    override fun navigateToJadwalSholat(context: Activity) {
         val screen = getIntentScreen(context, ActivityScreen.JadwalSholat)
         openActivity(context, screen)
     }
 
-    override fun gotoSettings(context: Activity) {
+    override fun navigateToSettings(context: Activity) {
         val screen = getIntentScreen(context, ActivityScreen.Settings)
         openActivity(context, screen)
     }
 
-    override fun gotoOnBoardingPage(context: Activity) {
+    override fun navigateToOnBoardingPage(context: Activity) {
         val screen = getIntentScreen(context, ActivityScreen.OnBoarding)
         screen.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
         openActivity(context, screen)
     }
 
-    override fun gotoHomePage(context: Activity) {
+    override fun navigateToHomePage(context: Activity) {
         val screen = getIntentScreen(context, ActivityScreen.Main)
         screen.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
         openActivity(context, screen)

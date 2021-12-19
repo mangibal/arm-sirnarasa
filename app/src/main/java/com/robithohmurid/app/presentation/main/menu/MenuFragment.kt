@@ -63,7 +63,7 @@ class MenuFragment : BaseBottomSheetDialogFragment<FragmentLainnyaBinding, MainV
 
     private fun showMenu(alias: String, title: String) {
         when (alias) {
-            MenuConstant.ADAB -> router.gotoListContent(
+            MenuConstant.ADAB -> router.navigateToListContent(
                 requireActivity(),
                 CategoryConstant.AMALIYAH_KEY,
                 alias,
@@ -73,22 +73,22 @@ class MenuFragment : BaseBottomSheetDialogFragment<FragmentLainnyaBinding, MainV
                 show(this@MenuFragment.childFragmentManager, SholatFragment().tag)
             }
             MenuConstant.DZIKIR -> {
-                router.gotoContent2(requireActivity(), title, dzikirData.content)
+                router.navigateToContent(requireActivity(), title, dzikirData.content)
             }
             MenuConstant.TAWASSUL -> {
-                router.gotoContent2(requireActivity(), title, tawasulData.content)
+                router.navigateToContent(requireActivity(), title, tawasulData.content)
             }
             MenuConstant.TANBIH -> {
-                router.gotoContent2(requireActivity(), title, tanbihData.content)
+                router.navigateToContent(requireActivity(), title, tanbihData.content)
             }
             MenuConstant.KHOTAMAN -> {
-                router.gotoContent2(requireActivity(), title, khotamanData.content)
+                router.navigateToContent(requireActivity(), title, khotamanData.content)
             }
             MenuConstant.MANAQIB -> ManaqibFragment().run {
                 show(this@MenuFragment.childFragmentManager, ManaqibFragment().tag)
             }
             MenuConstant.DOA -> {
-                router.gotoListContent(
+                router.navigateToListContent(
                     requireActivity(),
                     CategoryConstant.TQN_KEY,
                     alias,
@@ -96,7 +96,7 @@ class MenuFragment : BaseBottomSheetDialogFragment<FragmentLainnyaBinding, MainV
                 )
             }
             MenuConstant.SHOLAWAT -> {
-                router.gotoListContent(
+                router.navigateToListContent(
                     requireActivity(),
                     CategoryConstant.TQN_KEY,
                     alias,
@@ -104,26 +104,26 @@ class MenuFragment : BaseBottomSheetDialogFragment<FragmentLainnyaBinding, MainV
                 )
             }
             MenuConstant.ZIARAH -> {
-                router.gotoContent2(requireActivity(), title, tahlilData.content)
+                router.navigateToContent(requireActivity(), title, tahlilData.content)
             }
             MenuConstant.TUJUAN_DASAR -> {
-                router.gotoContent2(
+                router.navigateToContent(
                     requireActivity(),
                     tujuanDasarData.title,
                     tujuanDasarData.content
                 )
             }
             MenuConstant.DIAGRAM_LATIFAH -> {
-                router.gotoContent2(requireActivity(), title, tujuhLatifahData.content)
+                router.navigateToContent(requireActivity(), title, tujuhLatifahData.content)
             }
             MenuConstant.SILSILAH -> {
-                router.gotoContent2(requireActivity(), title, silsilahTqnData.content)
+                router.navigateToContent(requireActivity(), title, silsilahTqnData.content)
             }
             MenuConstant.SYEKH -> {
-                router.gotoContent2(requireActivity(), title, namaSyekhAbdulQodirData.content)
+                router.navigateToContent(requireActivity(), title, namaSyekhAbdulQodirData.content)
             }
             MenuConstant.TARHIM -> {
-                router.gotoContent2(requireActivity(), title, tarhimData.content)
+                router.navigateToContent(requireActivity(), title, tarhimData.content)
             }
         }
 

@@ -19,7 +19,7 @@ class SettingsActivity : BaseActivity<ActivitySettingsBinding, SettingsViewModel
             initToolbar(toolbarLayout.toolbar, getString(R.string.title_pengaturan))
 
             viewSholat.root.onClick {
-                router.gotoSettingSholat(this@SettingsActivity)
+//                router.gotoSettingSholat(this@SettingsActivity)
             }
 
             viewFaq.apply {

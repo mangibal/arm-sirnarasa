@@ -9,13 +9,12 @@ import android.content.Intent
  * iqbal.fauzi.if99@gmail.com
  */
 interface ScreenRouter {
-    fun gotoContent(context: Activity, category: String, contentAlias: String, item: String, title: String)
-    fun gotoContent2(context: Activity, title: String, bodyContent: String)
-    fun gotoListContent(context: Activity, category: String, alias: String, title: String)
+    fun navigateToContent(context: Activity, title: String, bodyContent: String)
+    fun navigateToListContent(context: Activity, category: String, alias: String, title: String)
     fun gotoSettingSholat(context: Activity)
-    fun gotoJadwalSholat(context: Activity)
-    fun gotoSettings(context: Activity)
-    fun gotoOnBoardingPage(context: Activity)
-    fun gotoHomePage(context: Activity)
+    fun navigateToJadwalSholat(context: Activity)
+    fun navigateToSettings(context: Activity)
+    fun navigateToOnBoardingPage(context: Activity)
+    fun navigateToHomePage(context: Activity)
     fun getIntentScreen(context: Context, screen: ActivityScreen): Intent
 }
