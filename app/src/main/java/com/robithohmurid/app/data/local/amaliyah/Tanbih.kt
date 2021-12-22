@@ -82,6 +82,18 @@ Ttd
 
 **AL FAATIHAH**
 
+**UNTAIAN MUTIARA :**
+
+1.  JANGAN BENCI KEPADA ULAMA YANG SEZAMAN
+2.  JANGAN MENYALAHKAN AJARAN ORANG LAIN
+3.  JANGAN MEMERIKSA MURID ORANG LAIN
+4.  JANGAN BERUBAH SIKAP MESKIPUN DISAKITI ORANG LAIN
+
+- **MESTI MENYAYANGI ORANG YANG MEMBENCIMU**
+
+**Bikaromati Syekh Muhammad Abdul Gaos As Shomadany Saefulloh Maslul Al Qodiri An Naqsabandi Al Mutaqi Al Kamil Al Muwaffaq Al Mujadid' Al Quthub Qoddasalloohu Sirrohu Al Fatihah.**
+
+
 """.trimIndent())
 
 val tanbihSundaData = ListingEntity(0, "Tanbih","""
