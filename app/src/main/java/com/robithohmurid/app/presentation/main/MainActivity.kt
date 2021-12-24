@@ -2,8 +2,8 @@ package com.robithohmurid.app.presentation.main
 
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
-import androidx.viewpager2.widget.ViewPager2
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupWithNavController
 import com.robithohmurid.app.R
 import com.robithohmurid.app.databinding.ActivityMainBinding
 import com.robithohmurid.app.domain.abstraction.BaseActivity
@@ -24,24 +24,6 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(
         return@lazy MainNavigationAdapter(this)
     }
 
-    private val mOnNavigationItemSelectedListener =
-        BottomNavigationView.OnNavigationItemSelectedListener { item ->
-            with(binding) {
-                when (item.itemId) {
-                    R.id.nav_home -> {
-                        vpContent.setCurrentItem(0, false)
-                    }
-                    R.id.nav_calendar -> {
-                        vpContent.setCurrentItem(1, false)
-                    }
-                    R.id.nav_info -> {
-                        vpContent.setCurrentItem(2, false)
-                    }
-                }
-            }
-            true
-        }
-
     override fun onBackPressed() {
         if (mDoubleTapExit) {
             super.onBackPressed()
@@ -61,18 +43,20 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(
     }
 
     override fun onInitUI(savedInstanceState: Bundle?) {
-        setupBottomNavigation()
+        setupNavigation()
+//        setupBottomNavigation()
     }
 
-    private fun setupBottomNavigation() {
+    private fun setupNavigation() {
         with(binding) {
-            vpContent.apply {
-                offscreenPageLimit = ViewPager2.OFFSCREEN_PAGE_LIMIT_DEFAULT
-                isUserInputEnabled = false
-                adapter = navigationAdapter
-            }
-            navView.setOnItemSelectedListener(mOnNavigationItemSelectedListener)
+            val navigationController = findNavController(R.id.nav_host_fragment)
+            navView.setupWithNavController(navigationController)
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.nav_host_fragment)
+        return navController.navigateUp() || super.onSupportNavigateUp()
     }
 
     override fun onInitData() {

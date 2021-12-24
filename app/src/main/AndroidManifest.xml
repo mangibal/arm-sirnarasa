@@ -24,7 +24,6 @@
         <activity android:name=".presentation.listcontent.ListContentActivity" />
         <activity android:name=".presentation.settings.SettingsActivity" />
         <activity android:name=".presentation.onboarding.OnBoardingActivity" />
-        <activity android:name=".presentation.main.home.HomeFragment" />
         <activity
             android:name=".presentation.splash.SplashActivity"
             android:exported="true"
