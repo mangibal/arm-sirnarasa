@@ -12,7 +12,6 @@ import com.robithohmurid.app.data.model.entity.UpdateEntity
 import com.robithohmurid.app.databinding.ActivitySplashBinding
 import com.robithohmurid.app.domain.abstraction.BaseActivity
 import com.robithohmurid.app.external.extension.app.getDrawableCompat
-import com.robithohmurid.app.external.extension.view.loadImage
 import com.robithohmurid.app.external.firebase.RemoteConfig
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -27,13 +26,6 @@ class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>(
     override fun onInitUI(savedInstanceState: Bundle?) {
         hideSystemUI()
         with(binding) {
-            tvCredit.text = String.format(
-                "%s %s",
-                getString(R.string.title_created_for),
-                getString(R.string.title_stid_sirnarasa)
-            )
-
-            tvAppVersion.text = String.format("Version %s\nBuild %s", BuildConfig.VERSION_NAME, BuildConfig.VERSION_CODE)
 
             if (Build.VERSION.SDK_INT < 28) {
                 ivLogo.setImageDrawable(getDrawableCompat(R.drawable.ic_launcher_foreground))
